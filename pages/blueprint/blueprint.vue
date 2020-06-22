@@ -28,7 +28,7 @@
 		</view>
 
 		<!-- 表格部分--人生蓝图2 -->
-		<view class="table" v-if="changeIndex==1">
+		<view class="table" v-else-if="changeIndex==1">
 			<view class="table-thead">
 				<text>类别</text>
 				<text>近期目标(5年内)</text>
@@ -43,6 +43,54 @@
 			</block>
 		</view>
 
+		<!-- 表格部分--人生蓝图3 -->
+		<view class="table" v-else-if="changeIndex==2">
+			<!-- 顶部部分 -->
+			<view class="title-head">
+				<block v-for="(value,index) in cate" :key="value.name">
+					<view class="">{{value.name}}</view>
+				</block>
+			</view>
+
+			<!-- 内容部分 -->
+			<block v-for="(value,index) in cateList" :key="value.name">
+				<view class="content">
+					<view class="content-left">{{value.name}}</view>
+					<view class="contain">
+						<block v-if="update" v-for="(value2,index2) in value.children" :key="value2.count">
+							<view class="content-right">
+								<!-- 类别 -->
+								<view>
+									<input type="text" @blur="handleCate($event,value2)" :value="value2.type" />
+								</view>
+								<!-- 序号 -->
+								<view>{{value2.count}}</view>
+								<!-- 目标内容 -->
+								<view>
+								  <textarea @blur="handleContent($event,value2)" :value="value2.content"></textarea>
+								</view>
+								<!-- 方法措施 -->
+								<view>
+									<textarea @blur="handleMeasures($event,value2)" :value="value2.measures"></textarea>
+								</view>
+								<!-- 选择时间 -->
+								<view>
+								 <picker mode="date" :value="value2.startTime" @change="bindDateChange($event,value2)">
+										<view class="picker">
+											<text style="opacity:0">选择时间</text>
+											<text>{{value2.startTime==null?'':value2.startTime}}</text>
+										</view>
+									</picker>
+								</view>
+								<!-- 完成打勾 -->
+								<view :class="value2.complete==true?'iconfont icon-zhengque':''" @tap="handleComplete(value2)"></view>
+							</view>
+						</block>
+					</view>
+				</view>
+			</block>
+
+		</view>
 
 	</view>
 </template>
@@ -415,40 +463,163 @@
 				//判断用户点击的是哪一项
 				if (index == 0) {
 					this.getUserBlPrint()
-				}else if(index==1){
+				} else if (index == 1) {
 					this.getUserBlPrint2()
-				}else{
-					
+				} else {
+					this.viewBlPrint3()
 				}
 				this.changeIndex = index
 			},
 			
+			// 人生蓝图3是否完成
+			async handleComplete(e){
+				let data=e
+				data.userid=uni.getStorageSync('userID');
+				//已经写有内容的才能标注是否完成
+				console.log(Boolean(data.id))
+				if(data.id){
+					data.complete=!data.complete
+					let res=await 	myAxios({
+						url:'/anonymous/updateBlueprintDetailed',
+						method:'post',
+						data
+					})
+					if(res.data.statusCode==200){
+						this.viewBlPrint3()
+					}else{
+						uni.showToast({
+							title:'更新数据失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
+				}
+			},
+			
+			// 人生蓝图3起止时间更新
+			async bindDateChange(e,value2){
+				let {value}=e.detail
+				let data=value2
+				data.startTime=value
+				data.userid=uni.getStorageSync('userID');
+				let res=await myAxios({
+					url:'/anonymous/updateBlueprintDetailed',
+					method:'post',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.viewBlPrint3()
+				}else{
+					uni.showToast({
+						title:'更新数据失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 人生蓝图3方法措施更新
+			async handleMeasures(e,value2){
+				let {value}=e.detail
+				let data=value2
+				data.measures=value
+				data.userid=uni.getStorageSync('userID');
+				let res=await myAxios({
+					url:'/anonymous/updateBlueprintDetailed',
+					method:'post',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.viewBlPrint3()
+				}else{
+					uni.showToast({
+						title:'更新数据失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 人生蓝图3目标内容更新
+			async handleContent(e,value2){
+				let {value}=e.detail
+				let data =value2
+				data.content=value
+				data.userid=uni.getStorageSync('userID');
+				let res=await myAxios({
+					url:'/anonymous/updateBlueprintDetailed',
+					method:'post',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.viewBlPrint3()
+				}else{
+					uni.showToast({
+						title: '更新数据失败,请重试',
+						icon:'none',
+						duration:500
+					});
+				}
+			},
+			
+			// 人生蓝图3类别更新
+			async handleCate(e,value2){
+				let {value}=e.detail
+				let data =value2
+				data.type=value
+				data.userid=uni.getStorageSync('userID');
+				let res= await myAxios({
+					url:'/anonymous/updateBlueprintDetailed',
+					method:'post',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.viewBlPrint3()
+				}else{
+					uni.showToast({
+						title: '更新数据失败,请重试',
+						icon:'none',
+						duration:500
+					});
+				}
+			},
+
 			// 蓝图2数据更新
 			async handleUpdate5(e) {
-							// 从event当中获取参数
-							let {index} = e.currentTarget.dataset
-							let {value} = e.detail
-							let data = {
-								completionTime: 5,
-								type: this.array[index].type,
-								content: value,
-								userid: uni.getStorageSync('userID')
-							}
-							if (this.array[index].id) {
-								data.id = this.array[index].id
-							}
-							console.log(data)
-							let res = await myAxios({
-								method: 'post',
-								url: '/anonymous/updateBlueprint',
-								data
-							})
-							// console.log(res)
-							// 更新成功之后，需要重新获取数据进行页面渲染
-							if (res.data.statusCode == 200) {
-								this.getUserBlPrint2()
-							}
-						},
+				// 从event当中获取参数
+				let {
+					index
+				} = e.currentTarget.dataset
+				let {
+					value
+				} = e.detail
+				let data = {
+					completionTime: 5,
+					type: this.array[index].type,
+					content: value,
+					userid: uni.getStorageSync('userID')
+				}
+				if (this.array[index].id) {
+					data.id = this.array[index].id
+				}
+				console.log(data)
+				let res = await myAxios({
+					method: 'post',
+					url: '/anonymous/updateBlueprint',
+					data
+				})
+				// console.log(res)
+				// 更新成功之后，需要重新获取数据进行页面渲染
+				if (res.data.statusCode == 200) {
+					this.getUserBlPrint2()
+				} else {
+					uni.showToast({
+						title: '更新失败,请重试',
+						duration: 500,
+						icon: 'none'
+					})
+				}
+			},
 
 			// 蓝图1数据更新
 			async handleUpdate3(e) {
@@ -478,11 +649,48 @@
 				// 更新成功之后，需要重新获取数据进行页面渲染
 				if (res.data.statusCode == 200) {
 					this.getUserBlPrint()
+				} else {
+					uni.showToast({
+						title: '更新失败,请重试',
+						duration: 500,
+						icon: 'none'
+					})
 				}
 			},
-			
+
+			// 获取蓝图3的数据内容
+			async viewBlPrint3(){
+				this.update=false
+				let res=await myAxios({
+					method:'post',
+					url:'/anonymous/queryBlueprintDetailed',
+					data:{
+						userid:wx.getStorageSync('userID')
+					}
+				})
+				// console.log(res);
+				// 更新视图
+				if(res.statusCode===200&&res.data.result.content){
+					let {content}=res.data.result
+					for(let i=0;i<this.cateList.length;i++){
+						content.forEach(v=>{
+							if(this.cateList[i].name===v.parentType){
+								this.cateList[i]['children'][v.count-1]=v
+							}
+						})
+					}
+				}else{
+					uni.showToast({
+						title:'获取蓝图3数据失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+				this.update=true
+			},
+
 			// 获取蓝图2的数据
-			async getUserBlPrint2(){
+			async getUserBlPrint2() {
 				this.update = false
 				let data = {
 					completionTime: 5,
@@ -516,7 +724,13 @@
 							this.array[5] = v
 						}
 					})
-					console.log(this.array)
+					// console.log(this.array)
+				} else {
+					uni.showToast({
+						title: '获取人生蓝图2数据失败,请重试',
+						duration: 500,
+						icon: 'none'
+					})
 				}
 				this.update = true
 			},
@@ -557,6 +771,12 @@
 						}
 					})
 
+				} else {
+					uni.showToast({
+						title: '获取人生蓝图1数据失败,请重试',
+						duration: 500,
+						icon: 'none'
+					})
 				}
 				this.update = true
 			}
@@ -772,6 +992,7 @@
 									top: 0;
 									left: 0;
 									display: flex;
+									font-size: 20rpx;
 									justify-content: center;
 									align-items: center;
 								}
