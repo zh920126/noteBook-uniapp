@@ -13,6 +13,10 @@
             "path" : "pages/quarterlygoals/quarterlygoals",
             "style" : {}
         }
+        ,{
+            "path" : "pages/monthygoals/monthygoals",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
