@@ -27,6 +27,21 @@
 			</block>
 		</view>
 
+		<!-- 表格部分--人生蓝图2 -->
+		<view class="table" v-if="changeIndex==1">
+			<view class="table-thead">
+				<text>类别</text>
+				<text>近期目标(5年内)</text>
+			</view>
+			<block v-for="(value,index) in array" :key="value.type" v-if="update">
+				<view class="tr">
+					<view class="td1">{{value.type}}</view>
+					<view class="td2">
+						<textarea @blur="handleUpdate5" :data-index=index maxlength="-1" :value="value.content"></textarea>
+					</view>
+				</view>
+			</block>
+		</view>
 
 
 	</view>
@@ -69,22 +84,22 @@
 					}
 				],
 				array: [{
-						name: '事业'
+						type: '事业'
 					},
 					{
-						name: '财富'
+						type: '财富'
 					},
 					{
-						name: '家庭生活'
+						type: '家庭生活'
 					},
 					{
-						name: '学习成长'
+						type: '学习成长'
 					},
 					{
-						name: '人际关系'
+						type: '人际关系'
 					},
 					{
-						name: '健康计划'
+						type: '健康计划'
 					}
 				],
 				cate: [{
@@ -387,14 +402,56 @@
 					},
 				],
 				changeIndex: 0,
-				update:true,
+				update: true,
 				completionTime: 3
 			};
 		},
 		methods: {
+			// tab栏切换
+			async handleClick(e) {
+				let {
+					index
+				} = e.currentTarget.dataset
+				//判断用户点击的是哪一项
+				if (index == 0) {
+					this.getUserBlPrint()
+				}else if(index==1){
+					this.getUserBlPrint2()
+				}else{
+					
+				}
+				this.changeIndex = index
+			},
 			
+			// 蓝图2数据更新
+			async handleUpdate5(e) {
+							// 从event当中获取参数
+							let {index} = e.currentTarget.dataset
+							let {value} = e.detail
+							let data = {
+								completionTime: 5,
+								type: this.array[index].type,
+								content: value,
+								userid: uni.getStorageSync('userID')
+							}
+							if (this.array[index].id) {
+								data.id = this.array[index].id
+							}
+							console.log(data)
+							let res = await myAxios({
+								method: 'post',
+								url: '/anonymous/updateBlueprint',
+								data
+							})
+							// console.log(res)
+							// 更新成功之后，需要重新获取数据进行页面渲染
+							if (res.data.statusCode == 200) {
+								this.getUserBlPrint2()
+							}
+						},
+
 			// 蓝图1数据更新
-			async handleUpdate3(e){
+			async handleUpdate3(e) {
 				// 从event当中获取参数
 				let {
 					index
@@ -406,63 +463,102 @@
 					completionTime: 3,
 					type: this.arr[index].type,
 					content: value,
-					userid: wx.getStorageSync('userID')
+					userid: uni.getStorageSync('userID')
 				}
-				if(this.arr[index].id){
-					data.id=this.arr[index].id
+				if (this.arr[index].id) {
+					data.id = this.arr[index].id
 				}
 				console.log(data)
-				let res=await myAxios({
-					method:'post',
-					url:'/anonymous/updateBlueprint',
+				let res = await myAxios({
+					method: 'post',
+					url: '/anonymous/updateBlueprint',
 					data
 				})
-				console.log(res)
+				// console.log(res)
 				// 更新成功之后，需要重新获取数据进行页面渲染
-				if(res.data.statusCode==200){
+				if (res.data.statusCode == 200) {
 					this.getUserBlPrint()
 				}
 			},
 			
-			// 进入页面就获取
+			// 获取蓝图2的数据
+			async getUserBlPrint2(){
+				this.update = false
+				let data = {
+					completionTime: 5,
+					userid: uni.getStorageSync('userID')
+				}
+				let res = await myAxios({
+					method: 'post',
+					url: '/anonymous/queryBlueprint',
+					data
+				})
+				if (res.data.message == '查询成功' && res.data.result.content) {
+					let userBluePrint = res.data.result.content
+					// 创建对象进行数据筛选
+					userBluePrint.forEach(v => {
+						if (v.type == '事业') {
+							this.array[0] = v
+						}
+						if (v.type == '财富') {
+							this.array[1] = v
+						}
+						if (v.type == '家庭生活') {
+							this.array[2] = v
+						}
+						if (v.type == '学习成长') {
+							this.array[3] = v
+						}
+						if (v.type == '人际关系') {
+							this.array[4] = v
+						}
+						if (v.type == '健康计划') {
+							this.array[5] = v
+						}
+					})
+					console.log(this.array)
+				}
+				this.update = true
+			},
+
+			// 进入页面就获取蓝图1的数据
 			async getUserBlPrint() {
-				this.update=false
+				this.update = false
 				let data = {
 					completionTime: 3,
 					userid: uni.getStorageSync('userID')
 				}
-				let res=await myAxios({
-					method:'post',
-					url:'/anonymous/queryBlueprint',
+				let res = await myAxios({
+					method: 'post',
+					url: '/anonymous/queryBlueprint',
 					data
 				})
-				if(res.data.message=='查询成功'&&res.data.result.content){
+				if (res.data.message == '查询成功' && res.data.result.content) {
 					let userBluePrint = res.data.result.content
 					// 创建对象进行数据筛选
-					userBluePrint.forEach(v=>{
-						if(v.type=='事业'){
-								this.arr[0]=v
+					userBluePrint.forEach(v => {
+						if (v.type == '事业') {
+							this.arr[0] = v
 						}
-						if(v.type=='财富'){
-							this.arr[1]=v
+						if (v.type == '财富') {
+							this.arr[1] = v
 						}
-						if(v.type=='家庭生活'){
-							this.arr[2]=v
+						if (v.type == '家庭生活') {
+							this.arr[2] = v
 						}
-						if(v.type=='学习成长'){
-							this.arr[3]=v
+						if (v.type == '学习成长') {
+							this.arr[3] = v
 						}
-						if(v.type=='人际关系'){
-							this.arr[4]=v
+						if (v.type == '人际关系') {
+							this.arr[4] = v
 						}
-						if(v.type=='健康计划'){
-							this.arr[5]=v
+						if (v.type == '健康计划') {
+							this.arr[5] = v
 						}
 					})
-					console.log(this.arr)
-					
+
 				}
-				this.update=true
+				this.update = true
 			}
 		},
 		onLoad() {
