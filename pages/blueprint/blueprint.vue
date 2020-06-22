@@ -972,6 +972,9 @@
 
 					&:last-child {
 						width: 36rpx;
+						display: flex;
+						justify-content: center;
+						align-items: center;
 					}
 
 					&:nth-child(5) {

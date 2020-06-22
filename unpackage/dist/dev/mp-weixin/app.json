@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/blueprint/blueprint"
+    "pages/blueprint/blueprint",
+    "pages/quarterlygoals/quarterlygoals"
   ],
   "subPackages": [],
   "window": {
@@ -10,6 +11,5 @@
     "navigationBarBackgroundColor": "#EDEDED",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap31.json"
+  "usingComponents": {}
 }

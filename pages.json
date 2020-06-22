@@ -9,6 +9,10 @@
             "path" : "pages/blueprint/blueprint",
             "style" : {}
         }
+        ,{
+            "path" : "pages/quarterlygoals/quarterlygoals",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
