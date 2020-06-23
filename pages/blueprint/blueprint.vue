@@ -958,6 +958,7 @@
 					&:nth-child(2) {
 						width: 36rpx;
 						display: flex;
+						font-size: 28rpx;
 						justify-content: center;
 						align-items: center;
 					}

@@ -17,6 +17,10 @@
             "path" : "pages/monthygoals/monthygoals",
             "style" : {}
         }
+        ,{
+            "path" : "pages/weekgoals/weekgoals",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

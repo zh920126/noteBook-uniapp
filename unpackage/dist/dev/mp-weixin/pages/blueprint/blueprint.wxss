@@ -201,6 +201,7 @@ page {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  font-size: 28rpx;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;

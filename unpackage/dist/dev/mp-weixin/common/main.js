@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 {
   onLaunch: function onLaunch(options) {
     console.log('App Launch');
-    uni.setStorageSync('userID', '11');
+    uni.setStorageSync('userID', '20');
   },
   onShow: function onShow() {
     console.log('App Show');

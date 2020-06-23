@@ -1,0 +1,344 @@
+page {
+  background: #EFF3F6;
+}
+.tabbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: #fff;
+  height: 50rpx;
+  padding: 7rpx 14rpx;
+  font-size: 15rpx;
+}
+.tabbar .weekTab {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 36rpx;
+  width: 252rpx;
+  border-radius: 5rpx;
+  color: #404040;
+  background: #f8f8f8;
+}
+.tabbar .weekTab > view {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.tabbar .weekTab .on {
+  background: #2ECE94;
+  color: #fff;
+}
+.tabbar .week-change {
+  width: 378rpx;
+  height: 36rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  border-radius: 5rpx;
+}
+.tabbar .week-change .tab {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.tabbar .week-change .tab:nth-child(2) {
+  background: #f8f8f8;
+  color: #2ECE94;
+}
+.week {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 0 14rpx;
+}
+.week-left {
+  width: 221rpx;
+  border: 1rpx solid #1C5E55;
+  box-sizing: border-box;
+}
+.week-left-item {
+  height: 54rpx;
+  border-bottom: 1rpx solid #1C5E55;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  box-sizing: border-box;
+}
+.week-left-item:nth-child(1),
+.week-left-item:nth-child(2) {
+  height: 40rpx;
+  background: #22705D;
+  box-sizing: border-box;
+  font-size: 13rpx;
+  color: #fff;
+}
+.week-left-item:nth-child(9),
+.week-left-item:nth-child(13),
+.week-left-item:nth-child(17) {
+  background: #22705D;
+  font-size: 13rpx;
+  box-sizing: border-box;
+  color: #fff;
+}
+.week-left-item:last-child {
+  border-bottom: 0rpx;
+}
+.week-left-item .mytext {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.week-right {
+  width: 491rpx;
+  border: 1rpx solid #1C5E55;
+  box-sizing: border-box;
+}
+.week-right-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 80rpx;
+  background: #22705D;
+  font-size: 13rpx;
+  color: #fff;
+}
+.week-right-title .left {
+  width: 36rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.week-right-title .right {
+  width: 90rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.week-right-title .center {
+  width: 365rpx;
+  font-size: 15rpx;
+  border-left: 1rpx solid #1C5E55;
+  border-right: 1rpx solid #1C5E55;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  box-sizing: border-box;
+}
+.week-right-title .center .icon {
+  margin: 0 36rpx 0 26rpx;
+}
+.week-right-title .center .description {
+  font-size: 12rpx;
+}
+.week-right-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 54rpx;
+}
+.week-right-content:last-child .left,
+.week-right-content:last-child .right,
+.week-right-content:last-child .center {
+  border-bottom: 0rpx;
+}
+.week-right-content .left {
+  width: 36rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 16rpx;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-bottom: 1rpx solid #1C5E55;
+}
+.week-right-content .right {
+  width: 90rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-bottom: 1rpx solid #1C5E55;
+}
+.week-right-content .center {
+  width: 365rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #1C5E55;
+  border-top: 0rpx;
+}
+.week-right-content .center .mytext {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.footer {
+  height: 241rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 9rpx 14rpx 0;
+}
+.footer-left {
+  width: 222rpx;
+  background: #2ECE94;
+  font-size: 49rpx;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.footer-right {
+  width: 491rpx;
+  border: 1rpx solid #1C5E55;
+  box-sizing: border-box;
+}
+.footer-right-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 79rpx;
+  background: #22705D;
+  font-size: 13rpx;
+  color: #fff;
+}
+.footer-right-title .title-left {
+  width: 126rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.footer-right-title .title-right {
+  width: 231rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 12rpx;
+}
+.footer-right-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 54rpx;
+}
+.footer-right-content .content-left {
+  width: 126rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-bottom: 1rpx solid #1C5E55;
+  font-size: 13rpx;
+  color: #1C5E55;
+  box-sizing: border-box;
+}
+.footer-right-content .content-center,
+.footer-right-content .content-right {
+  width: 182rpx;
+  border-bottom: 1rpx solid #1C5E55;
+  border-left: 1rpx solid #1C5E55;
+}
+.footer-right-content .content-center > view,
+.footer-right-content .content-right > view {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.footer-right-content .content-center .mytext,
+.footer-right-content .content-right .mytext {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+

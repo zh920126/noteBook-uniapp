@@ -1,17 +1,17 @@
 <template>
 	<view class="index">
 		<view class="index-top">
-			<view class="img">
+			<!-- <view class="img">
 				<image mode="aspectFill" src="../../static/image/im_bgFlower@2x.png">
 				</image>
-			</view>
+			</view> -->
 			<view class="index-header">高效工作 快乐生活</view>
 			<view class="index-title">改变从今天开始</view>
 		</view>
 		<view class="card">
 			<!-- 顶部背景 -->
 			<view class="bg">
-				<block v-if="userInfo.nickName">
+				<block v-if="true">
 					<view class="userAvatar">
 						<image class="" mode="widthFix" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3104749104,4207433598&fm=26&gp=0.jpg"></image>
 					</view>
@@ -117,7 +117,8 @@
 			height: 271rpx;
 			width: 100%;
 			overflow: hidden;
-			background: #257065;
+			background-image: url(../../static/image/背景顶部@2x.png);
+			background-size: 100% 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -170,7 +171,8 @@
 
 			.bg {
 				height: 197rpx;
-				background: rgba(95, 174, 137, 1);
+				background-image: url(../../static/image/卡片顶部@2x.png);
+				background-size: 100% 100%;
 
 				.userAvatar {
 					width: 157rpx;

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/blueprint/blueprint",
     "pages/quarterlygoals/quarterlygoals",
-    "pages/monthygoals/monthygoals"
+    "pages/monthygoals/monthygoals",
+    "pages/weekgoals/weekgoals"
   ],
   "subPackages": [],
   "window": {
@@ -12,5 +13,6 @@
     "navigationBarBackgroundColor": "#EDEDED",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap55.json"
 }
