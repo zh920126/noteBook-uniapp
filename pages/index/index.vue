@@ -94,10 +94,10 @@
 		},
 		onLoad(options) {
 			console.log(options)
-			
 		},
 		methods: {
 			goToelsePage(v){
+				console.log(v)
 				uni.navigateTo({
 					url:v
 				})

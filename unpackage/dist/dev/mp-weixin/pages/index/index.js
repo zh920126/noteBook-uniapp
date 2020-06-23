@@ -231,12 +231,19 @@ var _default =
   },
   onLoad: function onLoad(options) {
     console.log(options);
-
+    console.log('测试');
   },
   methods: {
     goToelsePage: function goToelsePage(v) {
+      console.log(v);
       uni.navigateTo({
-        url: v });
+        url: v,
+        success: function success(res) {
+          console.log(res);
+        },
+        fail: function fail(error) {
+          console.log(error);
+        } });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

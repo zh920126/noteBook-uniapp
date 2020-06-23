@@ -134,7 +134,65 @@
 					<view class="tab" @tap="handleNextWeek">下一周</view>
 				</view>
 			</view>
-			
+			<!-- 周一-周日tab栏 -->
+			<view class="days-tab">
+				<block v-for="(value,index) in weekDate" :key="value.type">
+					<view class="days" :class="whichDay==(index+1)?'on':''" @tap="handleChoseDate(index+1)">{{value.name}}</view>
+				</block>
+			</view>
+			<!-- 日期选择 -->
+			<view class="date">
+			  <picker mode="date"  @change="handleChangeTime">
+			    <text>{{year}}年{{month}}月{{days}}日</text>
+			  </picker>
+			    <view class="iconfont icon-rili"></view>
+			</view>
+			<!-- 每日数据 -->
+			<view class="daily" v-if="update3">
+			  <view class="daily-left">
+					<view class="category">
+						<view class="cateName">按ABC分类</view>
+						<view class="cateName">起止时间</view>
+						<view class="cateName">
+							<view >今天事项 要事第一</view>
+							<view >A类最重要 B类其次 C类次重要</view>
+						</view>
+						<view class="cateName">完成打勾</view>
+					</view>
+				<!-- 内容部分 -->
+				<block v-for="(value,index) in todayThings" :key="Math.random()">
+					<view class="description">
+					      <view class="content">
+									<input type="text" :value="value.type" @blur="handleChangeType($event,value)"/>
+								</view>
+					      <view class="content">
+					       <picker mode="date" :value="value.time" @change="bindDateChange($event,value)">
+					        <view class="picker">
+					          <text style="opacity:0">选择时间</text>
+					          <text>{{value.time==null?'':value.time}}</text>
+					        </view>
+					      </picker>
+					      </view>
+					      <view class="content">
+					        <textarea class="todayThings" :value="value.content" @blur="handleUpdateContent($event,value)">
+									</textarea>
+					      </view>
+					      <view class="content" :class="value.complete==true?'iconfont icon-zhengque':''" @tap="handleComplete2(value)"></view>
+					    </view>
+				</block>
+				</view>
+				<view class="daily-right">
+				    <view class="daily-right-title">
+				      <text >总结</text>
+				      <text >改进</text>
+				    </view>
+				    <block v-for="(value,index) in todaySummary">
+				      <view class="des">
+				        <textarea :value="value.content" @blur="handleUpdateSummary($event,value)"></textarea>
+				      </view>
+				    </block>
+				  </view>
+			</view>
 			
 		</block>
 		
@@ -355,17 +413,249 @@
 						name:'周日',
 						type:7
 					},
-				]
+				],
+				todayThings:[
+				      {
+				        index:1,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:2,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:3,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:4,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:5,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:6,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:7,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:8,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:9,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:10,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:11,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:12,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:13,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:14,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:15,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:16,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      },
+				      {
+				        index:17,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      }, {
+				        index:17,
+				        complete:false,
+				        time:'',
+				        parentType:'今日事项',
+				        type:'',
+				        content:''
+				      }
+						],
+				todaySummary:[
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					}
+				],
+				   
 				week: 0,
 				year: new Date().getFullYear(),
+				month:0,
+				days:0,
 				time: new Date().getTime(),
 				update:true,
 				update1:true,
 				update2:true,
-				changeIndex:0
+				update3:true,
+				changeIndex:0,
+				whichDay:1
 			};
 		},
 		methods:{
+			
+		// 选择时间
+		async handleChangeTime(e){
+			let date=new Date(e.detail.value)
+			this.month=date.getMonth()+1
+			this.year=date.getFullYear()
+			this.days=date.getDate()
+			this.time=date.getTime()
+			this.getDateNow()
+			this.getWeek()
+			this.getDayPlan()
+		},
 			
 		// 切换周--天
 		async handleChangeTab(index){
@@ -373,13 +663,466 @@
 			if(index==0){
 				this.getWeeklyTarget()
 				this.getWeeklySummary()
+				this.getSharePlan()
 			}else{
-				
+				this.getDateNow()
+				this.getDayPlan()
 			}
 		},
 		
+		// 切换周几
+		async handleChoseDate(index){
+			if((index-this.whichDay)>0){
+				this.time=this.time+24*60*60*1000*Math.abs(index-this.whichDay)
+			}else if((index-this.whichDay)<0){
+				this.time=this.time-24*60*60*1000*Math.abs(index-this.whichDay)
+			}
+			this.whichDay=index
+			this.getDateNow()
+			// 同时重新获取数据
+			this.getDayPlan()
+		},
 		
+		// 获取时间
+		getDateNow(){
+			console.log(this.time)
+			let date=new Date(this.time)
+			let year=date.getFullYear()
+			let month=date.getMonth()+1
+			let days=date.getDate()
+			let whichDay=date.getDay()
+			whichDay=whichDay===0?7:whichDay
+			this.year=year
+			this.month=month
+			this.days=days
+			this.whichDay=whichDay
+		},
+		/****************************************************天-部分数据***********************************************/
+		// 更新日总结改进
+		async handleUpdateSummary(e,value2){
+			let {value}=e.detail
+			let data={
+				content:value,
+				parentType:value2.parentType,
+				userId:uni.getStorageSync('userID'),
+				week:+this.week,
+				year:+this.year,
+				whichDay:+this.whichDay
+			}
+			if(value2.id){
+				data.id=value2.id
+			}
+			let res=await myAxios({
+				method:'post',
+				url:'/anonymous/updateDayPlan',
+				data
+			})
+			if(res.data.statusCode==200){
+				this.getDayPlan()
+			}else{
+				uni.showToast({
+					title:'更新数据失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+		},
+		
+		// 更新日目标完成状态
+		async handleComplete2(value){
+			let data={
+				complete:!value.complete,
+				content:value.content,
+				parentType:value.parentType,
+				type:value.type,
+				time:value.time,
+				userId:uni.getStorageSync('userID'),
+				week:+this.week,
+				year:+this.year,
+				whichDay:+this.whichDay
+			}
+			if(value.id){
+				data.id=value.id
+				let res=await myAxios({
+					method:'post',
+					url:'/anonymous/updateDayPlan',
+					data
+				})
+				console.log(res)
+				if(res.data.statusCode==200){
+					this.getDayPlan()
+				}else{
+					uni.showToast({
+						title:'更新数据失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			}
+		},
+		
+		// 更新日内容
+		async handleUpdateContent(e,value2){
+			let {value}=e.detail
+			let data={
+				complete:value2.complete,
+				content:value,
+				parentType:value2.parentType,
+				type:value2.type,
+				time:value2.time,
+				userId:uni.getStorageSync('userID'),
+				week:+this.week,
+				year:+this.year,
+				whichDay:+this.whichDay
+			}
+			if(value2.id){
+				data.id=value2.id
+			}
+			let res=await myAxios({
+				method:'post',
+				url:'/anonymous/updateDayPlan',
+				data
+			})
+			if(res.data.statusCode==200){
+				this.getDayPlan()
+			}else{
+				uni.showToast({
+					title:'更新数据失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+		},
+		
+		// 日计划选择时间
+		async bindDateChange(e,value2){
+			let {value}=e.detail
+			let data={
+				complete:value2.complete,
+				content:value2.content,
+				parentType:value2.parentType,
+				type:value2.type,
+				time:value,
+				userId:uni.getStorageSync('userID'),
+				week:+this.week,
+				year:+this.year,
+				whichDay:+this.whichDay
+			}
+			if(value2.id){
+				data.id=value2.id
+			}
+			let res=await myAxios({
+				method:'post',
+				url:'/anonymous/updateDayPlan',
+				data
+			})
+			if(res.data.statusCode==200){
+				this.getDayPlan()
+			}else{
+				uni.showToast({
+					title:'更新数据失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+		},
+		
+		// 更新日计划分类
+		async handleChangeType(e,value2){
+			let {value}=e.detail
+			 let data={
+				complete:value2.complete,
+				content:value2.content,
+				parentType:value2.parentType,
+				type:value,
+				time:value2.time,
+				userId:uni.getStorageSync('userID'),
+				week:+this.week,
+				year:+this.year,
+				whichDay:+this.whichDay
+			}
+			if(value2.id){
+				data.id=value2.id
+			}
+			let res=await myAxios({
+				method:'post',
+				url:'/anonymous/updateDayPlan',
+				data
+			})
+			if(res.data.statusCode==200){
+				this.getDayPlan()
+			}else{
+				uni.showToast({
+					title:'更新数据失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+		},
+		
+		// 获取日计划数据
+		async getDayPlan(){
+			this.update3=false
+			let data={
+				userId:uni.getStorageSync('userID'),
+				week:+this.week,
+				whichDay:+this.whichDay,
+				year:+this.year
+			}
+			let res=await myAxios({
+				method:'post',
+				url:'/anonymous/findAimsByConditionForDayPlan',
+				data
+			})
+			console.log(data)
+			console.log(res)
+			if(res.data.statusCode==200&&res.data.result){
+				let {result}=res.data
+				// 数据初始化
+				this.todayThings=[
+					{
+						index:1,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:2,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:3,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:4,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:5,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:6,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:7,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:8,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:9,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:10,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:11,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:12,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:13,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:14,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:15,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:16,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},
+					{
+						index:17,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					},{
+						index:18,
+						complete:false,
+						time:'',
+						parentType:'今日事项',
+						type:'',
+						content:''
+					}
+				],
+				this.todaySummary=[
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					},
+					{
+						parentType:'今日总结',
+						content:''
+					}
+				]
+				let j=0
+				let k=0
+					result.forEach((v,i) => {
+						if(v.parentType==='今日事项'){
+							this.todayThings[j]=v  
+							this.todayThings.length=18
+							j++
+						}
+						if(v.parentType==='今日总结'){
+							this.todaySummary[k]=v
+							this.todaySummary.length=18
+							k++
+						}
+				})
+			}else{
+				uni.showToast({
+					title:'获取日计划失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+			this.update3=true
+		},
 			
+		/****************************************************周-部分数据***********************************************/
 		// 下一周
 		handleNextWeek(){
 				if (this.week + 1 === 53) {
@@ -389,8 +1132,14 @@
 					this.week++
 				}
 				this.time=this.time+60*60*24*7*1000
-				this.getWeeklyTarget()
-				this.getWeeklySummary()
+				if(this.changeIndex==0){
+					this.getWeeklyTarget()
+					this.getWeeklySummary()
+					this.getSharePlan()
+				}else{
+					this.getDayPlan()
+				}
+				this.getDateNow()
 		},
 			
 		// 上一周
@@ -402,8 +1151,14 @@
 				this.week--
 			}
 			this.time=this.time-60*60*24*7*1000
-			this.getWeeklyTarget()
-			this.getWeeklySummary()
+			if(this.changeIndex==0){
+				this.getWeeklyTarget()
+				this.getWeeklySummary()
+				this.getSharePlan()
+			}else{
+				this.getDayPlan()
+			}
+			this.getDateNow()
 		},
 		
 		// 分享数据更新
@@ -675,7 +1430,7 @@
 		
 		// 时间转化为周数
 		getWeek() {
-			let date = new Date();
+			let date = new Date(this.time);
 			let beginDate = new Date(date.getFullYear(), 0, 1);
 			let week = Math.ceil((parseInt((date - beginDate) / (24 * 60 * 60 * 1000)) + 1 + beginDate.getDay()) / 7);
 			this.week=week
@@ -693,9 +1448,22 @@
 				url:'/anonymous/queryShare',
 				data
 			})
-			console.log(res)
 			if(res.data.statusCode==200&&res.data.result){
 				let {result}=res.data
+				this.shareArray=[
+								      {
+								        type:'1',
+								        content:''
+								      },
+								      {
+								        type:'2',
+								        content:''
+								      },
+								      {
+								        type:'3',
+								        content:''
+								      },
+								    ],
 				result.forEach(v=>{
 					this.shareArray.forEach((value,index)=>{
 						if(v.type===value.type){
@@ -703,7 +1471,6 @@
 						}
 					})
 				})
-				console.log(this.shareArray)
 			}else{
 				uni.showToast({
 					title:'获取分享数据失败,请重试',
@@ -977,10 +1744,10 @@
 			},
 		},
 		onLoad() {
-			this.getWeek()
-			this.getWeeklySummary()
-			this.getWeeklyTarget()
-			this.getSharePlan()
+				this.getWeek()
+				this.getWeeklySummary()
+				this.getWeeklyTarget()
+				this.getSharePlan()
 		}
 	}
 </script>
@@ -1257,5 +2024,185 @@ page{
 			}
 		}
 	}
+}
+.days-tab{
+  margin: 5rpx 14rpx 2rpx;
+  padding: 0 81rpx;
+  height: 36rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15rpx;
+  color: #707070;
+  border-bottom: 1rpx solid #D6D6D6;
+  &>view{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .on{
+    color: #2ECE94;
+    border-bottom: 3rpx solid #2ECE94;
+  }
+}
+.date{
+  height: 40rpx;
+  margin: 0 14rpx;
+  background: #fff;
+  font-size: 13rpx;
+  color: #404040;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  picker{
+    height: 100%;
+    font-size: #404040;
+    display: flex;
+    align-items: center;
+  }
+  &>view{
+    font-size: 20rpx;
+    display: flex;
+    align-items: center;
+    margin-left: 10rpx;
+  }
+}
+.daily{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 14rpx;
+  background: #fff;
+  &-left{
+    width: 355rpx;
+    border: 1rpx solid #1C5E55;
+    .category{
+      height: 54rpx;
+      display: flex;
+      font-size: 13rpx;
+      font-weight: bold;
+      &>view{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1rpx solid #1C5E55;
+        background: #22705D;
+        box-sizing: border-box;
+        color: #fff;
+        &:nth-child(1){
+          width: 36rpx;
+          border-left:0rpx;
+        }
+        &:nth-child(2){
+          width: 90rpx;
+        }
+        &:nth-child(3){
+          width: 193rpx;
+          display: flex;
+          flex-direction: column;
+          &>view{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:last-child{
+              font-size: 13rpx;
+            }
+          }
+        }
+        &:last-child{
+          width: 36rpx;
+        }
+      }
+    }
+    .description{
+      display: flex;
+      height: 79rpx;
+      &>view{
+        border-left: 1rpx solid #1C5E55;
+        border-bottom: 1rpx solid #1C5E55;
+        box-sizing: border-box;
+        &:nth-child(1){
+          width: 36rpx;
+          input{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+          }
+        }
+        &:nth-child(2){
+          width: 90rpx;
+          picker{
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+            position: relative;
+						
+            text{
+              &:last-child{
+                position: absolute;
+                top: 0;
+                left: 0;
+								font-size: 25rpx;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								margin: 8rpx;
+              }
+            }
+          }
+          input{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+          }
+        }
+        &:nth-child(3){
+          width: 193rpx;
+          textarea{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+          }
+        }
+        &:last-child{
+          width: 36rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  &-right{
+    width: 355rpx;
+    background: #fff;
+    border: 1rpx solid #1C5E55;
+    &-title{
+      height: 54rpx;
+      background: #22705D;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 13rpx;
+      color: #fff;
+      font-weight: bold;
+      text{
+        &:first-child{
+          margin: 0 20rpx;
+        }
+      }
+    }
+    .des{
+      height: 79rpx;
+      border: 1rpx solid #1C5E55;
+      box-sizing: border-box;
+      border-top: 0rpx;
+      textarea{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+    }
+  }
 }
 </style>

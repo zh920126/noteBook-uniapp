@@ -2,7 +2,7 @@
 	export default {
 		onLaunch: function(options) {
 			console.log('App Launch')
-			uni.setStorageSync('userID','20')
+			uni.setStorageSync('userID','10')
 		},
 		onShow: function() {
 			console.log('App Show')

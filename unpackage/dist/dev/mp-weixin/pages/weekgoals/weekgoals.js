@@ -146,9 +146,1519 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/fwh/chengzhangriji-uniapp/pages/weekgoals/weekgoals.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js):\nSyntaxError: Unexpected token, expected \",\" (359:4)\n    at Object.raise (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:7017:17)\n    at Object.unexpected (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8395:16)\n    at Object.expect (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8381:28)\n    at Object.parseObj (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9982:14)\n    at Object.parseExprAtom (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9616:28)\n    at Object.parseExprSubscripts (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9259:23)\n    at Object.parseMaybeUnary (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9239:21)\n    at Object.parseMaybeUnary (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6269:20)\n    at Object.parseExprOps (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9109:23)\n    at Object.parseMaybeConditional (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9082:23)\n    at Object.parseMaybeAssign (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9037:21)\n    at Object.parseMaybeAssign (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6216:20)\n    at Object.parseExpression (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8989:23)\n    at Object.parseReturnStatement (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11057:28)\n    at Object.parseStatementContent (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10738:21)\n    at Object.parseStatementContent (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:5976:18)");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 25));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 28);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
+{
+  data: function data() {
+    return {
+      weekDays: ['周', '天'],
+      weekPerformance: [{
+        content: '',
+        type: '目标完成情况' },
+
+      {
+        content: '',
+        type: '目标完成情况' },
+
+      {
+        content: '',
+        type: '目标完成情况' },
+
+      {
+        content: '',
+        type: '目标完成情况' },
+
+      {
+        content: '',
+        type: '目标完成情况' },
+
+      {
+        content: '',
+        type: '目标完成情况' }],
+
+
+      reason: [{
+        content: '',
+        type: '未完成目标的原因及障碍' },
+
+      {
+        content: '',
+        type: '未完成目标的原因及障碍' },
+
+      {
+        content: '',
+        type: '未完成目标的原因及障碍' }],
+
+
+      service: [{
+        content: '',
+        type: '克服障碍的对策和方法' },
+
+      {
+        content: '',
+        type: '克服障碍的对策和方法' },
+
+      {
+        content: '',
+        type: '克服障碍的对策和方法' }],
+
+
+      harvest: [{
+        content: '',
+        type: '本周创新与收获' },
+
+      {
+        content: '',
+        type: '本周创新与收获' },
+
+      {
+        content: '',
+        type: '本周创新与收获' }],
+
+
+      weeklyPlan: [{
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false },
+
+      {
+        content: '',
+        type: '本周目标',
+        complete: false }],
+
+
+      otherPlan: [{
+        type: '学习计划',
+        content: '',
+        complete: false },
+
+      {
+        type: '健康计划',
+        content: '',
+        complete: false },
+
+      {
+        type: '本周反省',
+        content: '',
+        complete: false }],
+
+
+      shareArray: [
+      {
+        type: '1',
+        content: '' },
+
+      {
+        type: '2',
+        content: '' },
+
+      {
+        type: '3',
+        content: '' }],
+
+
+      weekDate: [
+      {
+        name: '周一',
+        type: 1 },
+      {
+        name: '周二',
+        type: 2 },
+      {
+        name: '周三',
+        type: 3 },
+      {
+        name: '周四',
+        type: 4 },
+      {
+        name: '周五',
+        type: 5 },
+      {
+        name: '周六',
+        type: 6 },
+      {
+        name: '周日',
+        type: 7 }],
+
+
+      todayThings: [
+      {
+        index: 1,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 2,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 3,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 4,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 5,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 6,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 7,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 8,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 9,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 10,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 11,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 12,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 13,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 14,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 15,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 16,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' },
+
+      {
+        index: 17,
+        complete: false,
+        time: '',
+        parentType: '今日事项',
+        type: '',
+        content: '' }],
+
+
+      todaySummary: [
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' },
+
+      {
+        parentType: '今日总结',
+        content: '' }],
+
+
+
+      week: 0,
+      year: new Date().getFullYear(),
+      time: new Date().getTime(),
+      update: true,
+      update1: true,
+      update2: true,
+      changeIndex: 1,
+      whichDay: 1 };
+
+  },
+  methods: {
+
+    // 切换周--天
+    handleChangeTab: function handleChangeTab(index) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                _this.changeIndex = index;
+                if (index == 0) {
+                  _this.getWeeklyTarget();
+                  _this.getWeeklySummary();
+                  _this.getSharePlan();
+                } else {
+                  _this.getDayPlan();
+                }case 2:case "end":return _context.stop();}}}, _callee);}))();
+    },
+    /****************************************************天-部分数据***********************************************/
+
+
+    // 获取日计划数据
+    getDayPlan: function getDayPlan() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var data, res, result, j, k;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                _this2.update3 = false;
+                data = {
+                  userId: uni.getStorageSync('userID'),
+                  week: +_this2.week,
+                  whichDay: +_this2.whichDay,
+                  year: +_this2.year };_context2.next = 4;return (
+
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/findAimsByConditionForDayPlan',
+                    data: data }));case 4:res = _context2.sent;
+
+                if (res.data.statusCode == 200 && res.data.result) {
+                  result = res.data.result;
+                  // 数据初始化
+                  _this2.todayThings = [
+                  {
+                    index: 1,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 2,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 3,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 4,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 5,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 6,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 7,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 8,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 9,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 10,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 11,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 12,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 13,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 14,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 15,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 16,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' },
+
+                  {
+                    index: 17,
+                    complete: false,
+                    time: '',
+                    parentType: '今日事项',
+                    type: '',
+                    content: '' }],
+
+
+                  _this2.todaySummary = [
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' },
+
+                  {
+                    parentType: '今日总结',
+                    content: '' }];
+
+
+                  j = 0;
+                  k = 0;
+                  result.forEach(function (v, i) {
+                    if (v.parentType === '今日事项') {
+                      _this2.todayThings[j] = v;
+                      _this2.todayThings.length = 17;
+                      j++;
+                    }
+                    if (v.parentType === '今日总结') {
+                      _this2.todaySummary[k] = v;
+                      _this2.todaySummary.length = 18;
+                      k++;
+                    }
+                  });
+                } else {
+                  uni.showToast({
+                    title: '获取日计划失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }
+                _this2.update3 = true;case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
+
+    /****************************************************周-部分数据***********************************************/
+    // 下一周
+    handleNextWeek: function handleNextWeek() {
+      if (this.week + 1 === 53) {
+        this.week = 1;
+        this.year++;
+      } else {
+        this.week++;
+      }
+      this.time = this.time + 60 * 60 * 24 * 7 * 1000;
+      this.getWeeklyTarget();
+      this.getWeeklySummary();
+      this.getSharePlan();
+    },
+
+    // 上一周
+    handleLastWeek: function handleLastWeek() {
+      if (this.week - 1 === 0) {
+        this.week = 52;
+        this.year--;
+      } else {
+        this.week--;
+      }
+      this.time = this.time - 60 * 60 * 24 * 7 * 1000;
+      this.getWeeklyTarget();
+      this.getWeeklySummary();
+      this.getSharePlan();
+    },
+
+    // 分享数据更新
+    handleShare: function handleShare(e, value2) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var value, data, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  content: value,
+                  type: value2.type,
+                  timeSign: +('' + _this3.year + _this3.week),
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context3.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateShare',
+                    data: data }));case 5:res = _context3.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this3.getSharePlan();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context3.stop();}}}, _callee3);}))();
+    },
+
+    // 其他目标更新
+    handleOtherComplete: function handleOtherComplete(value) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var data, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
+                data = {
+                  complete: !value.complete,
+                  content: value.content,
+                  timeSign: +('' + _this4.year + _this4.week),
+                  type: value.type,
+                  userid: uni.getStorageSync('userID'),
+                  id: value.id };
+
+                // 必须是里面已经填写了内容的才可以打勾
+                if (!value.id) {_context4.next = 7;break;}_context4.next = 4;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateWeekPlan',
+                    data: data }));case 4:res = _context4.sent;
+
+                _this4.weeklyPlan.forEach(function (v) {
+                  if (v.id === value.id) {
+                    v.complete = !v.complete;
+                  }
+                });
+                if (res.data.statusCode == 200) {
+                  _this4.getWeeklyTarget();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context4.stop();}}}, _callee4);}))();
+
+    },
+
+    // 其他目标更新
+    handleOtherPlan: function handleOtherPlan(e, value2) {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var value, data, res;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  complete: value2.complete,
+                  content: value,
+                  timeSign: +('' + _this5.year + _this5.week),
+                  type: value2.type,
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context5.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateWeekPlan',
+                    data: data }));case 5:res = _context5.sent;
+
+                console.log(res.data.message);
+                if (res.data.statusCode == 200) {
+                  _this5.getWeeklyTarget();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 8:case "end":return _context5.stop();}}}, _callee5);}))();
+    },
+
+    // 本周目标完成状态更新
+    handleComplete: function handleComplete(value) {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var data, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+                data = {
+                  complete: !value.complete,
+                  content: value.content,
+                  timeSign: +('' + _this6.year + _this6.week),
+                  type: value.type,
+                  userid: uni.getStorageSync('userID'),
+                  id: value.id };
+
+                // 必须是里面已经填写了内容的才可以打勾
+                if (!value.id) {_context6.next = 6;break;}_context6.next = 4;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateWeekPlan',
+                    data: data }));case 4:res = _context6.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this6.getWeeklyTarget();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 6:case "end":return _context6.stop();}}}, _callee6);}))();
+
+    },
+
+    // 本周目标更新
+    handleUpdatePlan: function handleUpdatePlan(e, value2) {var _this7 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7() {var value, data, res;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  complete: value2.complete,
+                  content: value,
+                  timeSign: +('' + _this7.year + _this7.week),
+                  type: value2.type,
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context7.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateWeekPlan',
+                    data: data }));case 5:res = _context7.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this7.getWeeklyTarget();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context7.stop();}}}, _callee7);}))();
+    },
+
+    // 上周总结-本周创新与收获
+    handleHarvest: function handleHarvest(e, value2) {var _this8 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8() {var value, data, res;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  content: value,
+                  timeSign: +('' + _this8.year + _this8.week),
+                  type: value2.type,
+                  year: _this8.year,
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context8.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateSummarize',
+                    data: data }));case 5:res = _context8.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this8.getWeeklySummary();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context8.stop();}}}, _callee8);}))();
+    },
+
+    // 上周总结-克服障碍的对策和方法
+    handleService: function handleService(e, value2) {var _this9 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var value, data, res;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  content: value,
+                  timeSign: +('' + _this9.year + _this9.week),
+                  type: value2.type,
+                  year: _this9.year,
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context9.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateSummarize',
+                    data: data }));case 5:res = _context9.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this9.getWeeklySummary();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context9.stop();}}}, _callee9);}))();
+    },
+
+    // 上周总结-未完成目标的原因及障碍
+    handleReason: function handleReason(e, value2) {var _this10 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10() {var value, data, res;return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  content: value,
+                  timeSign: +('' + _this10.year + _this10.week),
+                  type: value2.type,
+                  year: _this10.year,
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context10.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateSummarize',
+                    data: data }));case 5:res = _context10.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this10.getWeeklySummary();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context10.stop();}}}, _callee10);}))();
+    },
+
+    // 上周总结-目标完成情况
+    handleWeekPerformance: function handleWeekPerformance(e, value2) {var _this11 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee11() {var value, data, res;return _regenerator.default.wrap(function _callee11$(_context11) {while (1) {switch (_context11.prev = _context11.next) {case 0:
+                value = e.detail.value;
+                data = {
+                  content: value,
+                  timeSign: +('' + _this11.year + _this11.week),
+                  type: value2.type,
+                  year: _this11.year,
+                  userid: uni.getStorageSync('userID') };
+
+                if (value2.id) {
+                  data.id = value2.id;
+                }_context11.next = 5;return (
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/updateSummarize',
+                    data: data }));case 5:res = _context11.sent;
+
+                if (res.data.statusCode == 200) {
+                  _this11.getWeeklySummary();
+                } else {
+                  uni.showToast({
+                    title: '更新数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }case 7:case "end":return _context11.stop();}}}, _callee11);}))();
+
+    },
+
+    // 时间转化为周数
+    getWeek: function getWeek() {
+      var date = new Date();
+      var beginDate = new Date(date.getFullYear(), 0, 1);
+      var week = Math.ceil((parseInt((date - beginDate) / (24 * 60 * 60 * 1000)) + 1 + beginDate.getDay()) / 7);
+      this.week = week;
+    },
+
+    // 获取分享数据
+    getSharePlan: function getSharePlan() {var _this12 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee12() {var data, res, result;return _regenerator.default.wrap(function _callee12$(_context12) {while (1) {switch (_context12.prev = _context12.next) {case 0:
+                _this12.update2 = false;
+                data = {
+                  timeSign: +('' + _this12.year + _this12.week),
+                  userid: uni.getStorageSync('userID') };_context12.next = 4;return (
+
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/queryShare',
+                    data: data }));case 4:res = _context12.sent;
+
+                if (res.data.statusCode == 200 && res.data.result) {
+                  result = res.data.result;
+                  result.forEach(function (v) {
+                    _this12.shareArray.forEach(function (value, index) {
+                      if (v.type === value.type) {
+                        _this12.shareArray[index] = v;
+                      }
+                    });
+                  });
+                } else {
+                  uni.showToast({
+                    title: '获取分享数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }
+                _this12.update2 = true;case 7:case "end":return _context12.stop();}}}, _callee12);}))();
+    },
+
+    // 获取周目标数据
+    getWeeklyTarget: function getWeeklyTarget() {var _this13 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee13() {var data, res, result;return _regenerator.default.wrap(function _callee13$(_context13) {while (1) {switch (_context13.prev = _context13.next) {case 0:
+                _this13.update1 = false;
+                data = {
+                  timeSign: +('' + _this13.year + _this13.week),
+                  userid: uni.getStorageSync('userID') };_context13.next = 4;return (
+
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/queryWeekPlan',
+                    data: data }));case 4:res = _context13.sent;
+
+                // console.log(res)
+                if (res.data.statusCode == 200 && res.data.result) {
+                  // 初始化数据
+                  _this13.weeklyPlan = [{
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false },
+
+                  {
+                    content: '',
+                    type: '本周目标',
+                    complete: false }],
+
+
+                  _this13.otherPlan = [{
+                    type: '学习计划',
+                    content: '',
+                    complete: false },
+
+                  {
+                    type: '健康计划',
+                    content: '',
+                    complete: false },
+
+                  {
+                    type: '本周反省',
+                    content: '',
+                    complete: false }];
+
+
+                  result = res.data.result;
+                  result.forEach(function (v, i) {
+                    if (v.type == '本周目标') {
+                      _this13.weeklyPlan[i] = v;
+                      _this13.weeklyPlan.length = 18;
+                    }
+                    _this13.otherPlan.forEach(function (value, index) {
+                      if (value.type == v.type) {
+                        _this13.otherPlan[index] = v;
+                      }
+                    });
+                  });
+                } else {
+                  uni.showToast({
+                    title: '获取数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }
+                _this13.update1 = true;case 7:case "end":return _context13.stop();}}}, _callee13);}))();
+    },
+
+    // 获取周总结数据
+    getWeeklySummary: function getWeeklySummary() {var _this14 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee14() {var data, res, result, j, k, l, g, i;return _regenerator.default.wrap(function _callee14$(_context14) {while (1) {switch (_context14.prev = _context14.next) {case 0:
+                _this14.update = false;
+                // 获取总结数据
+                data = {
+                  userid: uni.getStorageSync('userID'),
+                  timeSign: +('' + _this14.year + _this14.week),
+                  year: _this14.year };_context14.next = 4;return (
+
+                  (0, _myAxios.myAxios)({
+                    method: 'post',
+                    url: '/anonymous/querySummarize',
+                    data: data }));case 4:res = _context14.sent;
+
+                if (res.data.statusCode == 200 && res.data.result) {
+                  result = res.data.result;
+                  _this14.weekPerformance = [{
+                    content: '',
+                    type: '目标完成情况' },
+
+                  {
+                    content: '',
+                    type: '目标完成情况' },
+
+                  {
+                    content: '',
+                    type: '目标完成情况' },
+
+                  {
+                    content: '',
+                    type: '目标完成情况' },
+
+                  {
+                    content: '',
+                    type: '目标完成情况' },
+
+                  {
+                    content: '',
+                    type: '目标完成情况' }],
+
+
+
+                  _this14.reason = [{
+                    content: '',
+                    type: '未完成目标的原因及障碍' },
+
+                  {
+                    content: '',
+                    type: '未完成目标的原因及障碍' },
+
+                  {
+                    content: '',
+                    type: '未完成目标的原因及障碍' }],
+
+
+                  _this14.service = [{
+                    content: '',
+                    type: '克服障碍的对策和方法' },
+
+                  {
+                    content: '',
+                    type: '克服障碍的对策和方法' },
+
+                  {
+                    content: '',
+                    type: '克服障碍的对策和方法' }],
+
+
+                  _this14.harvest = [{
+                    content: '',
+                    type: '本周创新与收获' },
+
+                  {
+                    content: '',
+                    type: '本周创新与收获' },
+
+                  {
+                    content: '',
+                    type: '本周创新与收获' }];
+
+
+                  j = 0;
+                  k = 0;
+                  l = 0;
+                  g = 0;
+                  for (i = 0; i < result.length; i++) {
+                    if (result[i].type == '目标完成情况') {
+                      _this14.weekPerformance[j] = result[i];
+                      _this14.weekPerformance.length = 6;
+                      j++;
+                    }
+                    if (result[i].type == '未完成目标的原因及障碍') {
+                      _this14.reason[k] = result[i];
+                      _this14.reason.length = 3;
+                      k++;
+                    }
+                    if (result[i].type == '克服障碍的对策和方法') {
+                      _this14.service[l] = result[i];
+                      _this14.service.length = 3;
+                      l++;
+                    }
+                    if (result[i].type == '本周创新与收获') {
+                      _this14.harvest[g] = result[i];
+                      _this14.harvest.length = 3;
+                      g++;
+                    }
+                  }
+
+                } else {
+                  uni.showToast({
+                    title: '获取数据失败,请重试',
+                    icon: 'none',
+                    duration: 500 });
+
+                }
+                _this14.update = true;case 7:case "end":return _context14.stop();}}}, _callee14);}))();
+    } },
+
+  onLoad: function onLoad() {
+    this.getWeek();
+    this.getWeeklySummary();
+    this.getWeeklyTarget();
+    this.getSharePlan();
+
+    this.getDayPlan();
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
