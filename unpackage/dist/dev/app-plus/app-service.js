@@ -3567,471 +3567,789 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("view", [
-    _c("view", { staticClass: _vm._$s(1, "sc", "tabbar"), attrs: { _i: 1 } }, [
-      _c(
-        "view",
-        { staticClass: _vm._$s(2, "sc", "weekTab"), attrs: { _i: 2 } },
-        [
-          _c("view", { staticClass: _vm._$s(3, "sc", "on"), attrs: { _i: 3 } }),
-          _c("view")
-        ]
-      ),
-      _c(
-        "view",
-        { staticClass: _vm._$s(5, "sc", "week-change"), attrs: { _i: 5 } },
-        [
-          _c("view", {
-            staticClass: _vm._$s(6, "sc", "tab"),
-            attrs: { _i: 6 }
-          }),
-          _c(
-            "view",
-            { staticClass: _vm._$s(7, "sc", "tab"), attrs: { _i: 7 } },
-            [
-              _vm._v(
-                _vm._$s(7, "t0-0", _vm._s(_vm.year)) +
-                  _vm._$s(7, "t0-1", _vm._s(_vm.week))
-              )
-            ]
-          ),
-          _c("view", { staticClass: _vm._$s(8, "sc", "tab"), attrs: { _i: 8 } })
-        ]
-      )
-    ]),
-    _c("view", { staticClass: _vm._$s(9, "sc", "week"), attrs: { _i: 9 } }, [
-      _vm._$s(10, "i", _vm.update)
-        ? _c(
-            "view",
-            { staticClass: _vm._$s(10, "sc", "week-left"), attrs: { _i: 10 } },
-            [
-              _c("view", {
-                staticClass: _vm._$s(11, "sc", "week-left-item"),
-                attrs: { _i: 11 }
-              }),
-              _c("view", {
-                staticClass: _vm._$s(12, "sc", "week-left-item"),
-                attrs: { _i: 12 }
-              }),
-              _vm._l(
-                _vm._$s(13, "f", { forItems: _vm.weekPerformance }),
-                function(value, index, $20, $30) {
-                  return [
-                    _c(
-                      "view",
-                      {
-                        key: _vm._$s(13, "f", {
-                          forIndex: $20,
-                          keyIndex: 0,
-                          key: Math.random() + "_0"
-                        }),
-                        staticClass: _vm._$s(
-                          "14-" + $30,
-                          "sc",
-                          "week-left-item"
-                        ),
-                        attrs: { _i: "14-" + $30 }
-                      },
-                      [
-                        _c("textarea", {
-                          staticClass: _vm._$s("15-" + $30, "sc", "mytext"),
-                          attrs: {
-                            value: _vm._$s(
-                              "15-" + $30,
-                              "a-value",
-                              value.content
-                            ),
-                            _i: "15-" + $30
-                          },
-                          on: {
-                            blur: function($event) {
-                              return _vm.handleWeekPerformance($event, value)
-                            }
-                          }
-                        })
-                      ]
-                    )
-                  ]
-                }
-              ),
-              _c("view", {
-                staticClass: _vm._$s(16, "sc", "week-left-item"),
-                attrs: { _i: 16 }
-              }),
-              _vm._l(_vm._$s(17, "f", { forItems: _vm.reason }), function(
-                value,
-                index,
-                $21,
-                $31
-              ) {
-                return [
-                  _c(
-                    "view",
-                    {
-                      key: _vm._$s(17, "f", {
-                        forIndex: $21,
-                        keyIndex: 0,
-                        key: Math.random() + "_0"
-                      }),
-                      staticClass: _vm._$s("18-" + $31, "sc", "week-left-item"),
-                      attrs: { _i: "18-" + $31 }
-                    },
-                    [
-                      _c("textarea", {
-                        staticClass: _vm._$s("19-" + $31, "sc", "mytext"),
-                        attrs: {
-                          value: _vm._$s("19-" + $31, "a-value", value.content),
-                          _i: "19-" + $31
-                        },
-                        on: {
-                          blur: function($event) {
-                            return _vm.handleReason($event, value)
-                          }
-                        }
-                      })
-                    ]
-                  )
-                ]
-              }),
-              _c("view", {
-                staticClass: _vm._$s(20, "sc", "week-left-item"),
-                attrs: { _i: 20 }
-              }),
-              _vm._l(_vm._$s(21, "f", { forItems: _vm.service }), function(
-                value,
-                index,
-                $22,
-                $32
-              ) {
-                return [
-                  _c(
-                    "view",
-                    {
-                      key: _vm._$s(21, "f", {
-                        forIndex: $22,
-                        keyIndex: 0,
-                        key: Math.random() + "_0"
-                      }),
-                      staticClass: _vm._$s("22-" + $32, "sc", "week-left-item"),
-                      attrs: { _i: "22-" + $32 }
-                    },
-                    [
-                      _c("textarea", {
-                        staticClass: _vm._$s("23-" + $32, "sc", "mytext"),
-                        attrs: {
-                          value: _vm._$s("23-" + $32, "a-value", value.content),
-                          _i: "23-" + $32
-                        },
-                        on: {
-                          blur: function($event) {
-                            return _vm.handleService($event, value)
-                          }
-                        }
-                      })
-                    ]
-                  )
-                ]
-              }),
-              _c("view", {
-                staticClass: _vm._$s(24, "sc", "week-left-item"),
-                attrs: { _i: 24 }
-              }),
-              _vm._l(_vm._$s(25, "f", { forItems: _vm.harvest }), function(
-                value,
-                index,
-                $23,
-                $33
-              ) {
-                return [
-                  _c(
-                    "view",
-                    {
-                      key: _vm._$s(25, "f", {
-                        forIndex: $23,
-                        keyIndex: 0,
-                        key: index + "_0"
-                      }),
-                      staticClass: _vm._$s("26-" + $33, "sc", "week-left-item"),
-                      attrs: { _i: "26-" + $33 }
-                    },
-                    [
-                      _c("textarea", {
-                        staticClass: _vm._$s("27-" + $33, "sc", "mytext"),
-                        attrs: {
-                          value: _vm._$s("27-" + $33, "a-value", value.content),
-                          _i: "27-" + $33
-                        },
-                        on: {
-                          blur: function($event) {
-                            return _vm.handleHarvest($event, value)
-                          }
-                        }
-                      })
-                    ]
-                  )
-                ]
-              })
-            ],
-            2
-          )
-        : _vm._e(),
-      _vm._$s(28, "i", _vm.update1)
-        ? _c(
-            "view",
-            { staticClass: _vm._$s(28, "sc", "week-right"), attrs: { _i: 28 } },
-            [
-              _c(
-                "view",
-                {
-                  staticClass: _vm._$s(29, "sc", "week-right-title"),
-                  attrs: { _i: 29 }
-                },
-                [
-                  _c("view", {
-                    staticClass: _vm._$s(30, "sc", "left"),
-                    attrs: { _i: 30 }
-                  }),
-                  _c(
-                    "view",
-                    {
-                      staticClass: _vm._$s(31, "sc", "center"),
-                      attrs: { _i: 31 }
-                    },
-                    [
-                      _c(
-                        "view",
-                        {
-                          staticClass: _vm._$s(32, "sc", "icon"),
-                          attrs: { _i: 32 }
-                        },
-                        [_c("text")]
-                      ),
-                      _c(
-                        "view",
-                        {
-                          staticClass: _vm._$s(34, "sc", "description"),
-                          attrs: { _i: 34 }
-                        },
-                        [_c("view"), _c("view"), _c("view")]
-                      )
-                    ]
-                  ),
-                  _c("view", {
-                    staticClass: _vm._$s(38, "sc", "right"),
-                    attrs: { _i: 38 }
-                  })
-                ]
-              ),
-              _vm._l(_vm._$s(39, "f", { forItems: _vm.weeklyPlan }), function(
-                value,
-                index,
-                $24,
-                $34
-              ) {
-                return [
-                  _c(
-                    "view",
-                    {
-                      key: _vm._$s(39, "f", {
-                        forIndex: $24,
-                        keyIndex: 0,
-                        key: index + "_0"
-                      }),
-                      staticClass: _vm._$s(
-                        "40-" + $34,
-                        "sc",
-                        "week-right-content"
-                      ),
-                      attrs: { _i: "40-" + $34 }
-                    },
-                    [
-                      _c(
-                        "view",
-                        {
-                          staticClass: _vm._$s("41-" + $34, "sc", "left"),
-                          attrs: { _i: "41-" + $34 }
-                        },
-                        [
-                          _vm._v(
-                            _vm._$s("41-" + $34, "t0-0", _vm._s(index + 1))
-                          )
-                        ]
-                      ),
-                      _c(
-                        "view",
-                        {
-                          staticClass: _vm._$s("42-" + $34, "sc", "center"),
-                          attrs: { _i: "42-" + $34 }
-                        },
-                        [
-                          _c("textarea", {
-                            staticClass: _vm._$s("43-" + $34, "sc", "mytext"),
-                            attrs: {
-                              value: _vm._$s(
-                                "43-" + $34,
-                                "a-value",
-                                value.content
-                              ),
-                              _i: "43-" + $34
-                            },
-                            on: {
-                              blur: function($event) {
-                                return _vm.handleUpdatePlan($event, value)
-                              }
-                            }
-                          })
-                        ]
-                      ),
-                      _c("view", {
-                        staticClass: _vm._$s("44-" + $34, "sc", "right"),
-                        class: _vm._$s(
-                          "44-" + $34,
-                          "c",
-                          value.complete == true ? "iconfont icon-zhengque" : ""
-                        ),
-                        attrs: { _i: "44-" + $34 },
-                        on: {
-                          click: function($event) {
-                            return _vm.handleComplete(value)
-                          }
-                        }
-                      })
-                    ]
-                  )
-                ]
-              })
-            ],
-            2
-          )
-        : _vm._e()
-    ]),
-    _c(
-      "view",
-      { staticClass: _vm._$s(45, "sc", "footer"), attrs: { _i: 45 } },
-      [
-        _c("view", {
-          staticClass: _vm._$s(46, "sc", "footer-left"),
-          attrs: { _i: 46 }
-        }),
-        _c(
-          "view",
-          { staticClass: _vm._$s(47, "sc", "footer-right"), attrs: { _i: 47 } },
-          [
+  return _c(
+    "view",
+    [
+      _vm._$s(1, "i", _vm.changeIndex == 0)
+        ? [
             _c(
               "view",
-              {
-                staticClass: _vm._$s(48, "sc", "footer-right-title"),
-                attrs: { _i: 48 }
-              },
+              { staticClass: _vm._$s(2, "sc", "tabbar"), attrs: { _i: 2 } },
               [
-                _c("view", {
-                  staticClass: _vm._$s(49, "sc", "title-left"),
-                  attrs: { _i: 49 }
-                }),
-                _c("view", {
-                  staticClass: _vm._$s(50, "sc", "title-right"),
-                  attrs: { _i: 50 }
-                })
-              ]
-            ),
-            _vm._l(_vm._$s(51, "f", { forItems: _vm.otherPlan }), function(
-              value,
-              index,
-              $25,
-              $35
-            ) {
-              return [
                 _c(
                   "view",
                   {
-                    key: _vm._$s(51, "f", {
-                      forIndex: $25,
-                      keyIndex: 0,
-                      key: value.type + "_0"
+                    staticClass: _vm._$s(3, "sc", "weekTab"),
+                    attrs: { _i: 3 }
+                  },
+                  [
+                    _vm._l(
+                      _vm._$s(4, "f", { forItems: _vm.weekDays }),
+                      function(value, index, $20, $30) {
+                        return [
+                          _c(
+                            "view",
+                            {
+                              key: _vm._$s(4, "f", {
+                                forIndex: $20,
+                                keyIndex: 0,
+                                key: value + "_0"
+                              }),
+                              class: _vm._$s(
+                                "5-" + $30,
+                                "c",
+                                _vm.changeIndex === index ? "on" : ""
+                              ),
+                              attrs: { _i: "5-" + $30 },
+                              on: {
+                                click: function($event) {
+                                  return _vm.handleChangeTab(index)
+                                }
+                              }
+                            },
+                            [_vm._v(_vm._$s("5-" + $30, "t0-0", _vm._s(value)))]
+                          )
+                        ]
+                      }
+                    )
+                  ],
+                  2
+                ),
+                _c(
+                  "view",
+                  {
+                    staticClass: _vm._$s(6, "sc", "week-change"),
+                    attrs: { _i: 6 }
+                  },
+                  [
+                    _c("view", {
+                      staticClass: _vm._$s(7, "sc", "tab"),
+                      attrs: { _i: 7 },
+                      on: { click: _vm.handleLastWeek }
                     }),
-                    staticClass: _vm._$s(
-                      "52-" + $35,
-                      "sc",
-                      "footer-right-content"
+                    _c(
+                      "view",
+                      {
+                        staticClass: _vm._$s(8, "sc", "tab"),
+                        attrs: { _i: 8 }
+                      },
+                      [
+                        _vm._v(
+                          _vm._$s(8, "t0-0", _vm._s(_vm.year)) +
+                            _vm._$s(8, "t0-1", _vm._s(_vm.week))
+                        )
+                      ]
                     ),
-                    attrs: { _i: "52-" + $35 }
+                    _c("view", {
+                      staticClass: _vm._$s(9, "sc", "tab"),
+                      attrs: { _i: 9 },
+                      on: { click: _vm.handleNextWeek }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _c(
+              "view",
+              { staticClass: _vm._$s(10, "sc", "week"), attrs: { _i: 10 } },
+              [
+                _vm._$s(11, "i", _vm.update)
+                  ? _c(
+                      "view",
+                      {
+                        staticClass: _vm._$s(11, "sc", "week-left"),
+                        attrs: { _i: 11 }
+                      },
+                      [
+                        _c("view", {
+                          staticClass: _vm._$s(12, "sc", "week-left-item"),
+                          attrs: { _i: 12 }
+                        }),
+                        _c("view", {
+                          staticClass: _vm._$s(13, "sc", "week-left-item"),
+                          attrs: { _i: 13 }
+                        }),
+                        _vm._l(
+                          _vm._$s(14, "f", { forItems: _vm.weekPerformance }),
+                          function(value, index, $21, $31) {
+                            return [
+                              _c(
+                                "view",
+                                {
+                                  key: _vm._$s(14, "f", {
+                                    forIndex: $21,
+                                    keyIndex: 0,
+                                    key: Math.random() + "_0"
+                                  }),
+                                  staticClass: _vm._$s(
+                                    "15-" + $31,
+                                    "sc",
+                                    "week-left-item"
+                                  ),
+                                  attrs: { _i: "15-" + $31 }
+                                },
+                                [
+                                  _c("textarea", {
+                                    staticClass: _vm._$s(
+                                      "16-" + $31,
+                                      "sc",
+                                      "mytext"
+                                    ),
+                                    attrs: {
+                                      value: _vm._$s(
+                                        "16-" + $31,
+                                        "a-value",
+                                        value.content
+                                      ),
+                                      _i: "16-" + $31
+                                    },
+                                    on: {
+                                      blur: function($event) {
+                                        return _vm.handleWeekPerformance(
+                                          $event,
+                                          value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          }
+                        ),
+                        _c("view", {
+                          staticClass: _vm._$s(17, "sc", "week-left-item"),
+                          attrs: { _i: 17 }
+                        }),
+                        _vm._l(
+                          _vm._$s(18, "f", { forItems: _vm.reason }),
+                          function(value, index, $22, $32) {
+                            return [
+                              _c(
+                                "view",
+                                {
+                                  key: _vm._$s(18, "f", {
+                                    forIndex: $22,
+                                    keyIndex: 0,
+                                    key: Math.random() + "_0"
+                                  }),
+                                  staticClass: _vm._$s(
+                                    "19-" + $32,
+                                    "sc",
+                                    "week-left-item"
+                                  ),
+                                  attrs: { _i: "19-" + $32 }
+                                },
+                                [
+                                  _c("textarea", {
+                                    staticClass: _vm._$s(
+                                      "20-" + $32,
+                                      "sc",
+                                      "mytext"
+                                    ),
+                                    attrs: {
+                                      value: _vm._$s(
+                                        "20-" + $32,
+                                        "a-value",
+                                        value.content
+                                      ),
+                                      _i: "20-" + $32
+                                    },
+                                    on: {
+                                      blur: function($event) {
+                                        return _vm.handleReason($event, value)
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          }
+                        ),
+                        _c("view", {
+                          staticClass: _vm._$s(21, "sc", "week-left-item"),
+                          attrs: { _i: 21 }
+                        }),
+                        _vm._l(
+                          _vm._$s(22, "f", { forItems: _vm.service }),
+                          function(value, index, $23, $33) {
+                            return [
+                              _c(
+                                "view",
+                                {
+                                  key: _vm._$s(22, "f", {
+                                    forIndex: $23,
+                                    keyIndex: 0,
+                                    key: Math.random() + "_0"
+                                  }),
+                                  staticClass: _vm._$s(
+                                    "23-" + $33,
+                                    "sc",
+                                    "week-left-item"
+                                  ),
+                                  attrs: { _i: "23-" + $33 }
+                                },
+                                [
+                                  _c("textarea", {
+                                    staticClass: _vm._$s(
+                                      "24-" + $33,
+                                      "sc",
+                                      "mytext"
+                                    ),
+                                    attrs: {
+                                      value: _vm._$s(
+                                        "24-" + $33,
+                                        "a-value",
+                                        value.content
+                                      ),
+                                      _i: "24-" + $33
+                                    },
+                                    on: {
+                                      blur: function($event) {
+                                        return _vm.handleService($event, value)
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          }
+                        ),
+                        _c("view", {
+                          staticClass: _vm._$s(25, "sc", "week-left-item"),
+                          attrs: { _i: 25 }
+                        }),
+                        _vm._l(
+                          _vm._$s(26, "f", { forItems: _vm.harvest }),
+                          function(value, index, $24, $34) {
+                            return [
+                              _c(
+                                "view",
+                                {
+                                  key: _vm._$s(26, "f", {
+                                    forIndex: $24,
+                                    keyIndex: 0,
+                                    key: index + "_0"
+                                  }),
+                                  staticClass: _vm._$s(
+                                    "27-" + $34,
+                                    "sc",
+                                    "week-left-item"
+                                  ),
+                                  attrs: { _i: "27-" + $34 }
+                                },
+                                [
+                                  _c("textarea", {
+                                    staticClass: _vm._$s(
+                                      "28-" + $34,
+                                      "sc",
+                                      "mytext"
+                                    ),
+                                    attrs: {
+                                      value: _vm._$s(
+                                        "28-" + $34,
+                                        "a-value",
+                                        value.content
+                                      ),
+                                      _i: "28-" + $34
+                                    },
+                                    on: {
+                                      blur: function($event) {
+                                        return _vm.handleHarvest($event, value)
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          }
+                        )
+                      ],
+                      2
+                    )
+                  : _vm._e(),
+                _vm._$s(29, "i", _vm.update1)
+                  ? _c(
+                      "view",
+                      {
+                        staticClass: _vm._$s(29, "sc", "week-right"),
+                        attrs: { _i: 29 }
+                      },
+                      [
+                        _c(
+                          "view",
+                          {
+                            staticClass: _vm._$s(30, "sc", "week-right-title"),
+                            attrs: { _i: 30 }
+                          },
+                          [
+                            _c("view", {
+                              staticClass: _vm._$s(31, "sc", "left"),
+                              attrs: { _i: 31 }
+                            }),
+                            _c(
+                              "view",
+                              {
+                                staticClass: _vm._$s(32, "sc", "center"),
+                                attrs: { _i: 32 }
+                              },
+                              [
+                                _c(
+                                  "view",
+                                  {
+                                    staticClass: _vm._$s(33, "sc", "icon"),
+                                    attrs: { _i: 33 }
+                                  },
+                                  [_c("text")]
+                                ),
+                                _c(
+                                  "view",
+                                  {
+                                    staticClass: _vm._$s(
+                                      35,
+                                      "sc",
+                                      "description"
+                                    ),
+                                    attrs: { _i: 35 }
+                                  },
+                                  [_c("view"), _c("view"), _c("view")]
+                                )
+                              ]
+                            ),
+                            _c("view", {
+                              staticClass: _vm._$s(39, "sc", "right"),
+                              attrs: { _i: 39 }
+                            })
+                          ]
+                        ),
+                        _vm._l(
+                          _vm._$s(40, "f", { forItems: _vm.weeklyPlan }),
+                          function(value, index, $25, $35) {
+                            return [
+                              _c(
+                                "view",
+                                {
+                                  key: _vm._$s(40, "f", {
+                                    forIndex: $25,
+                                    keyIndex: 0,
+                                    key: index + "_0"
+                                  }),
+                                  staticClass: _vm._$s(
+                                    "41-" + $35,
+                                    "sc",
+                                    "week-right-content"
+                                  ),
+                                  attrs: { _i: "41-" + $35 }
+                                },
+                                [
+                                  _c(
+                                    "view",
+                                    {
+                                      staticClass: _vm._$s(
+                                        "42-" + $35,
+                                        "sc",
+                                        "left"
+                                      ),
+                                      attrs: { _i: "42-" + $35 }
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._$s(
+                                          "42-" + $35,
+                                          "t0-0",
+                                          _vm._s(index + 1)
+                                        )
+                                      )
+                                    ]
+                                  ),
+                                  _c(
+                                    "view",
+                                    {
+                                      staticClass: _vm._$s(
+                                        "43-" + $35,
+                                        "sc",
+                                        "center"
+                                      ),
+                                      attrs: { _i: "43-" + $35 }
+                                    },
+                                    [
+                                      _c("textarea", {
+                                        staticClass: _vm._$s(
+                                          "44-" + $35,
+                                          "sc",
+                                          "mytext"
+                                        ),
+                                        attrs: {
+                                          value: _vm._$s(
+                                            "44-" + $35,
+                                            "a-value",
+                                            value.content
+                                          ),
+                                          _i: "44-" + $35
+                                        },
+                                        on: {
+                                          blur: function($event) {
+                                            return _vm.handleUpdatePlan(
+                                              $event,
+                                              value
+                                            )
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _c("view", {
+                                    staticClass: _vm._$s(
+                                      "45-" + $35,
+                                      "sc",
+                                      "right"
+                                    ),
+                                    class: _vm._$s(
+                                      "45-" + $35,
+                                      "c",
+                                      value.complete == true
+                                        ? "iconfont icon-zhengque"
+                                        : ""
+                                    ),
+                                    attrs: { _i: "45-" + $35 },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.handleComplete(value)
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          }
+                        )
+                      ],
+                      2
+                    )
+                  : _vm._e()
+              ]
+            ),
+            _c(
+              "view",
+              { staticClass: _vm._$s(46, "sc", "footer"), attrs: { _i: 46 } },
+              [
+                _c("view", {
+                  staticClass: _vm._$s(47, "sc", "footer-left"),
+                  attrs: { _i: 47 }
+                }),
+                _c(
+                  "view",
+                  {
+                    staticClass: _vm._$s(48, "sc", "footer-right"),
+                    attrs: { _i: 48 }
                   },
                   [
                     _c(
                       "view",
                       {
-                        staticClass: _vm._$s("53-" + $35, "sc", "content-left"),
-                        attrs: { _i: "53-" + $35 }
-                      },
-                      [_vm._v(_vm._$s("53-" + $35, "t0-0", _vm._s(value.type)))]
-                    ),
-                    _c(
-                      "view",
-                      {
-                        staticClass: _vm._$s(
-                          "54-" + $35,
-                          "sc",
-                          "content-center"
-                        ),
-                        attrs: { _i: "54-" + $35 }
-                      },
-                      [
-                        _c("textarea", {
-                          staticClass: _vm._$s("55-" + $35, "sc", "mytext"),
-                          attrs: {
-                            value: _vm._$s(
-                              "55-" + $35,
-                              "a-value",
-                              value.content
-                            ),
-                            _i: "55-" + $35
-                          },
-                          on: {
-                            blur: function($event) {
-                              return _vm.handleOtherPlan($event, value)
-                            }
-                          }
-                        })
-                      ]
-                    ),
-                    _c(
-                      "view",
-                      {
-                        staticClass: _vm._$s(
-                          "56-" + $35,
-                          "sc",
-                          "content-right"
-                        ),
-                        attrs: { _i: "56-" + $35 }
+                        staticClass: _vm._$s(49, "sc", "footer-right-title"),
+                        attrs: { _i: 49 }
                       },
                       [
                         _c("view", {
-                          class: _vm._$s(
-                            "57-" + $35,
-                            "c",
-                            value.complete == true
-                              ? "iconfont icon-zhengque"
-                              : ""
-                          ),
-                          attrs: { _i: "57-" + $35 },
-                          on: {
-                            click: function($event) {
-                              return _vm.handleOtherComplete(value)
-                            }
-                          }
+                          staticClass: _vm._$s(50, "sc", "title-left"),
+                          attrs: { _i: 50 }
+                        }),
+                        _c("view", {
+                          staticClass: _vm._$s(51, "sc", "title-right"),
+                          attrs: { _i: 51 }
                         })
                       ]
+                    ),
+                    _vm._l(
+                      _vm._$s(52, "f", { forItems: _vm.otherPlan }),
+                      function(value, index, $26, $36) {
+                        return [
+                          _c(
+                            "view",
+                            {
+                              key: _vm._$s(52, "f", {
+                                forIndex: $26,
+                                keyIndex: 0,
+                                key: value.type + "_0"
+                              }),
+                              staticClass: _vm._$s(
+                                "53-" + $36,
+                                "sc",
+                                "footer-right-content"
+                              ),
+                              attrs: { _i: "53-" + $36 }
+                            },
+                            [
+                              _c(
+                                "view",
+                                {
+                                  staticClass: _vm._$s(
+                                    "54-" + $36,
+                                    "sc",
+                                    "content-left"
+                                  ),
+                                  attrs: { _i: "54-" + $36 }
+                                },
+                                [
+                                  _vm._v(
+                                    _vm._$s(
+                                      "54-" + $36,
+                                      "t0-0",
+                                      _vm._s(value.type)
+                                    )
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "view",
+                                {
+                                  staticClass: _vm._$s(
+                                    "55-" + $36,
+                                    "sc",
+                                    "content-center"
+                                  ),
+                                  attrs: { _i: "55-" + $36 }
+                                },
+                                [
+                                  _c("textarea", {
+                                    staticClass: _vm._$s(
+                                      "56-" + $36,
+                                      "sc",
+                                      "mytext"
+                                    ),
+                                    attrs: {
+                                      value: _vm._$s(
+                                        "56-" + $36,
+                                        "a-value",
+                                        value.content
+                                      ),
+                                      _i: "56-" + $36
+                                    },
+                                    on: {
+                                      blur: function($event) {
+                                        return _vm.handleOtherPlan(
+                                          $event,
+                                          value
+                                        )
+                                      }
+                                    }
+                                  })
+                                ]
+                              ),
+                              _c(
+                                "view",
+                                {
+                                  staticClass: _vm._$s(
+                                    "57-" + $36,
+                                    "sc",
+                                    "content-right"
+                                  ),
+                                  attrs: { _i: "57-" + $36 }
+                                },
+                                [
+                                  _c("view", {
+                                    class: _vm._$s(
+                                      "58-" + $36,
+                                      "c",
+                                      value.complete == true
+                                        ? "iconfont icon-zhengque"
+                                        : ""
+                                    ),
+                                    attrs: { _i: "58-" + $36 },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.handleOtherComplete(value)
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      }
                     )
+                  ],
+                  2
+                )
+              ]
+            ),
+            _c(
+              "view",
+              { staticClass: _vm._$s(59, "sc", "share"), attrs: { _i: 59 } },
+              [
+                _c("view", {
+                  staticClass: _vm._$s(60, "sc", "share-top"),
+                  attrs: { _i: 60 }
+                }),
+                _vm._l(_vm._$s(61, "f", { forItems: _vm.shareArray }), function(
+                  value,
+                  index,
+                  $27,
+                  $37
+                ) {
+                  return _vm._$s("61-" + $37, "i", _vm.update2)
+                    ? [
+                        _c(
+                          "view",
+                          {
+                            key: _vm._$s(61, "f", {
+                              forIndex: $27,
+                              keyIndex: 0,
+                              key: value.type + "_0"
+                            }),
+                            staticClass: _vm._$s(
+                              "62-" + $37,
+                              "sc",
+                              "share-content"
+                            ),
+                            attrs: { _i: "62-" + $37 }
+                          },
+                          [
+                            _c(
+                              "view",
+                              {
+                                staticClass: _vm._$s(
+                                  "63-" + $37,
+                                  "sc",
+                                  "share-content-left"
+                                ),
+                                attrs: { _i: "63-" + $37 }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._$s(
+                                    "63-" + $37,
+                                    "t0-0",
+                                    _vm._s(value.type)
+                                  )
+                                )
+                              ]
+                            ),
+                            _c(
+                              "view",
+                              {
+                                staticClass: _vm._$s(
+                                  "64-" + $37,
+                                  "sc",
+                                  "share-content-right"
+                                ),
+                                attrs: { _i: "64-" + $37 }
+                              },
+                              [
+                                _c("textarea", {
+                                  attrs: {
+                                    value: _vm._$s(
+                                      "65-" + $37,
+                                      "a-value",
+                                      value.content
+                                    ),
+                                    _i: "65-" + $37
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.handleShare($event, value)
+                                    }
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    : _vm._e()
+                })
+              ],
+              2
+            )
+          ]
+        : [
+            _c(
+              "view",
+              { staticClass: _vm._$s(67, "sc", "tabbar"), attrs: { _i: 67 } },
+              [
+                _c(
+                  "view",
+                  {
+                    staticClass: _vm._$s(68, "sc", "weekTab"),
+                    attrs: { _i: 68 }
+                  },
+                  [
+                    _vm._l(
+                      _vm._$s(69, "f", { forItems: _vm.weekDays }),
+                      function(value, index, $28, $38) {
+                        return [
+                          _c(
+                            "view",
+                            {
+                              key: _vm._$s(69, "f", {
+                                forIndex: $28,
+                                keyIndex: 0,
+                                key: value + "_0"
+                              }),
+                              class: _vm._$s(
+                                "70-" + $38,
+                                "c",
+                                _vm.changeIndex === index ? "on" : ""
+                              ),
+                              attrs: { _i: "70-" + $38 },
+                              on: {
+                                click: function($event) {
+                                  return _vm.handleChangeTab(index)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                _vm._$s("70-" + $38, "t0-0", _vm._s(value))
+                              )
+                            ]
+                          )
+                        ]
+                      }
+                    )
+                  ],
+                  2
+                ),
+                _c(
+                  "view",
+                  {
+                    staticClass: _vm._$s(71, "sc", "week-change"),
+                    attrs: { _i: 71 }
+                  },
+                  [
+                    _c("view", {
+                      staticClass: _vm._$s(72, "sc", "tab"),
+                      attrs: { _i: 72 },
+                      on: { click: _vm.handleLastWeek }
+                    }),
+                    _c(
+                      "view",
+                      {
+                        staticClass: _vm._$s(73, "sc", "tab"),
+                        attrs: { _i: 73 }
+                      },
+                      [
+                        _vm._v(
+                          _vm._$s(73, "t0-0", _vm._s(_vm.year)) +
+                            _vm._$s(73, "t0-1", _vm._s(_vm.week))
+                        )
+                      ]
+                    ),
+                    _c("view", {
+                      staticClass: _vm._$s(74, "sc", "tab"),
+                      attrs: { _i: 74 },
+                      on: { click: _vm.handleNextWeek }
+                    })
                   ]
                 )
               ]
-            })
-          ],
-          2
-        )
-      ]
-    )
-  ])
+            )
+          ]
+    ],
+    2
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -4056,10 +4374,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _E_H
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!F:/fwh/chengzhangriji-uniapp/pages/weekgoals/weekgoals.vue?vue&type=script&lang=js&mpType=page ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 17));\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);}_next(undefined);});};}var _default =\n{\n  data: function data() {\n    return {\n      weekPerformance: [{\n        content: '',\n        type: '目标完成情况' },\n\n      {\n        content: '',\n        type: '目标完成情况' },\n\n      {\n        content: '',\n        type: '目标完成情况' },\n\n      {\n        content: '',\n        type: '目标完成情况' },\n\n      {\n        content: '',\n        type: '目标完成情况' },\n\n      {\n        content: '',\n        type: '目标完成情况' }],\n\n\n      reason: [{\n        content: '',\n        type: '未完成目标的原因及障碍' },\n\n      {\n        content: '',\n        type: '未完成目标的原因及障碍' },\n\n      {\n        content: '',\n        type: '未完成目标的原因及障碍' }],\n\n\n      service: [{\n        content: '',\n        type: '克服障碍的对策和方法' },\n\n      {\n        content: '',\n        type: '克服障碍的对策和方法' },\n\n      {\n        content: '',\n        type: '克服障碍的对策和方法' }],\n\n\n      harvest: [{\n        content: '',\n        type: '本周创新与收获' },\n\n      {\n        content: '',\n        type: '本周创新与收获' },\n\n      {\n        content: '',\n        type: '本周创新与收获' }],\n\n\n      weeklyPlan: [{\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false },\n\n      {\n        content: '',\n        type: '本周目标',\n        complete: false }],\n\n\n      otherPlan: [{\n        type: '学习计划',\n        content: '',\n        complete: false },\n\n      {\n        type: '健康计划',\n        content: '',\n        complete: false },\n\n      {\n        type: '本周反省',\n        content: '',\n        complete: false }],\n\n\n      week: 0,\n      year: new Date().getFullYear(),\n      time: new Date().getTime(),\n      update: true,\n      update1: true };\n\n  },\n  methods: {\n\n    // 其他目标更新\n    handleOtherComplete: function handleOtherComplete(value) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var data, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:\n                data = {\n                  complete: !value.complete,\n                  content: value.content,\n                  timeSign: +('' + _this.year + _this.week),\n                  type: value.type,\n                  userid: uni.getStorageSync('userID'),\n                  id: value.id };\n\n                // 必须是里面已经填写了内容的才可以打勾\n                if (!value.id) {_context.next = 7;break;}_context.next = 4;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateWeekPlan',\n                    data: data }));case 4:res = _context.sent;\n\n                _this.weeklyPlan.forEach(function (v) {\n                  if (v.id === value.id) {\n                    v.complete = !v.complete;\n                  }\n                });\n                if (res.data.statusCode == 200) {\n                  _this.getWeeklyTarget();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 7:case \"end\":return _context.stop();}}}, _callee);}))();\n\n    },\n\n    // 其他目标更新\n    handleOtherPlan: function handleOtherPlan(e, value2) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var value, data, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:\n                value = e.detail.value;\n                data = {\n                  complete: value2.complete,\n                  content: value,\n                  timeSign: +('' + _this2.year + _this2.week),\n                  type: value2.type,\n                  userid: uni.getStorageSync('userID') };\n\n                if (value2.id) {\n                  data.id = value2.id;\n                }_context2.next = 5;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateWeekPlan',\n                    data: data }));case 5:res = _context2.sent;\n\n                __f__(\"log\", res.data.message, \" at pages/weekgoals/weekgoals.vue:341\");\n                if (res.data.statusCode == 200) {\n                  _this2.getWeeklyTarget();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 8:case \"end\":return _context2.stop();}}}, _callee2);}))();\n    },\n\n    // 本周目标完成状态更新\n    handleComplete: function handleComplete(value) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var data, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:\n                data = {\n                  complete: !value.complete,\n                  content: value.content,\n                  timeSign: +('' + _this3.year + _this3.week),\n                  type: value.type,\n                  userid: uni.getStorageSync('userID'),\n                  id: value.id };\n\n                // 必须是里面已经填写了内容的才可以打勾\n                if (!value.id) {_context3.next = 6;break;}_context3.next = 4;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateWeekPlan',\n                    data: data }));case 4:res = _context3.sent;\n\n                if (res.data.statusCode == 200) {\n                  _this3.getWeeklyTarget();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 6:case \"end\":return _context3.stop();}}}, _callee3);}))();\n\n    },\n\n    // 本周目标更新\n    handleUpdatePlan: function handleUpdatePlan(e, value2) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var value, data, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:\n                value = e.detail.value;\n                data = {\n                  complete: value2.complete,\n                  content: value,\n                  timeSign: +('' + _this4.year + _this4.week),\n                  type: value2.type,\n                  userid: uni.getStorageSync('userID') };\n\n                if (value2.id) {\n                  data.id = value2.id;\n                }_context4.next = 5;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateWeekPlan',\n                    data: data }));case 5:res = _context4.sent;\n\n                if (res.data.statusCode == 200) {\n                  _this4.getWeeklyTarget();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 7:case \"end\":return _context4.stop();}}}, _callee4);}))();\n    },\n\n    // 上周总结-本周创新与收获\n    handleHarvest: function handleHarvest(e, value2) {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var value, data, res;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:\n                value = e.detail.value;\n                data = {\n                  content: value,\n                  timeSign: +('' + _this5.year + _this5.week),\n                  type: value2.type,\n                  year: _this5.year,\n                  userid: uni.getStorageSync('userID') };\n\n                if (value2.id) {\n                  data.id = value2.id;\n                }_context5.next = 5;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateSummarize',\n                    data: data }));case 5:res = _context5.sent;\n\n                if (res.data.statusCode == 200) {\n                  _this5.getWeeklySummary();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 7:case \"end\":return _context5.stop();}}}, _callee5);}))();\n    },\n\n    // 上周总结-克服障碍的对策和方法\n    handleService: function handleService(e, value2) {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var value, data, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:\n                value = e.detail.value;\n                data = {\n                  content: value,\n                  timeSign: +('' + _this6.year + _this6.week),\n                  type: value2.type,\n                  year: _this6.year,\n                  userid: uni.getStorageSync('userID') };\n\n                if (value2.id) {\n                  data.id = value2.id;\n                }_context6.next = 5;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateSummarize',\n                    data: data }));case 5:res = _context6.sent;\n\n                if (res.data.statusCode == 200) {\n                  _this6.getWeeklySummary();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 7:case \"end\":return _context6.stop();}}}, _callee6);}))();\n    },\n\n    // 上周总结-未完成目标的原因及障碍\n    handleReason: function handleReason(e, value2) {var _this7 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7() {var value, data, res;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:\n                value = e.detail.value;\n                data = {\n                  content: value,\n                  timeSign: +('' + _this7.year + _this7.week),\n                  type: value2.type,\n                  year: _this7.year,\n                  userid: uni.getStorageSync('userID') };\n\n                if (value2.id) {\n                  data.id = value2.id;\n                }_context7.next = 5;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateSummarize',\n                    data: data }));case 5:res = _context7.sent;\n\n                if (res.data.statusCode == 200) {\n                  _this7.getWeeklySummary();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 7:case \"end\":return _context7.stop();}}}, _callee7);}))();\n    },\n\n    // 上周总结-目标完成情况\n    handleWeekPerformance: function handleWeekPerformance(e, value2) {var _this8 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8() {var value, data, res;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:\n                value = e.detail.value;\n                data = {\n                  content: value,\n                  timeSign: +('' + _this8.year + _this8.week),\n                  type: value2.type,\n                  year: _this8.year,\n                  userid: uni.getStorageSync('userID') };\n\n                if (value2.id) {\n                  data.id = value2.id;\n                }_context8.next = 5;return (\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/updateSummarize',\n                    data: data }));case 5:res = _context8.sent;\n\n                if (res.data.statusCode == 200) {\n                  _this8.getWeeklySummary();\n                } else {\n                  uni.showToast({\n                    title: '更新数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }case 7:case \"end\":return _context8.stop();}}}, _callee8);}))();\n\n    },\n\n    // 时间转化为周数\n    getWeek: function getWeek() {\n      var date = new Date();\n      var beginDate = new Date(date.getFullYear(), 0, 1);\n      var week = Math.ceil((parseInt((date - beginDate) / (24 * 60 * 60 * 1000)) + 1 + beginDate.getDay()) / 7);\n      this.week = week;\n    },\n\n    // 获取周目标数据\n    getWeeklyTarget: function getWeeklyTarget() {var _this9 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var data, res, result;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:\n                _this9.update1 = false;\n                data = {\n                  timeSign: +('' + _this9.year + _this9.week),\n                  userid: uni.getStorageSync('userID') };_context9.next = 4;return (\n\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/queryWeekPlan',\n                    data: data }));case 4:res = _context9.sent;\n\n                // console.log(res)\n                if (res.data.statusCode == 200 && res.data.result) {\n                  // 初始化数据\n                  _this9.weeklyPlan = [{\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false },\n\n                  {\n                    content: '',\n                    type: '本周目标',\n                    complete: false }],\n\n\n                  _this9.otherPlan = [{\n                    type: '学习计划',\n                    content: '',\n                    complete: false },\n\n                  {\n                    type: '健康计划',\n                    content: '',\n                    complete: false },\n\n                  {\n                    type: '本周反省',\n                    content: '',\n                    complete: false }];\n\n\n                  result = res.data.result;\n                  result.forEach(function (v, i) {\n                    if (v.type == '本周目标') {\n                      _this9.weeklyPlan[i] = v;\n                      _this9.weeklyPlan.length = 18;\n                    }\n                    _this9.otherPlan.forEach(function (value, index) {\n                      if (value.type == v.type) {\n                        _this9.otherPlan[index] = v;\n                      }\n                    });\n                  });\n                } else {\n                  uni.showToast({\n                    title: '获取数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }\n                _this9.update1 = true;case 7:case \"end\":return _context9.stop();}}}, _callee9);}))();\n    },\n\n    // 获取周总结数据\n    getWeeklySummary: function getWeeklySummary() {var _this10 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10() {var data, res, result, j, k, l, g, i;return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:\n                _this10.update = false;\n                // 获取总结数据\n                data = {\n                  userid: uni.getStorageSync('userID'),\n                  timeSign: +('' + _this10.year + _this10.week),\n                  year: _this10.year };_context10.next = 4;return (\n\n                  (0, _myAxios.myAxios)({\n                    method: 'post',\n                    url: '/anonymous/querySummarize',\n                    data: data }));case 4:res = _context10.sent;\n\n                if (res.data.statusCode == 200 && res.data.result) {\n                  result = res.data.result;\n                  _this10.weekPerformance = [{\n                    content: '',\n                    type: '目标完成情况' },\n\n                  {\n                    content: '',\n                    type: '目标完成情况' },\n\n                  {\n                    content: '',\n                    type: '目标完成情况' },\n\n                  {\n                    content: '',\n                    type: '目标完成情况' },\n\n                  {\n                    content: '',\n                    type: '目标完成情况' },\n\n                  {\n                    content: '',\n                    type: '目标完成情况' }],\n\n\n\n                  _this10.reason = [{\n                    content: '',\n                    type: '未完成目标的原因及障碍' },\n\n                  {\n                    content: '',\n                    type: '未完成目标的原因及障碍' },\n\n                  {\n                    content: '',\n                    type: '未完成目标的原因及障碍' }],\n\n\n                  _this10.service = [{\n                    content: '',\n                    type: '克服障碍的对策和方法' },\n\n                  {\n                    content: '',\n                    type: '克服障碍的对策和方法' },\n\n                  {\n                    content: '',\n                    type: '克服障碍的对策和方法' }],\n\n\n                  _this10.harvest = [{\n                    content: '',\n                    type: '本周创新与收获' },\n\n                  {\n                    content: '',\n                    type: '本周创新与收获' },\n\n                  {\n                    content: '',\n                    type: '本周创新与收获' }];\n\n\n                  j = 0;\n                  k = 0;\n                  l = 0;\n                  g = 0;\n                  for (i = 0; i < result.length; i++) {\n                    if (result[i].type == '目标完成情况') {\n                      _this10.weekPerformance[j] = result[i];\n                      _this10.weekPerformance.length = 6;\n                      j++;\n                    }\n                    if (result[i].type == '未完成目标的原因及障碍') {\n                      _this10.reason[k] = result[i];\n                      _this10.reason.length = 3;\n                      k++;\n                    }\n                    if (result[i].type == '克服障碍的对策和方法') {\n                      _this10.service[l] = result[i];\n                      _this10.service.length = 3;\n                      l++;\n                    }\n                    if (result[i].type == '本周创新与收获') {\n                      _this10.harvest[g] = result[i];\n                      _this10.harvest.length = 3;\n                      g++;\n                    }\n                  }\n\n                } else {\n                  uni.showToast({\n                    title: '获取数据失败,请重试',\n                    icon: 'none',\n                    duration: 500 });\n\n                }\n                _this10.update = true;case 7:case \"end\":return _context10.stop();}}}, _callee10);}))();\n    } },\n\n  onLoad: function onLoad() {\n    this.getWeek();\n    this.getWeeklySummary();\n    this.getWeeklyTarget();\n  } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 7)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvd2Vla2dvYWxzL3dlZWtnb2Fscy52dWUiXSwibmFtZXMiOlsiZGF0YSIsIndlZWtQZXJmb3JtYW5jZSIsImNvbnRlbnQiLCJ0eXBlIiwicmVhc29uIiwic2VydmljZSIsImhhcnZlc3QiLCJ3ZWVrbHlQbGFuIiwiY29tcGxldGUiLCJvdGhlclBsYW4iLCJ3ZWVrIiwieWVhciIsIkRhdGUiLCJnZXRGdWxsWWVhciIsInRpbWUiLCJnZXRUaW1lIiwidXBkYXRlIiwidXBkYXRlMSIsIm1ldGhvZHMiLCJoYW5kbGVPdGhlckNvbXBsZXRlIiwidmFsdWUiLCJ0aW1lU2lnbiIsInVzZXJpZCIsInVuaSIsImdldFN0b3JhZ2VTeW5jIiwiaWQiLCJtZXRob2QiLCJ1cmwiLCJyZXMiLCJmb3JFYWNoIiwidiIsInN0YXR1c0NvZGUiLCJnZXRXZWVrbHlUYXJnZXQiLCJzaG93VG9hc3QiLCJ0aXRsZSIsImljb24iLCJkdXJhdGlvbiIsImhhbmRsZU90aGVyUGxhbiIsImUiLCJ2YWx1ZTIiLCJkZXRhaWwiLCJtZXNzYWdlIiwiaGFuZGxlQ29tcGxldGUiLCJoYW5kbGVVcGRhdGVQbGFuIiwiaGFuZGxlSGFydmVzdCIsImdldFdlZWtseVN1bW1hcnkiLCJoYW5kbGVTZXJ2aWNlIiwiaGFuZGxlUmVhc29uIiwiaGFuZGxlV2Vla1BlcmZvcm1hbmNlIiwiZ2V0V2VlayIsImRhdGUiLCJiZWdpbkRhdGUiLCJNYXRoIiwiY2VpbCIsInBhcnNlSW50IiwiZ2V0RGF5IiwicmVzdWx0IiwiaSIsImxlbmd0aCIsImluZGV4IiwiaiIsImsiLCJsIiwiZyIsIm9uTG9hZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBeUdDLHFFO0FBQ2U7QUFDZEEsTUFEYyxrQkFDUDtBQUNOLFdBQU87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QUFDQUcsdUJBQUM7QUFDRDtBQUNELHdCQUFJTCxNQUFNLENBQUNDLENBQUQsQ0FBTixDQUFVdEQsSUFBVixJQUFrQixZQUF0QixFQUFvQztBQUNuQyw2QkFBSSxDQUFDRSxPQUFMLENBQWF5RCxDQUFiLElBQWdCTixNQUFNLENBQUNDLENBQUQsQ0FBdEI7QUFDQyw2QkFBSSxDQUFDcEQsT0FBTCxDQUFhcUQsTUFBYixHQUFzQixDQUF0QjtBQUNBSSx1QkFBQztBQUNGO0FBQ0Qsd0JBQUlOLE1BQU0sQ0FBQ0MsQ0FBRCxDQUFOLENBQVV0RCxJQUFWLElBQWtCLFNBQXRCLEVBQWlDO0FBQ2hDLDZCQUFJLENBQUNHLE9BQUwsQ0FBYXlELENBQWIsSUFBZ0JQLE1BQU0sQ0FBQ0MsQ0FBRCxDQUF0QjtBQUNDLDZCQUFJLENBQUNuRCxPQUFMLENBQWFvRCxNQUFiLEdBQXNCLENBQXRCO0FBQ0FLLHVCQUFDO0FBQ0Y7QUFDRDs7QUFFRCxpQkE5RkQsTUE4Rks7QUFDSnhDLHFCQUFHLENBQUNVLFNBQUosQ0FBYztBQUNiQyx5QkFBSyxFQUFDLFlBRE87QUFFYkMsd0JBQUksRUFBQyxNQUZRO0FBR2JDLDRCQUFRLEVBQUMsR0FISSxFQUFkOztBQUtBO0FBQ0QsdUJBQUksQ0FBQ3BCLE1BQUwsR0FBWSxJQUFaLENBbEh1QjtBQW1IdkIsS0E3Zk0sRUFwTE07O0FBbXJCZGdELFFBbnJCYyxvQkFtckJMO0FBQ1IsU0FBS2YsT0FBTDtBQUNBLFNBQUtKLGdCQUFMO0FBQ0EsU0FBS2IsZUFBTDtBQUNBLEdBdnJCYSxFIiwiZmlsZSI6IjM1LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG5cblx0aW1wb3J0IHtteUF4aW9zfSBmcm9tICcuLi8uLi91dGlscy9teUF4aW9zLmpzJ1xuXHRleHBvcnQgZGVmYXVsdCB7XG5cdFx0ZGF0YSgpIHtcblx0XHRcdHJldHVybiB7XG5cdFx0XHRcdHdlZWtQZXJmb3JtYW5jZTogW3tcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+ebruagh+WujOaIkOaDheWGtScsXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn55uu5qCH5a6M5oiQ5oOF5Ya1Jyxcblx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+ebruagh+WujOaIkOaDheWGtScsXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn55uu5qCH5a6M5oiQ5oOF5Ya1Jyxcblx0XHRcdFx0XHR9XG5cdFx0XHRcdF0sXG5cdFx0XHRcdHJlYXNvbjogW3tcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+acquWujOaIkOebruagh+eahOWOn+WboOWPiumanOeijSdcblx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+acquWujOaIkOebruagh+eahOWOn+WboOWPiumanOeijSdcblx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+acquWujOaIkOebruagh+eahOWOn+WboOWPiumanOeijSdcblx0XHRcdFx0XHR9XG5cdFx0XHRcdF0sXG5cdFx0XHRcdHNlcnZpY2U6IFt7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICflhYvmnI3pmpznoo3nmoTlr7nnrZblkozmlrnms5UnXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICflhYvmnI3pmpznoo3nmoTlr7nnrZblkozmlrnms5UnXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICflhYvmnI3pmpznoo3nmoTlr7nnrZblkozmlrnms5UnXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XSxcblx0XHRcdFx0aGFydmVzdDogW3tcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+acrOWRqOWIm+aWsOS4juaUtuiOtydcblx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+acrOWRqOWIm+aWsOS4juaUtuiOtydcblx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0dHlwZTogJ+acrOWRqOWIm+aWsOS4juaUtuiOtydcblx0XHRcdFx0XHR9LFxuXHRcdFx0XHRdLFxuXHRcdFx0XHR3ZWVrbHlQbGFuOiBbe1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajnm67moIcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRdLFxuXHRcdFx0XHRvdGhlclBsYW46IFt7XG5cdFx0XHRcdFx0XHR0eXBlOiAn5a2m5Lmg6K6h5YiSJyxcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHR0eXBlOiAn5YGl5bq36K6h5YiSJyxcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo5Y+N55yBJyxcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRdLFxuXHRcdFx0XHR3ZWVrOiAwLFxuXHRcdFx0XHR5ZWFyOiBuZXcgRGF0ZSgpLmdldEZ1bGxZZWFyKCksXG5cdFx0XHRcdHRpbWU6IG5ldyBEYXRlKCkuZ2V0VGltZSgpLFxuXHRcdFx0XHR1cGRhdGU6dHJ1ZSxcblx0XHRcdFx0dXBkYXRlMTp0cnVlXG5cdFx0XHR9O1xuXHRcdH0sXG5cdFx0bWV0aG9kczp7XG5cdFx0XHRcblx0XHQvLyDlhbbku5bnm67moIfmm7TmlrBcblx0XHRhc3luYyBoYW5kbGVPdGhlckNvbXBsZXRlKHZhbHVlKXtcblx0XHRcdGxldCBkYXRhID0ge1xuXHRcdFx0XHRjb21wbGV0ZTogIXZhbHVlLmNvbXBsZXRlLFxuXHRcdFx0XHRjb250ZW50OiB2YWx1ZS5jb250ZW50LFxuXHRcdFx0XHR0aW1lU2lnbjogKygnJyArIHRoaXMueWVhciArIHRoaXMud2VlayksXG5cdFx0XHRcdHR5cGU6IHZhbHVlLnR5cGUsXG5cdFx0XHRcdHVzZXJpZDogdW5pLmdldFN0b3JhZ2VTeW5jKCd1c2VySUQnKSxcblx0XHRcdFx0aWQ6dmFsdWUuaWRcblx0XHRcdH1cblx0XHRcdC8vIOW/hemhu+aYr+mHjOmdouW3sue7j+Whq+WGmeS6huWGheWuueeahOaJjeWPr+S7peaJk+WLvlxuXHRcdFx0aWYodmFsdWUuaWQpe1xuXHRcdFx0XHRsZXQgcmVzID0gYXdhaXQgbXlBeGlvcyh7XG5cdFx0XHRcdFx0bWV0aG9kOiAncG9zdCcsXG5cdFx0XHRcdFx0dXJsOiAnL2Fub255bW91cy91cGRhdGVXZWVrUGxhbicsXG5cdFx0XHRcdFx0ZGF0YVxuXHRcdFx0XHR9KVxuXHRcdFx0XHR0aGlzLndlZWtseVBsYW4uZm9yRWFjaCh2ID0+IHtcblx0XHRcdFx0XHRpZiAodi5pZCA9PT0gdmFsdWUuaWQpIHtcblx0XHRcdFx0XHRcdHYuY29tcGxldGUgPSAhdi5jb21wbGV0ZVxuXHRcdFx0XHRcdH1cblx0XHRcdFx0fSlcblx0XHRcdFx0aWYocmVzLmRhdGEuc3RhdHVzQ29kZT09MjAwKXtcblx0XHRcdFx0XHR0aGlzLmdldFdlZWtseVRhcmdldCgpXG5cdFx0XHRcdH1lbHNle1xuXHRcdFx0XHRcdHVuaS5zaG93VG9hc3Qoe1xuXHRcdFx0XHRcdFx0dGl0bGU6J+abtOaWsOaVsOaNruWksei0pSzor7fph43or5UnLFxuXHRcdFx0XHRcdFx0aWNvbjonbm9uZScsXG5cdFx0XHRcdFx0XHRkdXJhdGlvbjo1MDBcblx0XHRcdFx0XHR9KVxuXHRcdFx0XHR9XG5cdFx0XHR9XG5cdFx0fSxcblx0XHRcdFxuXHRcdC8vIOWFtuS7luebruagh+abtOaWsFxuXHRcdGFzeW5jIGhhbmRsZU90aGVyUGxhbihlLHZhbHVlMil7XG5cdFx0XHRsZXQge3ZhbHVlfT1lLmRldGFpbFxuXHRcdFx0bGV0IGRhdGE9e1xuXHRcdFx0XHRjb21wbGV0ZTogdmFsdWUyLmNvbXBsZXRlLFxuXHRcdFx0XHRjb250ZW50OiB2YWx1ZSxcblx0XHRcdFx0dGltZVNpZ246ICsoJycgKyB0aGlzLnllYXIgKyB0aGlzLndlZWspLFxuXHRcdFx0XHR0eXBlOiB2YWx1ZTIudHlwZSxcblx0XHRcdFx0dXNlcmlkOiB1bmkuZ2V0U3RvcmFnZVN5bmMoJ3VzZXJJRCcpXG5cdFx0XHR9XG5cdFx0XHRpZih2YWx1ZTIuaWQpe1xuXHRcdFx0XHRkYXRhLmlkPXZhbHVlMi5pZFxuXHRcdFx0fVxuXHRcdFx0bGV0IHJlcz1hd2FpdCBteUF4aW9zKHtcblx0XHRcdFx0bWV0aG9kOidwb3N0Jyxcblx0XHRcdFx0dXJsOicvYW5vbnltb3VzL3VwZGF0ZVdlZWtQbGFuJyxcblx0XHRcdFx0ZGF0YVxuXHRcdFx0fSlcblx0XHRcdGNvbnNvbGUubG9nKHJlcy5kYXRhLm1lc3NhZ2UpXG5cdFx0XHRpZihyZXMuZGF0YS5zdGF0dXNDb2RlPT0yMDApe1xuXHRcdFx0XHR0aGlzLmdldFdlZWtseVRhcmdldCgpXG5cdFx0XHR9ZWxzZXtcblx0XHRcdFx0dW5pLnNob3dUb2FzdCh7XG5cdFx0XHRcdFx0dGl0bGU6J+abtOaWsOaVsOaNruWksei0pSzor7fph43or5UnLFxuXHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdGR1cmF0aW9uOjUwMFxuXHRcdFx0XHR9KVxuXHRcdFx0fVxuXHRcdH0sXG5cdFx0XG5cdFx0Ly8g5pys5ZGo55uu5qCH5a6M5oiQ54q25oCB5pu05pawXG5cdFx0YXN5bmMgaGFuZGxlQ29tcGxldGUodmFsdWUpe1xuXHRcdFx0bGV0IGRhdGEgPSB7XG5cdFx0XHRcdGNvbXBsZXRlOiAhdmFsdWUuY29tcGxldGUsXG5cdFx0XHRcdGNvbnRlbnQ6IHZhbHVlLmNvbnRlbnQsXG5cdFx0XHRcdHRpbWVTaWduOiArKCcnICsgdGhpcy55ZWFyICsgdGhpcy53ZWVrKSxcblx0XHRcdFx0dHlwZTogdmFsdWUudHlwZSxcblx0XHRcdFx0dXNlcmlkOiB1bmkuZ2V0U3RvcmFnZVN5bmMoJ3VzZXJJRCcpLFxuXHRcdFx0XHRpZDp2YWx1ZS5pZFxuXHRcdFx0fVxuXHRcdFx0Ly8g5b+F6aG75piv6YeM6Z2i5bey57uP5aGr5YaZ5LqG5YaF5a6555qE5omN5Y+v5Lul5omT5Yu+XG5cdFx0XHRpZih2YWx1ZS5pZCl7XG5cdFx0XHRcdGxldCByZXMgPSBhd2FpdCBteUF4aW9zKHtcblx0XHRcdFx0XHRtZXRob2Q6ICdwb3N0Jyxcblx0XHRcdFx0XHR1cmw6ICcvYW5vbnltb3VzL3VwZGF0ZVdlZWtQbGFuJyxcblx0XHRcdFx0XHRkYXRhXG5cdFx0XHRcdH0pXG5cdFx0XHRcdGlmKHJlcy5kYXRhLnN0YXR1c0NvZGU9PTIwMCl7XG5cdFx0XHRcdFx0dGhpcy5nZXRXZWVrbHlUYXJnZXQoKVxuXHRcdFx0XHR9ZWxzZXtcblx0XHRcdFx0XHR1bmkuc2hvd1RvYXN0KHtcblx0XHRcdFx0XHRcdHRpdGxlOifmm7TmlrDmlbDmja7lpLHotKUs6K+36YeN6K+VJyxcblx0XHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdFx0ZHVyYXRpb246NTAwXG5cdFx0XHRcdFx0fSlcblx0XHRcdFx0fVxuXHRcdFx0fVxuXHRcdH0sXG5cdFx0XHRcdFxuXHRcdC8vIOacrOWRqOebruagh+abtOaWsFxuXHRcdGFzeW5jIGhhbmRsZVVwZGF0ZVBsYW4oZSx2YWx1ZTIpe1xuXHRcdFx0bGV0IHt2YWx1ZX09ZS5kZXRhaWxcblx0XHRcdGxldCBkYXRhPXtcblx0XHRcdFx0Y29tcGxldGU6IHZhbHVlMi5jb21wbGV0ZSxcblx0XHRcdFx0Y29udGVudDogdmFsdWUsXG5cdFx0XHRcdHRpbWVTaWduOiArKCcnICsgdGhpcy55ZWFyICsgdGhpcy53ZWVrKSxcblx0XHRcdFx0dHlwZTogdmFsdWUyLnR5cGUsXG5cdFx0XHRcdHVzZXJpZDogdW5pLmdldFN0b3JhZ2VTeW5jKCd1c2VySUQnKVxuXHRcdFx0fVxuXHRcdFx0aWYodmFsdWUyLmlkKXtcblx0XHRcdFx0ZGF0YS5pZD12YWx1ZTIuaWRcblx0XHRcdH1cblx0XHRcdGxldCByZXM9YXdhaXQgbXlBeGlvcyh7XG5cdFx0XHRcdG1ldGhvZDoncG9zdCcsXG5cdFx0XHRcdHVybDonL2Fub255bW91cy91cGRhdGVXZWVrUGxhbicsXG5cdFx0XHRcdGRhdGFcblx0XHRcdH0pXG5cdFx0XHRpZihyZXMuZGF0YS5zdGF0dXNDb2RlPT0yMDApe1xuXHRcdFx0XHR0aGlzLmdldFdlZWtseVRhcmdldCgpXG5cdFx0XHR9ZWxzZXtcblx0XHRcdFx0dW5pLnNob3dUb2FzdCh7XG5cdFx0XHRcdFx0dGl0bGU6J+abtOaWsOaVsOaNruWksei0pSzor7fph43or5UnLFxuXHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdGR1cmF0aW9uOjUwMFxuXHRcdFx0XHR9KVxuXHRcdFx0fVxuXHRcdH0sXG5cdFx0XHRcblx0XHQvLyDkuIrlkajmgLvnu5Mt5pys5ZGo5Yib5paw5LiO5pS26I63XG5cdFx0YXN5bmMgaGFuZGxlSGFydmVzdChlLHZhbHVlMil7XG5cdFx0XHRsZXQge3ZhbHVlfSA9IGUuZGV0YWlsXG5cdFx0XHRsZXQgZGF0YSA9IHtcblx0XHRcdCAgY29udGVudDogdmFsdWUsXG5cdFx0XHQgIHRpbWVTaWduOiArKCcnICsgdGhpcy55ZWFyICsgdGhpcy53ZWVrKSxcblx0XHRcdCAgdHlwZTogdmFsdWUyLnR5cGUsXG5cdFx0XHQgIHllYXI6IHRoaXMueWVhcixcblx0XHRcdCAgdXNlcmlkOiB1bmkuZ2V0U3RvcmFnZVN5bmMoJ3VzZXJJRCcpXG5cdFx0XHR9XG5cdFx0XHRpZih2YWx1ZTIuaWQpe1xuXHRcdFx0XHRkYXRhLmlkPXZhbHVlMi5pZFxuXHRcdFx0fVxuXHRcdFx0bGV0IHJlcz1hd2FpdCBteUF4aW9zKHtcblx0XHRcdFx0bWV0aG9kOiAncG9zdCcsXG5cdFx0XHRcdHVybDogJy9hbm9ueW1vdXMvdXBkYXRlU3VtbWFyaXplJyxcblx0XHRcdFx0ZGF0YVxuXHRcdFx0fSlcblx0XHRcdGlmKHJlcy5kYXRhLnN0YXR1c0NvZGU9PTIwMCl7XG5cdFx0XHRcdHRoaXMuZ2V0V2Vla2x5U3VtbWFyeSgpXG5cdFx0XHR9ZWxzZXtcblx0XHRcdFx0dW5pLnNob3dUb2FzdCh7XG5cdFx0XHRcdFx0dGl0bGU6J+abtOaWsOaVsOaNruWksei0pSzor7fph43or5UnLFxuXHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdGR1cmF0aW9uOjUwMFxuXHRcdFx0XHR9KVxuXHRcdFx0fVxuXHRcdH0sXG5cdFx0XHRcblx0XHQvLyDkuIrlkajmgLvnu5Mt5YWL5pyN6Zqc56KN55qE5a+5562W5ZKM5pa55rOVXG5cdFx0YXN5bmMgaGFuZGxlU2VydmljZShlLHZhbHVlMil7XG5cdFx0XHRsZXQge3ZhbHVlfSA9IGUuZGV0YWlsXG5cdFx0XHRsZXQgZGF0YSA9IHtcbiAgICAgICAgY29udGVudDogdmFsdWUsXG4gICAgICAgIHRpbWVTaWduOiArKCcnICsgdGhpcy55ZWFyICsgdGhpcy53ZWVrKSxcbiAgICAgICAgdHlwZTogdmFsdWUyLnR5cGUsXG4gICAgICAgIHllYXI6IHRoaXMueWVhcixcbiAgICAgICAgdXNlcmlkOiB1bmkuZ2V0U3RvcmFnZVN5bmMoJ3VzZXJJRCcpXG4gICAgICB9XG5cdFx0XHRpZih2YWx1ZTIuaWQpe1xuXHRcdFx0XHRkYXRhLmlkPXZhbHVlMi5pZFxuXHRcdFx0fVxuXHRcdFx0bGV0IHJlcz1hd2FpdCBteUF4aW9zKHtcblx0XHRcdFx0bWV0aG9kOiAncG9zdCcsXG5cdFx0XHRcdHVybDogJy9hbm9ueW1vdXMvdXBkYXRlU3VtbWFyaXplJyxcblx0XHRcdFx0ZGF0YVxuXHRcdFx0fSlcblx0XHRcdGlmKHJlcy5kYXRhLnN0YXR1c0NvZGU9PTIwMCl7XG5cdFx0XHRcdHRoaXMuZ2V0V2Vla2x5U3VtbWFyeSgpXG5cdFx0XHR9ZWxzZXtcblx0XHRcdFx0dW5pLnNob3dUb2FzdCh7XG5cdFx0XHRcdFx0dGl0bGU6J+abtOaWsOaVsOaNruWksei0pSzor7fph43or5UnLFxuXHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdGR1cmF0aW9uOjUwMFxuXHRcdFx0XHR9KVxuXHRcdFx0fVxuXHRcdH0sXG5cdFx0XHRcblx0XHQvLyDkuIrlkajmgLvnu5Mt5pyq5a6M5oiQ55uu5qCH55qE5Y6f5Zug5Y+K6Zqc56KNXG5cdFx0YXN5bmMgaGFuZGxlUmVhc29uKGUsdmFsdWUyKXtcblx0XHRcdGxldCB7dmFsdWV9ID1lLmRldGFpbFxuXHRcdFx0bGV0IGRhdGEgPSB7XG4gICAgICAgIGNvbnRlbnQ6IHZhbHVlLFxuICAgICAgICB0aW1lU2lnbjogKygnJyArIHRoaXMueWVhciArIHRoaXMud2VlayksXG4gICAgICAgIHR5cGU6IHZhbHVlMi50eXBlLFxuICAgICAgICB5ZWFyOiB0aGlzLnllYXIsXG4gICAgICAgIHVzZXJpZDogdW5pLmdldFN0b3JhZ2VTeW5jKCd1c2VySUQnKVxuICAgICAgfVxuXHRcdFx0aWYodmFsdWUyLmlkKXtcblx0XHRcdFx0ZGF0YS5pZD12YWx1ZTIuaWRcblx0XHRcdH1cblx0XHRcdGxldCByZXM9YXdhaXQgbXlBeGlvcyh7XG5cdFx0XHRcdG1ldGhvZDogJ3Bvc3QnLFxuXHRcdFx0XHR1cmw6ICcvYW5vbnltb3VzL3VwZGF0ZVN1bW1hcml6ZScsXG5cdFx0XHRcdGRhdGFcblx0XHRcdH0pXG5cdFx0XHRpZihyZXMuZGF0YS5zdGF0dXNDb2RlPT0yMDApe1xuXHRcdFx0XHR0aGlzLmdldFdlZWtseVN1bW1hcnkoKVxuXHRcdFx0fWVsc2V7XG5cdFx0XHRcdHVuaS5zaG93VG9hc3Qoe1xuXHRcdFx0XHRcdHRpdGxlOifmm7TmlrDmlbDmja7lpLHotKUs6K+36YeN6K+VJyxcblx0XHRcdFx0XHRpY29uOidub25lJyxcblx0XHRcdFx0XHRkdXJhdGlvbjo1MDBcblx0XHRcdFx0fSlcblx0XHRcdH1cblx0XHR9LFxuXHRcdFx0XG5cdFx0Ly8g5LiK5ZGo5oC757uTLeebruagh+WujOaIkOaDheWGtVxuXHRcdGFzeW5jIGhhbmRsZVdlZWtQZXJmb3JtYW5jZShlLHZhbHVlMil7XG5cdFx0XHRcdGxldCB7dmFsdWV9ID0gZS5kZXRhaWxcblx0XHRcdFx0bGV0IGRhdGEgPSB7XG5cdFx0XHRcdFx0Y29udGVudDogdmFsdWUsXG5cdFx0XHRcdFx0dGltZVNpZ246ICsoJycgKyB0aGlzLnllYXIgKyB0aGlzLndlZWspLFxuXHRcdFx0XHRcdHR5cGU6IHZhbHVlMi50eXBlLFxuXHRcdFx0XHRcdHllYXI6IHRoaXMueWVhcixcblx0XHRcdFx0XHR1c2VyaWQ6IHVuaS5nZXRTdG9yYWdlU3luYygndXNlcklEJylcblx0XHRcdFx0fVxuXHRcdFx0XHRpZih2YWx1ZTIuaWQpe1xuXHRcdFx0XHRcdGRhdGEuaWQ9dmFsdWUyLmlkXG5cdFx0XHRcdH1cblx0XHRcdFx0bGV0IHJlcz1hd2FpdCBteUF4aW9zKHtcblx0XHRcdFx0XHRtZXRob2Q6J3Bvc3QnLFxuXHRcdFx0XHRcdHVybDonL2Fub255bW91cy91cGRhdGVTdW1tYXJpemUnLFxuXHRcdFx0XHRcdGRhdGFcblx0XHRcdFx0fSlcblx0XHRcdFx0aWYocmVzLmRhdGEuc3RhdHVzQ29kZT09MjAwKXtcblx0XHRcdFx0XHR0aGlzLmdldFdlZWtseVN1bW1hcnkoKVxuXHRcdFx0XHR9ZWxzZXtcblx0XHRcdFx0XHR1bmkuc2hvd1RvYXN0KHtcblx0XHRcdFx0XHRcdHRpdGxlOifmm7TmlrDmlbDmja7lpLHotKUs6K+36YeN6K+VJyxcblx0XHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdFx0ZHVyYXRpb246NTAwXG5cdFx0XHRcdFx0fSlcblx0XHRcdFx0fVxuXHRcdFx0XHRcblx0XHR9LFxuXHRcdFxuXHRcdC8vIOaXtumXtOi9rOWMluS4uuWRqOaVsFxuXHRcdGdldFdlZWsoKSB7XG5cdFx0XHRsZXQgZGF0ZSA9IG5ldyBEYXRlKCk7XG5cdFx0XHRsZXQgYmVnaW5EYXRlID0gbmV3IERhdGUoZGF0ZS5nZXRGdWxsWWVhcigpLCAwLCAxKTtcblx0XHRcdGxldCB3ZWVrID0gTWF0aC5jZWlsKChwYXJzZUludCgoZGF0ZSAtIGJlZ2luRGF0ZSkgLyAoMjQgKiA2MCAqIDYwICogMTAwMCkpICsgMSArIGJlZ2luRGF0ZS5nZXREYXkoKSkgLyA3KTtcblx0XHRcdHRoaXMud2Vlaz13ZWVrXG5cdFx0fSxcblx0XHRcblx0XHQvLyDojrflj5blkajnm67moIfmlbDmja5cblx0XHRhc3luYyBnZXRXZWVrbHlUYXJnZXQoKXtcblx0XHRcdHRoaXMudXBkYXRlMT1mYWxzZVxuXHRcdFx0bGV0IGRhdGE9e1xuXHRcdFx0XHR0aW1lU2lnbjogKygnJyArIHRoaXMueWVhciArIHRoaXMud2VlayksXG5cdFx0XHRcdHVzZXJpZDogdW5pLmdldFN0b3JhZ2VTeW5jKCd1c2VySUQnKVxuXHRcdFx0fVxuXHRcdFx0bGV0IHJlcz1hd2FpdCBteUF4aW9zKHtcblx0XHRcdFx0bWV0aG9kOidwb3N0Jyxcblx0XHRcdFx0dXJsOicvYW5vbnltb3VzL3F1ZXJ5V2Vla1BsYW4nLFxuXHRcdFx0XHRkYXRhXG5cdFx0XHR9KVxuXHRcdFx0Ly8gY29uc29sZS5sb2cocmVzKVxuXHRcdFx0aWYocmVzLmRhdGEuc3RhdHVzQ29kZT09MjAwJiZyZXMuZGF0YS5yZXN1bHQpe1xuXHRcdFx0XHQvLyDliJ3lp4vljJbmlbDmja5cblx0XHRcdFx0dGhpcy53ZWVrbHlQbGFuPSBbe1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo55uu5qCHJyxcblx0XHRcdFx0XHRcdGNvbXBsZXRlOiBmYWxzZVxuXHRcdFx0XHRcdH1cblx0XHRcdFx0XSxcblx0XHRcdFx0dGhpcy5vdGhlclBsYW49IFt7XG5cdFx0XHRcdFx0XHR0eXBlOiAn5a2m5Lmg6K6h5YiSJyxcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHR0eXBlOiAn5YGl5bq36K6h5YiSJyxcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fSxcblx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo5Y+N55yBJyxcblx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0Y29tcGxldGU6IGZhbHNlXG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRdXG5cdFx0XHRcdGxldCB7cmVzdWx0fSA9cmVzLmRhdGFcblx0XHRcdFx0cmVzdWx0LmZvckVhY2goKHYsIGkpID0+IHtcblx0XHRcdFx0XHRpZiAodi50eXBlID09ICfmnKzlkajnm67moIcnKSB7XG5cdFx0XHRcdFx0XHR0aGlzLndlZWtseVBsYW5baV0gPSB2XG5cdFx0XHRcdFx0XHR0aGlzLndlZWtseVBsYW4ubGVuZ3RoID0gMThcblx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0dGhpcy5vdGhlclBsYW4uZm9yRWFjaCgodmFsdWUsaW5kZXgpPT57XG5cdFx0XHRcdFx0XHRpZih2YWx1ZS50eXBlPT12LnR5cGUpe1xuXHRcdFx0XHRcdFx0XHR0aGlzLm90aGVyUGxhbltpbmRleF09dlxuXHRcdFx0XHRcdFx0fVxuXHRcdFx0XHRcdH0pXG5cdFx0XHRcdH0pO1xuXHRcdFx0fWVsc2V7XG5cdFx0XHRcdHVuaS5zaG93VG9hc3Qoe1xuXHRcdFx0XHRcdHRpdGxlOifojrflj5bmlbDmja7lpLHotKUs6K+36YeN6K+VJyxcblx0XHRcdFx0XHRpY29uOidub25lJyxcblx0XHRcdFx0XHRkdXJhdGlvbjo1MDBcblx0XHRcdFx0fSlcblx0XHRcdH1cblx0XHRcdHRoaXMudXBkYXRlMT10cnVlXG5cdFx0fSxcblx0XHRcblx0XHQvLyDojrflj5blkajmgLvnu5PmlbDmja5cblx0XHRhc3luYyBnZXRXZWVrbHlTdW1tYXJ5KCkge1xuXHRcdFx0XHR0aGlzLnVwZGF0ZT1mYWxzZVxuXHRcdFx0XHQvLyDojrflj5bmgLvnu5PmlbDmja5cblx0XHRcdFx0bGV0IGRhdGEgPSB7XG5cdFx0XHRcdFx0dXNlcmlkOiB1bmkuZ2V0U3RvcmFnZVN5bmMoJ3VzZXJJRCcpLFxuXHRcdFx0XHRcdHRpbWVTaWduOiArKCcnICsgdGhpcy55ZWFyICsgdGhpcy53ZWVrKSxcblx0XHRcdFx0XHR5ZWFyOiB0aGlzLnllYXJcblx0XHRcdFx0fVxuXHRcdFx0XHRsZXQgcmVzID0gYXdhaXQgbXlBeGlvcyh7XG5cdFx0XHRcdFx0bWV0aG9kOiAncG9zdCcsXG5cdFx0XHRcdFx0dXJsOiAnL2Fub255bW91cy9xdWVyeVN1bW1hcml6ZScsXG5cdFx0XHRcdFx0ZGF0YVxuXHRcdFx0XHR9KVxuXHRcdFx0XHRpZiAocmVzLmRhdGEuc3RhdHVzQ29kZT09MjAwJiZyZXMuZGF0YS5yZXN1bHQpIHtcblx0XHRcdFx0XHRsZXR7cmVzdWx0fT1yZXMuZGF0YVxuXHRcdFx0XHRcdHRoaXMud2Vla1BlcmZvcm1hbmNlID0gW3tcblx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdHR5cGU6ICfnm67moIflrozmiJDmg4XlhrUnLFxuXHRcdFx0XHRcdFx0fVxuXHRcdFx0XHRcdF0sXG5cdFx0XHRcdFx0XHRcblx0XHRcdFx0XHRcdHRoaXMucmVhc29uID0gW3tcblx0XHRcdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdFx0XHR0eXBlOiAn5pyq5a6M5oiQ55uu5qCH55qE5Y6f5Zug5Y+K6Zqc56KNJ1xuXHRcdFx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdFx0dHlwZTogJ+acquWujOaIkOebruagh+eahOWOn+WboOWPiumanOeijSdcblx0XHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdFx0e1xuXHRcdFx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0XHRcdHR5cGU6ICfmnKrlrozmiJDnm67moIfnmoTljp/lm6Dlj4rpmpznoo0nXG5cdFx0XHRcdFx0XHRcdH1cblx0XHRcdFx0XHRcdF0sXG5cdFx0XHRcdFx0XHR0aGlzLnNlcnZpY2UgPSBbe1xuXHRcdFx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0XHRcdHR5cGU6ICflhYvmnI3pmpznoo3nmoTlr7nnrZblkozmlrnms5UnXG5cdFx0XHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdFx0XHR0eXBlOiAn5YWL5pyN6Zqc56KN55qE5a+5562W5ZKM5pa55rOVJ1xuXHRcdFx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdFx0dHlwZTogJ+WFi+acjemanOeijeeahOWvueetluWSjOaWueazlSdcblx0XHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdF0sXG5cdFx0XHRcdFx0XHR0aGlzLmhhcnZlc3QgPSBbe1xuXHRcdFx0XHRcdFx0XHRcdGNvbnRlbnQ6ICcnLFxuXHRcdFx0XHRcdFx0XHRcdHR5cGU6ICfmnKzlkajliJvmlrDkuI7mlLbojrcnXG5cdFx0XHRcdFx0XHRcdH0sXG5cdFx0XHRcdFx0XHRcdHtcblx0XHRcdFx0XHRcdFx0XHRjb250ZW50OiAnJyxcblx0XHRcdFx0XHRcdFx0XHR0eXBlOiAn5pys5ZGo5Yib5paw5LiO5pS26I63J1xuXHRcdFx0XHRcdFx0XHR9LFxuXHRcdFx0XHRcdFx0XHR7XG5cdFx0XHRcdFx0XHRcdFx0Y29udGVudDogJycsXG5cdFx0XHRcdFx0XHRcdFx0dHlwZTogJ+acrOWRqOWIm+aWsOS4juaUtuiOtydcblx0XHRcdFx0XHRcdFx0fSxcblx0XHRcdFx0XHRcdF1cblx0XHRcdFx0XHRcdGxldCBqPTA7XG5cdFx0XHRcdFx0XHRsZXQgaz0wO1xuXHRcdFx0XHRcdFx0bGV0IGw9MDtcblx0XHRcdFx0XHRcdGxldCBnPTA7XG5cdFx0XHRcdFx0Zm9yIChsZXQgaSA9IDA7IGkgPCByZXN1bHQubGVuZ3RoOyBpKyspIHtcblx0XHRcdFx0XHRcdGlmIChyZXN1bHRbaV0udHlwZSA9PSAn55uu5qCH5a6M5oiQ5oOF5Ya1Jykge1xuXHRcdFx0XHRcdFx0XHR0aGlzLndlZWtQZXJmb3JtYW5jZVtqXT1yZXN1bHRbaV1cblx0XHRcdFx0XHRcdFx0XHR0aGlzLndlZWtQZXJmb3JtYW5jZS5sZW5ndGggPSA2XG5cdFx0XHRcdFx0XHRcdFx0aisrXG5cdFx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0XHRpZiAocmVzdWx0W2ldLnR5cGUgPT0gJ+acquWujOaIkOebruagh+eahOWOn+WboOWPiumanOeijScpIHtcblx0XHRcdFx0XHRcdFx0dGhpcy5yZWFzb25ba109cmVzdWx0W2ldXG5cdFx0XHRcdFx0XHRcdHRoaXMucmVhc29uLmxlbmd0aCA9IDNcblx0XHRcdFx0XHRcdFx0aysrXG5cdFx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0XHRpZiAocmVzdWx0W2ldLnR5cGUgPT0gJ+WFi+acjemanOeijeeahOWvueetluWSjOaWueazlScpIHtcblx0XHRcdFx0XHRcdFx0dGhpcy5zZXJ2aWNlW2xdPXJlc3VsdFtpXVxuXHRcdFx0XHRcdFx0XHRcdHRoaXMuc2VydmljZS5sZW5ndGggPSAzXG5cdFx0XHRcdFx0XHRcdFx0bCsrXG5cdFx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0XHRpZiAocmVzdWx0W2ldLnR5cGUgPT0gJ+acrOWRqOWIm+aWsOS4juaUtuiOtycpIHtcblx0XHRcdFx0XHRcdFx0dGhpcy5oYXJ2ZXN0W2ddPXJlc3VsdFtpXVxuXHRcdFx0XHRcdFx0XHRcdHRoaXMuaGFydmVzdC5sZW5ndGggPSAzXG5cdFx0XHRcdFx0XHRcdFx0ZysrXG5cdFx0XHRcdFx0XHR9XG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRcdFxuXHRcdFx0XHR9ZWxzZXtcblx0XHRcdFx0XHR1bmkuc2hvd1RvYXN0KHtcblx0XHRcdFx0XHRcdHRpdGxlOifojrflj5bmlbDmja7lpLHotKUs6K+36YeN6K+VJyxcblx0XHRcdFx0XHRcdGljb246J25vbmUnLFxuXHRcdFx0XHRcdFx0ZHVyYXRpb246NTAwXG5cdFx0XHRcdFx0fSlcblx0XHRcdFx0fVxuXHRcdFx0XHR0aGlzLnVwZGF0ZT10cnVlXG5cdFx0XHR9LFxuXHRcdH0sXG5cdFx0b25Mb2FkKCkge1xuXHRcdFx0dGhpcy5nZXRXZWVrKClcblx0XHRcdHRoaXMuZ2V0V2Vla2x5U3VtbWFyeSgpXG5cdFx0XHR0aGlzLmdldFdlZWtseVRhcmdldCgpXG5cdFx0fVxuXHR9XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///35\n");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: F:\\\\fwh\\\\chengzhangriji-uniapp\\\\pages\\\\weekgoals\\\\weekgoals.vue: Unexpected token, expected \\\",\\\" (359:4)\\n\\n  357 | \\t\\t\\t\\t\\t},\\n  358 | \\t\\t\\t\\t]\\n> 359 | \\t\\t\\t\\tweek: 0,\\n      | \\t\\t\\t\\t^\\n  360 | \\t\\t\\t\\tyear: new Date().getFullYear(),\\n  361 | \\t\\t\\t\\ttime: new Date().getTime(),\\n  362 | \\t\\t\\t\\tupdate:true,\\n    at Object._raise (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:742:17)\\n    at Object.raiseWithData (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:735:17)\\n    at Object.raise (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:729:17)\\n    at Object.unexpected (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:8757:16)\\n    at Object.expect (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:8743:28)\\n    at Object.parseObj (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:10365:14)\\n    at Object.parseExprAtom (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9995:28)\\n    at Object.parseExprAtom (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:4614:20)\\n    at Object.parseExprSubscripts (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9602:23)\\n    at Object.parseMaybeUnary (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9582:21)\\n    at Object.parseExprOps (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9452:23)\\n    at Object.parseMaybeConditional (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9425:23)\\n    at Object.parseMaybeAssign (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9380:21)\\n    at Object.parseExpression (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:9332:23)\\n    at Object.parseReturnStatement (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:11448:28)\\n    at Object.parseStatementContent (E:\\\\软件\\\\HBuilderX\\\\plugins\\\\uniapp-cli\\\\node_modules\\\\@babel\\\\core\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:11129:21)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIzNS5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///35\n");
 
 /***/ }),
 /* 36 */

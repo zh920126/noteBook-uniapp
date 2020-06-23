@@ -2822,433 +2822,632 @@ var render = function() {
     "v-uni-view",
     { attrs: { _i: 0 } },
     [
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-            [
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-                [_vm._v("周")]
-              ),
-              _c("v-uni-view", { attrs: { _i: 4 } }, [_vm._v("天")])
-            ],
-            1
-          ),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-            [
-              _c(
-                "v-uni-view",
-                {
-                  staticClass: _vm._$g(6, "sc"),
-                  attrs: { "bind:tap": "handleLastWeek", _i: 6 }
-                },
-                [_vm._v("上一周")]
-              ),
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
-                [
-                  _vm._v(
-                    _vm._$g(7, "t0-0") + "年 第" + _vm._$g(7, "t0-1") + "周"
-                  )
-                ]
-              ),
-              _c(
-                "v-uni-view",
-                {
-                  staticClass: _vm._$g(8, "sc"),
-                  attrs: { "bind:tap": "handleNextWeek", _i: 8 }
-                },
-                [_vm._v("下一周")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-        [
-          _vm._$g(10, "i")
-            ? _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
-                    [_vm._v("上周总结")]
-                  ),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-                    [_vm._v("目标完成情况")]
-                  ),
-                  _vm._l(_vm._$g(13, "f"), function(value, index, $20, $30) {
-                    return [
-                      _c(
-                        "v-uni-view",
-                        {
-                          key: value["k0"],
-                          staticClass: _vm._$g("14-" + $30, "sc"),
-                          attrs: { _i: "14-" + $30 }
-                        },
-                        [
-                          _c("v-uni-textarea", {
-                            staticClass: _vm._$g("15-" + $30, "sc"),
-                            attrs: {
-                              value: _vm._$g("15-" + $30, "a-value"),
-                              _i: "15-" + $30
-                            },
+      _vm._$g(1, "i")
+        ? [
+            _c(
+              "v-uni-view",
+              { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
+              [
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+                  [
+                    _vm._l(_vm._$g(4, "f"), function(value, index, $20, $30) {
+                      return [
+                        _c(
+                          "v-uni-view",
+                          {
+                            key: value["k0"],
+                            class: _vm._$g("5-" + $30, "c"),
+                            attrs: { _i: "5-" + $30 },
                             on: {
-                              blur: function($event) {
+                              click: function($event) {
                                 return _vm.$handleViewEvent($event)
                               }
                             }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  }),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
-                    [_vm._v("未完成目标的原因及障碍")]
-                  ),
-                  _vm._l(_vm._$g(17, "f"), function(value, index, $21, $31) {
-                    return [
-                      _c(
-                        "v-uni-view",
-                        {
-                          key: value["k0"],
-                          staticClass: _vm._$g("18-" + $31, "sc"),
-                          attrs: { _i: "18-" + $31 }
-                        },
-                        [
-                          _c("v-uni-textarea", {
-                            staticClass: _vm._$g("19-" + $31, "sc"),
-                            attrs: {
-                              value: _vm._$g("19-" + $31, "a-value"),
-                              _i: "19-" + $31
-                            },
-                            on: {
-                              blur: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  }),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
-                    [_vm._v("克服障碍的对策和方法")]
-                  ),
-                  _vm._l(_vm._$g(21, "f"), function(value, index, $22, $32) {
-                    return [
-                      _c(
-                        "v-uni-view",
-                        {
-                          key: value["k0"],
-                          staticClass: _vm._$g("22-" + $32, "sc"),
-                          attrs: { _i: "22-" + $32 }
-                        },
-                        [
-                          _c("v-uni-textarea", {
-                            staticClass: _vm._$g("23-" + $32, "sc"),
-                            attrs: {
-                              value: _vm._$g("23-" + $32, "a-value"),
-                              _i: "23-" + $32
-                            },
-                            on: {
-                              blur: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  }),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                    [_vm._v("本周创新与收获")]
-                  ),
-                  _vm._l(_vm._$g(25, "f"), function(value, index, $23, $33) {
-                    return [
-                      _c(
-                        "v-uni-view",
-                        {
-                          key: value["k0"],
-                          staticClass: _vm._$g("26-" + $33, "sc"),
-                          attrs: { _i: "26-" + $33 }
-                        },
-                        [
-                          _c("v-uni-textarea", {
-                            staticClass: _vm._$g("27-" + $33, "sc"),
-                            attrs: {
-                              value: _vm._$g("27-" + $33, "a-value"),
-                              _i: "27-" + $33
-                            },
-                            on: {
-                              blur: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  })
-                ],
-                2
-              )
-            : _vm._e(),
-          _vm._$g(28, "i")
-            ? _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                    [
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
-                        [_vm._v("序号")]
-                      ),
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(32, "sc"),
-                              attrs: { _i: 32 }
-                            },
-                            [
-                              _c("v-uni-text", { attrs: { _i: 33 } }, [
-                                _vm._v("本周目标")
-                              ])
-                            ],
-                            1
-                          ),
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g(34, "sc"),
-                              attrs: { _i: 34 }
-                            },
-                            [
-                              _c("v-uni-view", { attrs: { _i: 35 } }, [
-                                _vm._v("1.请在上周五的规划填写")
-                              ]),
-                              _c("v-uni-view", { attrs: { _i: 36 } }, [
-                                _vm._v("2.按目标重要程度规划有限顺序")
-                              ]),
-                              _c("v-uni-view", { attrs: { _i: 37 } }, [
-                                _vm._v("3.完成一项,在完成时限处打勾")
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _c(
-                        "v-uni-view",
-                        { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
-                        [_vm._v("完成期限")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._l(_vm._$g(39, "f"), function(value, index, $24, $34) {
-                    return [
-                      _c(
-                        "v-uni-view",
-                        {
-                          key: value["k0"],
-                          staticClass: _vm._$g("40-" + $34, "sc"),
-                          attrs: { _i: "40-" + $34 }
-                        },
-                        [
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g("41-" + $34, "sc"),
-                              attrs: { _i: "41-" + $34 }
-                            },
-                            [_vm._v(_vm._$g("41-" + $34, "t0-0"))]
-                          ),
-                          _c(
-                            "v-uni-view",
-                            {
-                              staticClass: _vm._$g("42-" + $34, "sc"),
-                              attrs: { _i: "42-" + $34 }
-                            },
-                            [
-                              _c("v-uni-textarea", {
-                                staticClass: _vm._$g("43-" + $34, "sc"),
-                                attrs: {
-                                  value: _vm._$g("43-" + $34, "a-value"),
-                                  _i: "43-" + $34
-                                },
-                                on: {
-                                  blur: function($event) {
-                                    return _vm.$handleViewEvent($event)
+                          },
+                          [_vm._v(_vm._$g("5-" + $30, "t0-0"))]
+                        )
+                      ]
+                    })
+                  ],
+                  2
+                ),
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+                  [
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g(7, "sc"),
+                        attrs: { _i: 7 },
+                        on: {
+                          click: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
+                      },
+                      [_vm._v("上一周")]
+                    ),
+                    _c(
+                      "v-uni-view",
+                      { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                      [
+                        _vm._v(
+                          _vm._$g(8, "t0-0") +
+                            "年 第" +
+                            _vm._$g(8, "t0-1") +
+                            "周"
+                        )
+                      ]
+                    ),
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g(9, "sc"),
+                        attrs: { _i: 9 },
+                        on: {
+                          click: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
+                      },
+                      [_vm._v("下一周")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _c(
+              "v-uni-view",
+              { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+              [
+                _vm._$g(11, "i")
+                  ? _c(
+                      "v-uni-view",
+                      { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+                      [
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+                          [_vm._v("上周总结")]
+                        ),
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+                          [_vm._v("目标完成情况")]
+                        ),
+                        _vm._l(_vm._$g(14, "f"), function(
+                          value,
+                          index,
+                          $21,
+                          $31
+                        ) {
+                          return [
+                            _c(
+                              "v-uni-view",
+                              {
+                                key: value["k0"],
+                                staticClass: _vm._$g("15-" + $31, "sc"),
+                                attrs: { _i: "15-" + $31 }
+                              },
+                              [
+                                _c("v-uni-textarea", {
+                                  staticClass: _vm._$g("16-" + $31, "sc"),
+                                  attrs: {
+                                    value: _vm._$g("16-" + $31, "a-value"),
+                                    _i: "16-" + $31
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
                                   }
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _c("v-uni-view", {
-                            staticClass: _vm._$g("44-" + $34, "sc"),
-                            class: _vm._$g("44-" + $34, "c"),
-                            attrs: { _i: "44-" + $34 },
+                                })
+                              ],
+                              1
+                            )
+                          ]
+                        }),
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                          [_vm._v("未完成目标的原因及障碍")]
+                        ),
+                        _vm._l(_vm._$g(18, "f"), function(
+                          value,
+                          index,
+                          $22,
+                          $32
+                        ) {
+                          return [
+                            _c(
+                              "v-uni-view",
+                              {
+                                key: value["k0"],
+                                staticClass: _vm._$g("19-" + $32, "sc"),
+                                attrs: { _i: "19-" + $32 }
+                              },
+                              [
+                                _c("v-uni-textarea", {
+                                  staticClass: _vm._$g("20-" + $32, "sc"),
+                                  attrs: {
+                                    value: _vm._$g("20-" + $32, "a-value"),
+                                    _i: "20-" + $32
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]
+                        }),
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
+                          [_vm._v("克服障碍的对策和方法")]
+                        ),
+                        _vm._l(_vm._$g(22, "f"), function(
+                          value,
+                          index,
+                          $23,
+                          $33
+                        ) {
+                          return [
+                            _c(
+                              "v-uni-view",
+                              {
+                                key: value["k0"],
+                                staticClass: _vm._$g("23-" + $33, "sc"),
+                                attrs: { _i: "23-" + $33 }
+                              },
+                              [
+                                _c("v-uni-textarea", {
+                                  staticClass: _vm._$g("24-" + $33, "sc"),
+                                  attrs: {
+                                    value: _vm._$g("24-" + $33, "a-value"),
+                                    _i: "24-" + $33
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]
+                        }),
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                          [_vm._v("本周创新与收获")]
+                        ),
+                        _vm._l(_vm._$g(26, "f"), function(
+                          value,
+                          index,
+                          $24,
+                          $34
+                        ) {
+                          return [
+                            _c(
+                              "v-uni-view",
+                              {
+                                key: value["k0"],
+                                staticClass: _vm._$g("27-" + $34, "sc"),
+                                attrs: { _i: "27-" + $34 }
+                              },
+                              [
+                                _c("v-uni-textarea", {
+                                  staticClass: _vm._$g("28-" + $34, "sc"),
+                                  attrs: {
+                                    value: _vm._$g("28-" + $34, "a-value"),
+                                    _i: "28-" + $34
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]
+                        })
+                      ],
+                      2
+                    )
+                  : _vm._e(),
+                _vm._$g(29, "i")
+                  ? _c(
+                      "v-uni-view",
+                      { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
+                      [
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+                          [
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g(31, "sc"),
+                                attrs: { _i: 31 }
+                              },
+                              [_vm._v("序号")]
+                            ),
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g(32, "sc"),
+                                attrs: { _i: 32 }
+                              },
+                              [
+                                _c(
+                                  "v-uni-view",
+                                  {
+                                    staticClass: _vm._$g(33, "sc"),
+                                    attrs: { _i: 33 }
+                                  },
+                                  [
+                                    _c("v-uni-text", { attrs: { _i: 34 } }, [
+                                      _vm._v("本周目标")
+                                    ])
+                                  ],
+                                  1
+                                ),
+                                _c(
+                                  "v-uni-view",
+                                  {
+                                    staticClass: _vm._$g(35, "sc"),
+                                    attrs: { _i: 35 }
+                                  },
+                                  [
+                                    _c("v-uni-view", { attrs: { _i: 36 } }, [
+                                      _vm._v("1.请在上周五的规划填写")
+                                    ]),
+                                    _c("v-uni-view", { attrs: { _i: 37 } }, [
+                                      _vm._v("2.按目标重要程度规划有限顺序")
+                                    ]),
+                                    _c("v-uni-view", { attrs: { _i: 38 } }, [
+                                      _vm._v("3.完成一项,在完成时限处打勾")
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g(39, "sc"),
+                                attrs: { _i: 39 }
+                              },
+                              [_vm._v("完成期限")]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._l(_vm._$g(40, "f"), function(
+                          value,
+                          index,
+                          $25,
+                          $35
+                        ) {
+                          return [
+                            _c(
+                              "v-uni-view",
+                              {
+                                key: value["k0"],
+                                staticClass: _vm._$g("41-" + $35, "sc"),
+                                attrs: { _i: "41-" + $35 }
+                              },
+                              [
+                                _c(
+                                  "v-uni-view",
+                                  {
+                                    staticClass: _vm._$g("42-" + $35, "sc"),
+                                    attrs: { _i: "42-" + $35 }
+                                  },
+                                  [_vm._v(_vm._$g("42-" + $35, "t0-0"))]
+                                ),
+                                _c(
+                                  "v-uni-view",
+                                  {
+                                    staticClass: _vm._$g("43-" + $35, "sc"),
+                                    attrs: { _i: "43-" + $35 }
+                                  },
+                                  [
+                                    _c("v-uni-textarea", {
+                                      staticClass: _vm._$g("44-" + $35, "sc"),
+                                      attrs: {
+                                        value: _vm._$g("44-" + $35, "a-value"),
+                                        _i: "44-" + $35
+                                      },
+                                      on: {
+                                        blur: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _c("v-uni-view", {
+                                  staticClass: _vm._$g("45-" + $35, "sc"),
+                                  class: _vm._$g("45-" + $35, "c"),
+                                  attrs: { _i: "45-" + $35 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]
+                        })
+                      ],
+                      2
+                    )
+                  : _vm._e()
+              ],
+              1
+            ),
+            _c(
+              "v-uni-view",
+              { staticClass: _vm._$g(46, "sc"), attrs: { _i: 46 } },
+              [
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(47, "sc"), attrs: { _i: 47 } },
+                  [_vm._v("广告位")]
+                ),
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(48, "sc"), attrs: { _i: 48 } },
+                  [
+                    _c(
+                      "v-uni-view",
+                      { staticClass: _vm._$g(49, "sc"), attrs: { _i: 49 } },
+                      [
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(50, "sc"), attrs: { _i: 50 } },
+                          [_vm._v("本周其他目标")]
+                        ),
+                        _c(
+                          "v-uni-view",
+                          { staticClass: _vm._$g(51, "sc"), attrs: { _i: 51 } },
+                          [
+                            _vm._v(
+                              "请注意规划你的生活，平衡你的人生，以下目标做到打'√',本周有特别的日子吗？请标注 (生日/节日/纪念日)"
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._l(_vm._$g(52, "f"), function(value, index, $26, $36) {
+                      return [
+                        _c(
+                          "v-uni-view",
+                          {
+                            key: value["k0"],
+                            staticClass: _vm._$g("53-" + $36, "sc"),
+                            attrs: { _i: "53-" + $36 }
+                          },
+                          [
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g("54-" + $36, "sc"),
+                                attrs: { _i: "54-" + $36 }
+                              },
+                              [_vm._v(_vm._$g("54-" + $36, "t0-0"))]
+                            ),
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g("55-" + $36, "sc"),
+                                attrs: { _i: "55-" + $36 }
+                              },
+                              [
+                                _c("v-uni-textarea", {
+                                  staticClass: _vm._$g("56-" + $36, "sc"),
+                                  attrs: {
+                                    value: _vm._$g("56-" + $36, "a-value"),
+                                    _i: "56-" + $36
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g("57-" + $36, "sc"),
+                                attrs: { _i: "57-" + $36 }
+                              },
+                              [
+                                _c("v-uni-view", {
+                                  class: _vm._$g("58-" + $36, "c"),
+                                  attrs: { _i: "58-" + $36 },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    })
+                  ],
+                  2
+                )
+              ],
+              1
+            ),
+            _c(
+              "v-uni-view",
+              { staticClass: _vm._$g(59, "sc"), attrs: { _i: 59 } },
+              [
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(60, "sc"), attrs: { _i: 60 } },
+                  [_vm._v("本周最想分享的三点")]
+                ),
+                _vm._l(_vm._$g(61, "f"), function(value, index, $27, $37) {
+                  return _vm._$g("61-" + $37, "i")
+                    ? [
+                        _c(
+                          "v-uni-view",
+                          {
+                            key: value["k0"],
+                            staticClass: _vm._$g("62-" + $37, "sc"),
+                            attrs: { _i: "62-" + $37 }
+                          },
+                          [
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g("63-" + $37, "sc"),
+                                attrs: { _i: "63-" + $37 }
+                              },
+                              [_vm._v(_vm._$g("63-" + $37, "t0-0"))]
+                            ),
+                            _c(
+                              "v-uni-view",
+                              {
+                                staticClass: _vm._$g("64-" + $37, "sc"),
+                                attrs: { _i: "64-" + $37 }
+                              },
+                              [
+                                _c("v-uni-textarea", {
+                                  attrs: {
+                                    value: _vm._$g("65-" + $37, "a-value"),
+                                    _i: "65-" + $37
+                                  },
+                                  on: {
+                                    blur: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    : _vm._e()
+                })
+              ],
+              2
+            )
+          ]
+        : [
+            _c(
+              "v-uni-view",
+              { staticClass: _vm._$g(67, "sc"), attrs: { _i: 67 } },
+              [
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(68, "sc"), attrs: { _i: 68 } },
+                  [
+                    _vm._l(_vm._$g(69, "f"), function(value, index, $28, $38) {
+                      return [
+                        _c(
+                          "v-uni-view",
+                          {
+                            key: value["k0"],
+                            class: _vm._$g("70-" + $38, "c"),
+                            attrs: { _i: "70-" + $38 },
                             on: {
                               click: function($event) {
                                 return _vm.$handleViewEvent($event)
                               }
                             }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  })
-                ],
-                2
-              )
-            : _vm._e()
-        ],
-        1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(45, "sc"), attrs: { _i: 45 } },
-        [
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(46, "sc"), attrs: { _i: 46 } },
-            [_vm._v("广告位")]
-          ),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(47, "sc"), attrs: { _i: 47 } },
-            [
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(48, "sc"), attrs: { _i: 48 } },
-                [
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(49, "sc"), attrs: { _i: 49 } },
-                    [_vm._v("本周其他目标")]
-                  ),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(50, "sc"), attrs: { _i: 50 } },
-                    [
-                      _vm._v(
-                        "请注意规划你的生活，平衡你的人生，以下目标做到打'√',本周有特别的日子吗？请标注 (生日/节日/纪念日)"
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._l(_vm._$g(51, "f"), function(value, index, $25, $35) {
-                return [
-                  _c(
-                    "v-uni-view",
-                    {
-                      key: value["k0"],
-                      staticClass: _vm._$g("52-" + $35, "sc"),
-                      attrs: { _i: "52-" + $35 }
-                    },
-                    [
-                      _c(
-                        "v-uni-view",
-                        {
-                          staticClass: _vm._$g("53-" + $35, "sc"),
-                          attrs: { _i: "53-" + $35 }
-                        },
-                        [_vm._v(_vm._$g("53-" + $35, "t0-0"))]
-                      ),
-                      _c(
-                        "v-uni-view",
-                        {
-                          staticClass: _vm._$g("54-" + $35, "sc"),
-                          attrs: { _i: "54-" + $35 }
-                        },
-                        [
-                          _c("v-uni-textarea", {
-                            staticClass: _vm._$g("55-" + $35, "sc"),
-                            attrs: {
-                              value: _vm._$g("55-" + $35, "a-value"),
-                              _i: "55-" + $35
-                            },
-                            on: {
-                              blur: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _c(
-                        "v-uni-view",
-                        {
-                          staticClass: _vm._$g("56-" + $35, "sc"),
-                          attrs: { _i: "56-" + $35 }
-                        },
-                        [
-                          _c("v-uni-view", {
-                            class: _vm._$g("57-" + $35, "c"),
-                            attrs: { _i: "57-" + $35 },
-                            on: {
-                              click: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ]
-              })
-            ],
-            2
-          )
-        ],
-        1
-      )
+                          },
+                          [_vm._v(_vm._$g("70-" + $38, "t0-0"))]
+                        )
+                      ]
+                    })
+                  ],
+                  2
+                ),
+                _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(71, "sc"), attrs: { _i: 71 } },
+                  [
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g(72, "sc"),
+                        attrs: { _i: 72 },
+                        on: {
+                          click: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
+                      },
+                      [_vm._v("上一周")]
+                    ),
+                    _c(
+                      "v-uni-view",
+                      { staticClass: _vm._$g(73, "sc"), attrs: { _i: 73 } },
+                      [
+                        _vm._v(
+                          _vm._$g(73, "t0-0") +
+                            "年 第" +
+                            _vm._$g(73, "t0-1") +
+                            "周"
+                        )
+                      ]
+                    ),
+                    _c(
+                      "v-uni-view",
+                      {
+                        staticClass: _vm._$g(74, "sc"),
+                        attrs: { _i: 74 },
+                        on: {
+                          click: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
+                      },
+                      [_vm._v("下一周")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]
     ],
-    1
+    2
   )
 }
 var recyclableRender = false
@@ -3278,19 +3477,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!F:/fwh/chengzhangriji-uniapp/pages/weekgoals/weekgoals.vue?vue&type=script&lang=js&mpType=page ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
-
-{
-
-  data: function data() {
-    return {
-      wxsProps: {} };
-
-  },
-  components: {} };exports.default = _default;
+throw new Error("Module build failed (from ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js):\nSyntaxError: Unexpected token, expected \",\" (359:4)\n    at Object.raise (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:7017:17)\n    at Object.unexpected (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8395:16)\n    at Object.expect (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8381:28)\n    at Object.parseObj (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9982:14)\n    at Object.parseExprAtom (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9616:28)\n    at Object.parseExprSubscripts (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9259:23)\n    at Object.parseMaybeUnary (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9239:21)\n    at Object.parseMaybeUnary (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6269:20)\n    at Object.parseExprOps (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9109:23)\n    at Object.parseMaybeConditional (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9082:23)\n    at Object.parseMaybeAssign (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9037:21)\n    at Object.parseMaybeAssign (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6216:20)\n    at Object.parseExpression (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8989:23)\n    at Object.parseReturnStatement (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11057:28)\n    at Object.parseStatementContent (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10738:21)\n    at Object.parseStatementContent (E:\\软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:5976:18)");
 
 /***/ }),
 /* 46 */
@@ -3339,7 +3528,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  background: #EFF3F6;\n}\n.tabbar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  background: #fff;\n  height: 50rpx;\n  padding: 7rpx 14rpx;\n  font-size: 15rpx;\n}\n.tabbar .weekTab {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 36rpx;\n  width: 252rpx;\n  border-radius: 5rpx;\n  color: #404040;\n  background: #f8f8f8;\n}\n.tabbar .weekTab > uni-view {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n}\n.tabbar .weekTab .on {\n  background: #2ECE94;\n  color: #fff;\n}\n.tabbar .week-change {\n  width: 378rpx;\n  height: 36rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  border-radius: 5rpx;\n}\n.tabbar .week-change .tab {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.tabbar .week-change .tab:nth-child(2) {\n  background: #f8f8f8;\n  color: #2ECE94;\n}\n.week {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  margin: 0 14rpx;\n}\n.week-left {\n  width: 221rpx;\n  border: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.week-left-item {\n  height: 54rpx;\n  border-bottom: 1rpx solid #1C5E55;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  box-sizing: border-box;\n}\n.week-left-item:nth-child(1),\n.week-left-item:nth-child(2) {\n  height: 40rpx;\n  background: #22705D;\n  box-sizing: border-box;\n  font-size: 13rpx;\n  color: #fff;\n}\n.week-left-item:nth-child(9),\n.week-left-item:nth-child(13),\n.week-left-item:nth-child(17) {\n  background: #22705D;\n  font-size: 13rpx;\n  box-sizing: border-box;\n  color: #fff;\n}\n.week-left-item:last-child {\n  border-bottom: 0rpx;\n}\n.week-left-item .mytext {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n}\n.week-right {\n  width: 491rpx;\n  border: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.week-right-title {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 80rpx;\n  background: #22705D;\n  font-size: 13rpx;\n  color: #fff;\n}\n.week-right-title .left {\n  width: 36rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.week-right-title .right {\n  width: 90rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.week-right-title .center {\n  width: 365rpx;\n  font-size: 15rpx;\n  border-left: 1rpx solid #1C5E55;\n  border-right: 1rpx solid #1C5E55;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  box-sizing: border-box;\n}\n.week-right-title .center .icon {\n  margin: 0 36rpx 0 26rpx;\n}\n.week-right-title .center .description {\n  font-size: 12rpx;\n}\n.week-right-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 54rpx;\n}\n.week-right-content:last-child .left,\n.week-right-content:last-child .right,\n.week-right-content:last-child .center {\n  border-bottom: 0rpx;\n}\n.week-right-content .left {\n  width: 36rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  font-size: 16rpx;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: 1rpx solid #1C5E55;\n}\n.week-right-content .right {\n  width: 90rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: 1rpx solid #1C5E55;\n}\n.week-right-content .center {\n  width: 365rpx;\n  box-sizing: border-box;\n  border: 1rpx solid #1C5E55;\n  border-top: 0rpx;\n}\n.week-right-content .center .mytext {\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  text-align: center;\n}\n.footer {\n  height: 241rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  margin: 9rpx 14rpx 0;\n}\n.footer-left {\n  width: 222rpx;\n  background: #2ECE94;\n  font-size: 49rpx;\n  color: #fff;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.footer-right {\n  width: 491rpx;\n  border: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.footer-right-title {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 79rpx;\n  background: #22705D;\n  font-size: 13rpx;\n  color: #fff;\n}\n.footer-right-title .title-left {\n  width: 126rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.footer-right-title .title-right {\n  width: 231rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 12rpx;\n}\n.footer-right-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 54rpx;\n}\n.footer-right-content .content-left {\n  width: 126rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: 1rpx solid #1C5E55;\n  font-size: 13rpx;\n  color: #1C5E55;\n  box-sizing: border-box;\n}\n.footer-right-content .content-center,\n.footer-right-content .content-right {\n  width: 182rpx;\n  border-bottom: 1rpx solid #1C5E55;\n  border-left: 1rpx solid #1C5E55;\n}\n.footer-right-content .content-center > uni-view,\n.footer-right-content .content-right > uni-view {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.footer-right-content .content-center .mytext,\n.footer-right-content .content-right .mytext {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "body {\n  background: #EFF3F6;\n}\n.tabbar {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  background: #fff;\n  height: 50rpx;\n  padding: 7rpx 14rpx;\n  font-size: 15rpx;\n}\n.tabbar .weekTab {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 36rpx;\n  width: 252rpx;\n  border-radius: 5rpx;\n  color: #404040;\n  background: #f8f8f8;\n}\n.tabbar .weekTab > uni-view {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n}\n.tabbar .weekTab .on {\n  background: #2ECE94;\n  color: #fff;\n}\n.tabbar .week-change {\n  width: 378rpx;\n  height: 36rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  border-radius: 5rpx;\n}\n.tabbar .week-change .tab {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.tabbar .week-change .tab:nth-child(2) {\n  background: #f8f8f8;\n  color: #2ECE94;\n}\n.week {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  margin: 0 14rpx;\n}\n.week-left {\n  width: 221rpx;\n  border: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.week-left-item {\n  height: 54rpx;\n  border-bottom: 1rpx solid #1C5E55;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  box-sizing: border-box;\n}\n.week-left-item:nth-child(1),\n.week-left-item:nth-child(2) {\n  height: 40rpx;\n  background: #22705D;\n  box-sizing: border-box;\n  font-size: 13rpx;\n  color: #fff;\n}\n.week-left-item:nth-child(9),\n.week-left-item:nth-child(13),\n.week-left-item:nth-child(17) {\n  background: #22705D;\n  font-size: 13rpx;\n  box-sizing: border-box;\n  color: #fff;\n}\n.week-left-item:last-child {\n  border-bottom: 0rpx;\n}\n.week-left-item .mytext {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n}\n.week-right {\n  width: 491rpx;\n  border: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.week-right-title {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 80rpx;\n  background: #22705D;\n  font-size: 13rpx;\n  color: #fff;\n}\n.week-right-title .left {\n  width: 36rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.week-right-title .right {\n  width: 90rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.week-right-title .center {\n  width: 365rpx;\n  font-size: 15rpx;\n  border-left: 1rpx solid #1C5E55;\n  border-right: 1rpx solid #1C5E55;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  box-sizing: border-box;\n}\n.week-right-title .center .icon {\n  margin: 0 36rpx 0 26rpx;\n}\n.week-right-title .center .description {\n  font-size: 12rpx;\n}\n.week-right-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 54rpx;\n}\n.week-right-content:last-child .left,\n.week-right-content:last-child .right,\n.week-right-content:last-child .center {\n  border-bottom: 0rpx;\n}\n.week-right-content .left {\n  width: 36rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  font-size: 16rpx;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: 1rpx solid #1C5E55;\n}\n.week-right-content .right {\n  width: 90rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: 1rpx solid #1C5E55;\n}\n.week-right-content .center {\n  width: 365rpx;\n  box-sizing: border-box;\n  border: 1rpx solid #1C5E55;\n  border-top: 0rpx;\n}\n.week-right-content .center .mytext {\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  text-align: center;\n}\n.footer {\n  height: 241rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n  margin: 9rpx 14rpx 0;\n}\n.footer-left {\n  width: 222rpx;\n  background: #2ECE94;\n  font-size: 49rpx;\n  color: #fff;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.footer-right {\n  width: 491rpx;\n  border: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.footer-right-title {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 79rpx;\n  background: #22705D;\n  font-size: 13rpx;\n  color: #fff;\n}\n.footer-right-title .title-left {\n  width: 126rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.footer-right-title .title-right {\n  width: 231rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 12rpx;\n}\n.footer-right-content {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 54rpx;\n}\n.footer-right-content .content-left {\n  width: 126rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  border-bottom: 1rpx solid #1C5E55;\n  font-size: 13rpx;\n  color: #1C5E55;\n  box-sizing: border-box;\n}\n.footer-right-content .content-center,\n.footer-right-content .content-right {\n  width: 182rpx;\n  border-bottom: 1rpx solid #1C5E55;\n  border-left: 1rpx solid #1C5E55;\n}\n.footer-right-content .content-center > uni-view,\n.footer-right-content .content-right > uni-view {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\n.footer-right-content .content-center .mytext,\n.footer-right-content .content-right .mytext {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n}\n.share {\n  margin: 9rpx 14rpx 0;\n  width: 722rpx;\n  border: 1rpx solid #1C5E55;\n}\n.share-top {\n  height: 40rpx;\n  background: #22705D;\n  font-size: 13rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #fff;\n  font-weight: bold;\n}\n.share-content {\n  height: 90rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\n.share-content-left {\n  width: 72rpx;\n  border-top: 1rpx solid #1C5E55;\n  font-size: 22rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  box-sizing: border-box;\n}\n.share-content-right {\n  width: 650rpx;\n  border-top: 1rpx solid #1C5E55;\n  border-left: 1rpx solid #1C5E55;\n  box-sizing: border-box;\n}\n.share-content-right uni-textarea {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

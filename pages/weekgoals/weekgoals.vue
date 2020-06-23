@@ -1,103 +1,143 @@
 <template>
 	<view>
-		<!-- 顶部tab栏 -->
-		<view class="tabbar">
-			<view class="weekTab">
-				<view class="on">周</view>
-				<view >天</view>
-			</view>
-			<view class="week-change">
-				<view class="tab" bind:tap="handleLastWeek">上一周</view>
-				<view class="tab">
-					{{year}}年 第{{week}}周
+		<!-- 显示周 -->
+		<block v-if="changeIndex==0">
+			<!-- 顶部tab栏 -->
+			<view class="tabbar">
+				<view class="weekTab">
+					<block v-for="(value,index) in weekDays" :key="value">
+					<view @tap="handleChangeTab(index)" :class="changeIndex===index?'on':''">{{value}}</view>
+					</block>
 				</view>
-				<view class="tab" bind:tap="handleNextWeek">下一周</view>
-			</view>
-		</view>
-
-		<!-- 表格数据部分 -->
-		<view class="week">
-			<!-- 左边表格 -->
-			<view class="week-left" v-if="update">
-				<view class="week-left-item">上周总结</view>
-				<view class="week-left-item">目标完成情况</view>
-				 <block v-for="(value,index) in weekPerformance" :key="Math.random()">
-						<view class="week-left-item">
-						<textarea class="mytext" :value="value.content" @blur="handleWeekPerformance($event,value)"></textarea>
+				<view class="week-change">
+					<view class="tab" @tap="handleLastWeek">上一周</view>
+					<view class="tab">
+						{{year}}年 第{{week}}周
 					</view>
-				</block>
-				<view class="week-left-item">未完成目标的原因及障碍</view>
-				<block v-for="(value,index) in reason" :key="Math.random()">
-					<view class="week-left-item">
-					<textarea class="mytext" @blur="handleReason($event,value)" :value="value.content"></textarea>
+					<view class="tab" @tap="handleNextWeek">下一周</view>
 				</view>
-				</block>
-				<view class="week-left-item">克服障碍的对策和方法</view>
-				<block v-for="(value,index) in service" :key="Math.random()">
-					<view class="week-left-item">
-					<textarea class="mytext" @blur="handleService($event,value)" :value="value.content"></textarea>
+			</view>
+
+			<!-- 表格数据部分 -->
+			<view class="week">
+				<!-- 左边表格 -->
+				<view class="week-left" v-if="update">
+					<view class="week-left-item">上周总结</view>
+					<view class="week-left-item">目标完成情况</view>
+					 <block v-for="(value,index) in weekPerformance" :key="Math.random()">
+							<view class="week-left-item">
+							<textarea class="mytext" :value="value.content" @blur="handleWeekPerformance($event,value)"></textarea>
+						</view>
+					</block>
+					<view class="week-left-item">未完成目标的原因及障碍</view>
+					<block v-for="(value,index) in reason" :key="Math.random()">
+						<view class="week-left-item">
+						<textarea class="mytext" @blur="handleReason($event,value)" :value="value.content"></textarea>
+					</view>
+					</block>
+					<view class="week-left-item">克服障碍的对策和方法</view>
+					<block v-for="(value,index) in service" :key="Math.random()">
+						<view class="week-left-item">
+						<textarea class="mytext" @blur="handleService($event,value)" :value="value.content"></textarea>
+					</view>
+					</block> 
+					<view class="week-left-item">本周创新与收获</view>
+					<block v-for="(value,index) in harvest" :key="index">
+						<view class="week-left-item">
+						<textarea class="mytext" @blur="handleHarvest($event,value)" :value="value.content"></textarea>
+					</view>
+					</block>
 				</view>
-				</block> 
-				<view class="week-left-item">本周创新与收获</view>
-				<block v-for="(value,index) in harvest" :key="index">
-					<view class="week-left-item">
-					<textarea class="mytext" @blur="handleHarvest($event,value)" :value="value.content"></textarea>
+				<!-- 右边表格 -->
+				<view class="week-right" v-if="update1">
+						<view class="week-right-title">
+							<view class="left">序号</view>
+							<view class="center">
+								<view class="icon">
+									<text>本周目标</text>
+								</view>
+								<view class="description">
+									<view>1.请在上周五的规划填写</view>
+									<view>2.按目标重要程度规划有限顺序</view>
+									<view>3.完成一项,在完成时限处打勾</view>
+								</view>
+							</view>
+							<view class="right">完成期限</view>
+						</view>
+						<block v-for="(value,index) in weeklyPlan" :key="index">
+							<view class="week-right-content">
+								<view class="left">{{index+1}}</view>
+								<view class="center">
+									<textarea class="mytext" :value="value.content" @blur="handleUpdatePlan($event,value)"></textarea>
+								</view>
+								<view class="right" :class="value.complete==true?'iconfont icon-zhengque':''" @tap="handleComplete(value)"></view>
+							</view>
+						</block>
+					</view>
+					
+			</view>
+				
+			<!-- 底部图片以及其他计划部分 -->
+			<view class="footer">
+				<view class="footer-left">广告位
+				</view>
+				<view class="footer-right">
+					<view class="footer-right-title">
+						<view class="title-left">本周其他目标</view>
+						<view class="title-right">
+							请注意规划你的生活，平衡你的人生，以下目标做到打'√',本周有特别的日子吗？请标注 (生日/节日/纪念日)
+						</view>
+					</view>
+					<block v-for="(value,index) in otherPlan" :key="value.type">
+					<view class="footer-right-content">
+						 <view class="content-left">{{value.type}}</view>
+						 <view class="content-center">
+							 <textarea class="mytext" :value="value.content" @blur="handleOtherPlan($event,value)"></textarea>
+						 </view>
+						<view class="content-right">
+							<view :class="value.complete==true?'iconfont icon-zhengque':''" @tap="handleOtherComplete(value)"></view>
+						</view>
+					</view>
+					</block>
+				</view>
+			</view>
+			
+			<!-- 分享部分 -->
+			<view class="share">
+				<view class="share-top">本周最想分享的三点</view>
+				<block v-if="update2" v-for="(value,index) in shareArray" :key="value.type">
+				<view class="share-content">
+					<view class="share-content-left">{{value.type}}</view>
+					<view class="share-content-right">
+						<textarea :value="value.content" @blur="handleShare($event,value)"></textarea>
+					</view>
 				</view>
 				</block>
 			</view>
-			<!-- 右边表格 -->
-			<view class="week-right" v-if="update1">
-			    <view class="week-right-title">
-			      <view class="left">序号</view>
-			      <view class="center">
-			        <view class="icon">
-			          <text>本周目标</text>
-			        </view>
-			        <view class="description">
-			          <view>1.请在上周五的规划填写</view>
-			          <view>2.按目标重要程度规划有限顺序</view>
-			          <view>3.完成一项,在完成时限处打勾</view>
-			        </view>
-			      </view>
-			      <view class="right">完成期限</view>
-			    </view>
-			    <block v-for="(value,index) in weeklyPlan" :key="index">
-			      <view class="week-right-content">
-			        <view class="left">{{index+1}}</view>
-			        <view class="center">
-			          <textarea class="mytext" :value="value.content" @blur="handleUpdatePlan($event,value)"></textarea>
-			        </view>
-			        <view class="right" :class="value.complete==true?'iconfont icon-zhengque':''" @tap="handleComplete(value)"></view>
-			      </view>
-			    </block>
-			  </view>
-				
-		</view>
 			
-		<!-- 底部图片以及其他计划部分 -->
-		  <view class="footer">
-		    <view class="footer-left">广告位
-		    </view>
-		    <view class="footer-right">
-		      <view class="footer-right-title">
-		        <view class="title-left">本周其他目标</view>
-		        <view class="title-right">
-		          请注意规划你的生活，平衡你的人生，以下目标做到打'√',本周有特别的日子吗？请标注 (生日/节日/纪念日)
-		        </view>
-		      </view>
-		      <block v-for="(value,index) in otherPlan" :key="value.type">
-		      <view class="footer-right-content">
-		         <view class="content-left">{{value.type}}</view>
-		         <view class="content-center">
-		           <textarea class="mytext" :value="value.content" @blur="handleOtherPlan($event,value)"></textarea>
-		         </view>
-		        <view class="content-right">
-		          <view :class="value.complete==true?'iconfont icon-zhengque':''" @tap="handleOtherComplete(value)"></view>
-		        </view>
-		      </view>
-		      </block>
-		    </view>
-		  </view>
+		</block>
+		
+		<!-- 显示天 -->
+		<block v-else>
+			<!-- 顶部tabbar -->
+			<view class="tabbar">
+				<view class="weekTab">
+					<block v-for="(value,index) in weekDays" :key="value">
+					<view @tap="handleChangeTab(index)" :class="changeIndex===index?'on':''">{{value}}</view>
+					</block>
+				</view>
+				<view class="week-change">
+					<view class="tab" @tap="handleLastWeek">上一周</view>
+					<view class="tab">
+						{{year}}年 第{{week}}周
+					</view>
+					<view class="tab" @tap="handleNextWeek">下一周</view>
+				</view>
+			</view>
+			
+			
+		</block>
+		
 		
 	</view>
 </template>
@@ -107,6 +147,7 @@
 	export default {
 		data() {
 			return {
+				weekDays:['周','天'],
 				weekPerformance: [{
 						content: '',
 						type: '目标完成情况',
@@ -277,15 +318,122 @@
 						complete: false
 					}
 				],
+				shareArray:[
+				      {
+				        type:'1',
+				        content:''
+				      },
+				      {
+				        type:'2',
+				        content:''
+				      },
+				      {
+				        type:'3',
+				        content:''
+				      },
+				    ],
+				weekDate:[
+					{
+						name:'周一',
+						type:1
+					},{
+						name:'周二',
+						type:2
+					},{
+						name:'周三',
+						type:3
+					},{
+						name:'周四',
+						type:4
+					},{
+						name:'周五',
+						type:5
+					},{
+						name:'周六',
+						type:6
+					},{
+						name:'周日',
+						type:7
+					},
+				]
 				week: 0,
 				year: new Date().getFullYear(),
 				time: new Date().getTime(),
 				update:true,
-				update1:true
+				update1:true,
+				update2:true,
+				changeIndex:0
 			};
 		},
 		methods:{
 			
+		// 切换周--天
+		async handleChangeTab(index){
+			this.changeIndex=index
+			if(index==0){
+				this.getWeeklyTarget()
+				this.getWeeklySummary()
+			}else{
+				
+			}
+		},
+		
+		
+			
+		// 下一周
+		handleNextWeek(){
+				if (this.week + 1 === 53) {
+					this.week = 1
+					this.year++
+				}else{
+					this.week++
+				}
+				this.time=this.time+60*60*24*7*1000
+				this.getWeeklyTarget()
+				this.getWeeklySummary()
+		},
+			
+		// 上一周
+		handleLastWeek(){
+			if (this.week - 1 === 0) {
+				this.week = 52
+				this.year--
+			}else{
+				this.week--
+			}
+			this.time=this.time-60*60*24*7*1000
+			this.getWeeklyTarget()
+			this.getWeeklySummary()
+		},
+		
+		// 分享数据更新
+		async handleShare(e,value2){
+			let {value}=e.detail
+			let data={
+				content:value,
+				type:value2.type,
+				timeSign:+('' + this.year + this.week),
+				userid:uni.getStorageSync('userID')
+			}
+			if(value2.id){
+				data.id=value2.id
+			}
+			let res= await myAxios({
+				method:'post',
+				url:'/anonymous/updateShare',
+				data
+			})
+			if(res.data.statusCode==200){
+				this.getSharePlan()
+			}else{
+				uni.showToast({
+					title:'更新数据失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+		},
+		
 		// 其他目标更新
 		async handleOtherComplete(value){
 			let data = {
@@ -531,6 +679,39 @@
 			let beginDate = new Date(date.getFullYear(), 0, 1);
 			let week = Math.ceil((parseInt((date - beginDate) / (24 * 60 * 60 * 1000)) + 1 + beginDate.getDay()) / 7);
 			this.week=week
+		},
+		
+		// 获取分享数据
+		async getSharePlan(){
+			this.update2=false
+			let data={
+				timeSign: +('' + this.year + this.week),
+				userid:uni.getStorageSync('userID')
+			}
+			let res=await myAxios({
+				method:'post',
+				url:'/anonymous/queryShare',
+				data
+			})
+			console.log(res)
+			if(res.data.statusCode==200&&res.data.result){
+				let {result}=res.data
+				result.forEach(v=>{
+					this.shareArray.forEach((value,index)=>{
+						if(v.type===value.type){
+							this.shareArray[index]=v
+						}
+					})
+				})
+				console.log(this.shareArray)
+			}else{
+				uni.showToast({
+					title:'获取分享数据失败,请重试',
+					icon:'none',
+					duration:500
+				})
+			}
+			this.update2=true
 		},
 		
 		// 获取周目标数据
@@ -799,6 +980,7 @@
 			this.getWeek()
 			this.getWeeklySummary()
 			this.getWeeklyTarget()
+			this.getSharePlan()
 		}
 	}
 </script>
@@ -1036,5 +1218,44 @@ page{
       }
     }
   }
+}
+.share{
+	margin: 9rpx 14rpx 0;
+	width: 722rpx;
+	border: 1rpx solid #1C5E55;
+	&-top{
+		height: 40rpx;
+		background: #22705D;
+		font-size: 13rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		font-weight: bold;
+	}
+	&-content{
+		height: 90rpx;
+		display: flex;
+		&-left{
+			width: 72rpx;
+			border-top: 1rpx solid #1C5E55;
+			font-size: 22rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+		}
+		&-right{
+			width: 650rpx;
+			border-top: 1rpx solid #1C5E55;
+			border-left: 1rpx solid #1C5E55;
+			box-sizing: border-box;
+			textarea{
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+		}
+	}
 }
 </style>
