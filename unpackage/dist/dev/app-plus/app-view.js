@@ -273,145 +273,211 @@ var render = function() {
             ],
             2
           ),
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-            [
-              _c(
+          _vm._$g(12, "i")
+            ? _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+                { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
                 [
                   _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                    { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
                     [
-                      _c("v-uni-view", { attrs: { _i: 15 } }, [_vm._v("姓名")]),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
-                        [_vm._v(_vm._$g(16, "t0-0"))]
+                        { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                        [
+                          _c("v-uni-view", { attrs: { _i: 15 } }, [
+                            _vm._v("姓名")
+                          ]),
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(16, "sc"),
+                              attrs: { _i: 16 }
+                            },
+                            [_vm._v(_vm._$g(16, "t0-0"))]
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                        [
+                          _c("v-uni-view", { attrs: { _i: 18 } }, [
+                            _vm._v("手机")
+                          ]),
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(19, "sc"),
+                              attrs: { _i: 19 }
+                            },
+                            [_vm._v(_vm._$g(19, "t0-0"))]
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
                   ),
                   _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                    { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
                     [
-                      _c("v-uni-view", { attrs: { _i: 18 } }, [_vm._v("手机")]),
+                      _c("v-uni-view", { attrs: { _i: 21 } }, [_vm._v("单位")]),
+                      _c("v-uni-view", { attrs: { _i: 22 } }, [
+                        _vm._v(_vm._$g(22, "t0-0"))
+                      ])
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                    [
+                      _c("v-uni-view", { attrs: { _i: 24 } }, [_vm._v("地址")]),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
-                        [_vm._v("13012345678")]
+                        { attrs: { _i: 25 } },
+                        [
+                          _c("v-uni-textarea", {
+                            attrs: { value: _vm._$g(26, "a-value"), _i: 26 },
+                            on: {
+                              blur: function($event) {
+                                return _vm.$handleViewEvent($event)
+                              }
+                            }
+                          })
+                        ],
+                        1
                       )
                     ],
                     1
-                  )
-                ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
-                [
-                  _c("v-uni-view", { attrs: { _i: 21 } }, [_vm._v("单位")]),
-                  _c("v-uni-view", { attrs: { _i: 22 } }, [
-                    _vm._v("广州樊文花化妆品有限公司")
-                  ])
-                ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
-                [
-                  _c("v-uni-view", { attrs: { _i: 24 } }, [_vm._v("地址")]),
-                  _c("v-uni-view", { attrs: { _i: 25 } }, [
-                    _vm._v("广州珠江新城K11管理服务中心")
-                  ])
-                ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-                [
+                  ),
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
                     [
-                      _c("v-uni-view", {
-                        staticClass: _vm._$g(28, "sc"),
-                        attrs: { _i: 28 }
-                      }),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                        [_vm._v("12123456890")]
+                        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
+                        [
+                          _c("v-uni-view", {
+                            staticClass: _vm._$g(29, "sc"),
+                            attrs: { _i: 29 }
+                          }),
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(30, "sc"),
+                              attrs: { _i: 30 }
+                            },
+                            [
+                              _c("v-uni-textarea", {
+                                attrs: {
+                                  value: _vm._$g(31, "a-value"),
+                                  _i: 31
+                                },
+                                on: {
+                                  blur: function($event) {
+                                    return _vm.$handleViewEvent($event)
+                                  }
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _c(
+                        "v-uni-view",
+                        { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
+                        [
+                          _c("v-uni-view", {
+                            staticClass: _vm._$g(33, "sc"),
+                            attrs: { _i: 33 }
+                          }),
+                          _c(
+                            "v-uni-view",
+                            {
+                              staticClass: _vm._$g(34, "sc"),
+                              attrs: { _i: 34 }
+                            },
+                            [
+                              _c("v-uni-textarea", {
+                                attrs: {
+                                  value: _vm._$g(35, "a-value"),
+                                  _i: 35
+                                },
+                                on: {
+                                  blur: function($event) {
+                                    return _vm.$handleViewEvent($event)
+                                  }
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
                   ),
                   _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+                    { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
                     [
                       _c("v-uni-view", {
-                        staticClass: _vm._$g(31, "sc"),
-                        attrs: { _i: 31 }
+                        staticClass: _vm._$g(37, "sc"),
+                        attrs: { _i: 37 }
                       }),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
-                        [_vm._v("13012345678")]
+                        { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
+                        [
+                          _c("v-uni-textarea", {
+                            attrs: { value: _vm._$g(39, "a-value"), _i: 39 },
+                            on: {
+                              blur: function($event) {
+                                return _vm.$handleViewEvent($event)
+                              }
+                            }
+                          })
+                        ],
+                        1
                       )
                     ],
                     1
                   )
                 ],
                 1
-              ),
-              _c(
-                "v-uni-view",
-                { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
-                [
-                  _c("v-uni-view", {
-                    staticClass: _vm._$g(34, "sc"),
-                    attrs: { _i: 34 }
-                  }),
-                  _c(
-                    "v-uni-view",
-                    { staticClass: _vm._$g(35, "sc"), attrs: { _i: 35 } },
-                    [_vm._v("12345333333333336890")]
-                  )
-                ],
-                1
               )
-            ],
-            1
-          )
+            : _vm._e()
         ],
         1
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
+        { staticClass: _vm._$g(40, "sc"), attrs: { _i: 40 } },
         [
-          _vm._l(_vm._$g(37, "f"), function(v, i, $20, $30) {
+          _vm._l(_vm._$g(41, "f"), function(v, i, $20, $30) {
             return [
               _c(
                 "v-uni-view",
                 {
                   key: v["k0"],
-                  staticClass: _vm._$g("38-" + $30, "sc"),
-                  attrs: { _i: "38-" + $30 },
+                  staticClass: _vm._$g("42-" + $30, "sc"),
+                  attrs: { _i: "42-" + $30 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
                     }
                   }
                 },
-                [_vm._v(_vm._$g("38-" + $30, "t0-0"))]
+                [_vm._v(_vm._$g("42-" + $30, "t0-0"))]
               )
             ]
           })
@@ -515,7 +581,7 @@ exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-exports.push([module.i, "body[data-v-2be84a3c] {\n  background: #EFF3F6;\n}\nbody .index[data-v-2be84a3c] {\n  color: #219d9c;\n  font-size: 22rpx;\n}\nbody .index-top[data-v-2be84a3c] {\n  height: 271rpx;\n  width: 100%;\n  overflow: hidden;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #fff;\n  position: relative;\n}\nbody .index-top .img[data-v-2be84a3c] {\n  position: absolute;\n  right: 0rpx;\n  bottom: 0rpx;\n  height: 391rpx;\n  width: 300rpx;\n}\nbody .index-top .img uni-image[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 80rpx;\n  right: -20rpx;\n}\nbody .index-header[data-v-2be84a3c] {\n  width: 190rpx;\n  height: 30rpx;\n  margin: 14rpx 0 0;\n}\nbody .index-title[data-v-2be84a3c] {\n  width: 302rpx;\n  height: 60rpx;\n  font-size: 43rpx;\n  margin-top: 8rpx;\n  font-weight: bold;\n}\nbody .index .card[data-v-2be84a3c] {\n  position: relative;\n  width: 476rpx;\n  height: 615rpx;\n  margin: -124rpx auto 0;\n  z-index: 2;\n  border-radius: 7rpx;\n  border-bottom: 16rpx solid #5FAE89;\n  box-sizing: border-box;\n  box-shadow: 0px 5rpx 11rpx rgba(0, 0, 0, 0.16);\n  overflow: hidden;\n  background: #fff;\n}\nbody .index .card .bg[data-v-2be84a3c] {\n  height: 197rpx;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n  background-size: 100% 100%;\n}\nbody .index .card .bg .userAvatar[data-v-2be84a3c] {\n  width: 157rpx;\n  height: 203rpx;\n  position: absolute;\n  background: #fff;\n  top: 52rpx;\n  left: 50%;\n  border-radius: 7rpx;\n  overflow: hidden;\n  -webkit-transform: translate(-50%);\n          transform: translate(-50%);\n  -webkit-writing-mode: vertical-lr;\n          writing-mode: vertical-lr;\n}\nbody .index .card .bg .userAvatar uni-button[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  color: #5FAE89;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .card .bg uni-image[data-v-2be84a3c] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  width: 157rpx;\n}\nbody .index .btns[data-v-2be84a3c] {\n  width: 200rpx;\n  height: 280rpx;\n  margin: 60rpx auto;\n  border: 1rpx dashed #000;\n  border-radius: 20rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .btns uni-button[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  margin: 0;\n  padding: 0;\n  background: rgba(255, 255, 255, 0);\n  font-size: 28rpx;\n  font-weight: normal;\n  color: inherit;\n}\nbody .index .userInfo[data-v-2be84a3c] {\n  margin-top: 93rpx;\n  margin-left: 47rpx;\n  font-size: 14rpx;\n  color: #AFB5B3;\n}\nbody .index .userInfo > uni-view[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  margin-bottom: 27rpx;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .userInfo .item > uni-view[data-v-2be84a3c]:first-child {\n  width: 30rpx;\n}\nbody .index .userInfo .item > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  font-size: 22rpx;\n  color: #257065;\n}\nbody .index .userInfo .user-name[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .user-name > uni-view[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .user-name > uni-view > uni-view[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .userInfo .user-name > uni-view > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  width: 150rpx;\n  font-size: 22rpx;\n  color: #257065;\n}\nbody .index .userInfo .item-qq[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .item-qq .qq[data-v-2be84a3c],\nbody .index .userInfo .item-qq .wechat[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .item-qq .qq > uni-view uni-image[data-v-2be84a3c],\nbody .index .userInfo .item-qq .wechat > uni-view uni-image[data-v-2be84a3c] {\n  width: 100%;\n}\nbody .index .userInfo .item-qq .qq > uni-view[data-v-2be84a3c]:first-child,\nbody .index .userInfo .item-qq .wechat > uni-view[data-v-2be84a3c]:first-child {\n  font-size: 30rpx;\n  width: 30rpx;\n  height: 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #93D8AA;\n}\nbody .index .userInfo .item-qq .qq > uni-view[data-v-2be84a3c]:last-child,\nbody .index .userInfo .item-qq .wechat > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  width: 150rpx;\n  font-size: 22rpx;\n  color: #257065;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n}\nbody .index .userInfo .email[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .email > uni-view[data-v-2be84a3c]:first-child {\n  width: 30rpx;\n  height: 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  font-size: 30rpx;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #93D8AA;\n}\nbody .index .userInfo .email > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  font-size: 22rpx;\n  color: #257065;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n}\nbody .index .user-dream[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 66rpx;\n  margin: 73rpx 49rpx 0;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\nbody .index .user-dream-item[data-v-2be84a3c] {\n  width: 130rpx;\n  background: #2bc24e;\n  border-radius: 7rpx;\n  box-shadow: 0rpx 10rpx 10rpx rgba(43, 194, 78, 0.5);\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 22rpx;\n  color: #FFFFFF;\n  font-weight: bold;\n}\nbody .index .user-dream-item[data-v-2be84a3c]:nth-child(2) {\n  background: #81cf45;\n  box-shadow: 0rpx 10rpx 10rpx rgba(129, 207, 69, 0.5);\n}\nbody .index .user-dream-item[data-v-2be84a3c]:nth-child(3) {\n  background: #2bc2bd;\n  box-shadow: 0rpx 10rpx 10rpx rgba(43, 194, 189, 0.5);\n}\nbody .index .user-dream-item[data-v-2be84a3c]:nth-child(4) {\n  background: #2e9cef;\n  box-shadow: 0rpx 10rpx 10rpx rgba(46, 156, 239, 0.5);\n}\n", ""]);
+exports.push([module.i, "body[data-v-2be84a3c] {\n  background: #EFF3F6;\n}\nbody .index[data-v-2be84a3c] {\n  color: #219d9c;\n  font-size: 20rpx;\n}\nbody .index-top[data-v-2be84a3c] {\n  height: 271rpx;\n  width: 100%;\n  overflow: hidden;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #fff;\n  position: relative;\n}\nbody .index-top .img[data-v-2be84a3c] {\n  position: absolute;\n  right: 0rpx;\n  bottom: 0rpx;\n  height: 391rpx;\n  width: 300rpx;\n}\nbody .index-top .img uni-image[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 80rpx;\n  right: -20rpx;\n}\nbody .index-header[data-v-2be84a3c] {\n  width: 190rpx;\n  height: 30rpx;\n  margin: 14rpx 0 0;\n}\nbody .index-title[data-v-2be84a3c] {\n  width: 302rpx;\n  height: 60rpx;\n  font-size: 43rpx;\n  margin-top: 8rpx;\n  font-weight: bold;\n}\nbody .index .card[data-v-2be84a3c] {\n  position: relative;\n  width: 476rpx;\n  height: 615rpx;\n  margin: -124rpx auto 0;\n  z-index: 2;\n  border-radius: 7rpx;\n  border-bottom: 16rpx solid #5FAE89;\n  box-sizing: border-box;\n  box-shadow: 0px 5rpx 11rpx rgba(0, 0, 0, 0.16);\n  overflow: hidden;\n  background: #fff;\n}\nbody .index .card .bg[data-v-2be84a3c] {\n  height: 197rpx;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n  background-size: 100% 100%;\n}\nbody .index .card .bg .userAvatar[data-v-2be84a3c] {\n  width: 157rpx;\n  height: 203rpx;\n  position: absolute;\n  background: #fff;\n  top: 52rpx;\n  left: 50%;\n  border-radius: 7rpx;\n  overflow: hidden;\n  -webkit-transform: translate(-50%);\n          transform: translate(-50%);\n  -webkit-writing-mode: vertical-lr;\n          writing-mode: vertical-lr;\n}\nbody .index .card .bg .userAvatar uni-button[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  color: #5FAE89;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .card .bg uni-image[data-v-2be84a3c] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  width: 157rpx;\n}\nbody .index .btns[data-v-2be84a3c] {\n  width: 200rpx;\n  height: 280rpx;\n  margin: 60rpx auto;\n  border: 1rpx dashed #000;\n  border-radius: 20rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .btns uni-button[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  margin: 0;\n  padding: 0;\n  background: rgba(255, 255, 255, 0);\n  font-size: 28rpx;\n  font-weight: normal;\n  color: inherit;\n}\nbody .index .userInfo[data-v-2be84a3c] {\n  margin-top: 93rpx;\n  margin-left: 47rpx;\n  font-size: 14rpx;\n  color: #AFB5B3;\n}\nbody .index .userInfo > uni-view[data-v-2be84a3c] {\n  height: 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  margin-bottom: 27rpx;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .userInfo .item > uni-view[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n}\nbody .index .userInfo .item > uni-view uni-textarea[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  font-size: 22rpx;\n  text-align: left;\n}\nbody .index .userInfo .item > uni-view[data-v-2be84a3c]:first-child {\n  width: 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .userInfo .item > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  font-size: 20rpx;\n  color: #257065;\n}\nbody .index .userInfo .user-name[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .user-name > uni-view[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .user-name > uni-view > uni-view[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n}\nbody .index .userInfo .user-name > uni-view > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  width: 150rpx;\n  font-size: 20rpx;\n  color: #257065;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n}\nbody .index .userInfo .item-qq[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .item-qq .qq[data-v-2be84a3c],\nbody .index .userInfo .item-qq .wechat[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n}\nbody .index .userInfo .item-qq .qq > uni-view uni-image[data-v-2be84a3c],\nbody .index .userInfo .item-qq .wechat > uni-view uni-image[data-v-2be84a3c] {\n  width: 100%;\n}\nbody .index .userInfo .item-qq .qq > uni-view[data-v-2be84a3c]:first-child,\nbody .index .userInfo .item-qq .wechat > uni-view[data-v-2be84a3c]:first-child {\n  font-size: 30rpx;\n  width: 30rpx;\n  height: 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #93D8AA;\n}\nbody .index .userInfo .item-qq .qq > uni-view[data-v-2be84a3c]:last-child,\nbody .index .userInfo .item-qq .wechat > uni-view[data-v-2be84a3c]:last-child {\n  margin-left: 11rpx;\n  width: 150rpx;\n  color: #257065;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n}\nbody .index .userInfo .item-qq .qq > uni-view:last-child uni-textarea[data-v-2be84a3c],\nbody .index .userInfo .item-qq .wechat > uni-view:last-child uni-textarea[data-v-2be84a3c] {\n  width: 100%;\n  height: 100%;\n  font-size: 20rpx;\n  text-align: left;\n}\nbody .index .userInfo .email[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 30rpx;\n}\nbody .index .userInfo .email > uni-view[data-v-2be84a3c]:first-child {\n  width: 30rpx;\n  height: 30rpx;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  font-size: 30rpx;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  color: #93D8AA;\n}\nbody .index .userInfo .email > uni-view[data-v-2be84a3c]:last-child {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n          flex: 1;\n  height: 30rpx;\n  margin-left: 11rpx;\n  font-size: 20rpx;\n  color: #257065;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n          flex-wrap: wrap;\n}\nbody .index .userInfo .email > uni-view:last-child uni-textarea[data-v-2be84a3c] {\n  height: 100%;\n  width: 100%;\n  font-size: 20rpx;\n  text-align: left;\n}\nbody .index .user-dream[data-v-2be84a3c] {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  height: 66rpx;\n  margin: 73rpx 49rpx 0;\n  -webkit-box-pack: justify;\n  -webkit-justify-content: space-between;\n          justify-content: space-between;\n}\nbody .index .user-dream-item[data-v-2be84a3c] {\n  width: 130rpx;\n  background: #2bc24e;\n  border-radius: 7rpx;\n  box-shadow: 0rpx 10rpx 10rpx rgba(43, 194, 78, 0.5);\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n          justify-content: center;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n          align-items: center;\n  font-size: 22rpx;\n  color: #FFFFFF;\n  font-weight: bold;\n}\nbody .index .user-dream-item[data-v-2be84a3c]:nth-child(2) {\n  background: #81cf45;\n  box-shadow: 0rpx 10rpx 10rpx rgba(129, 207, 69, 0.5);\n}\nbody .index .user-dream-item[data-v-2be84a3c]:nth-child(3) {\n  background: #2bc2bd;\n  box-shadow: 0rpx 10rpx 10rpx rgba(43, 194, 189, 0.5);\n}\nbody .index .user-dream-item[data-v-2be84a3c]:nth-child(4) {\n  background: #2e9cef;\n  box-shadow: 0rpx 10rpx 10rpx rgba(46, 156, 239, 0.5);\n}\n", ""]);
 // Exports
 module.exports = exports;
 

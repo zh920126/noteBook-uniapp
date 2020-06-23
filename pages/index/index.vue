@@ -23,38 +23,46 @@
 				</block>
 			</view>
 			
-			<view class="userInfo">
+			<view class="userInfo" v-if="update">
 			      <view class="user-name">
 			        <view class="user-name-title">
 			          <view>姓名</view>
-			          <view class="name">{{userInfo.nickName}}</view>
+			          <view class="name">{{userInfo.name}}</view>
 			        </view>
 			        <view class="user-name-phone">
 			          <view>手机</view>
-			          <view class="name">13012345678</view>
+			          <view class="name">{{userInfo.mobile}}</view>
 			        </view>
 			      </view>
 			      <view class="item">
 			        <view>单位</view>
-			        <view>广州樊文花化妆品有限公司</view>
+			        <view>{{userInfo.component}}</view>
 			      </view>
 			      <view class="item">
 			        <view>地址</view>
-			        <view>广州珠江新城K11管理服务中心</view>
+			        <view>
+								<textarea :value="userInfo.address" @blur="handleUserAddress($event,userInfo)"></textarea>
+							</view>
 			      </view>
 			      <view class="item-qq">
 			        <view class="qq">
 			          <view class="iconfont icon-QQ"></view>
-			          <view class="name">12123456890</view>
+			          <view class="name">
+									<textarea :value="userInfo.qqNumber" @blur="handleUserQQ($event,userInfo)"/>
+								</view>
 			        </view>
 			        <view class="wechat">
 			          <view class="iconfont icon-weixin"></view>
-			          <view class="name">13012345678</view>
+			          <view class="name">
+									<textarea :value="userInfo.wechatNumber" @blur="handleUserWechat($event,userInfo)"/>
+								</view>
 			        </view>
 			      </view>
 			      <view class="email">
 			          <view class="iconfont icon-email"></view>
-			          <view class="name">12345333333333336890</view>
+			          <view class="email-des">
+									<textarea :value="userInfo.email" @blur="handleUserEmail($event,userInfo)"/>
+								</view>
 			      </view>
 			</view>
 			
@@ -69,6 +77,7 @@
 </template>
 
 <script>
+	import {myAxios} from '../../utils/myAxios.js'
 	export default {
 		data() {
 			return {
@@ -89,13 +98,159 @@
 						url: '/pages/weekgoals/weekgoals'
 					}
 				],
-				userInfo: uni.getStorageInfoSync('userInfo') || {}
+				userInfo: uni.getStorageInfoSync('userInfo').name || {
+					name:'樊文花',
+					mobile:'130123456789',
+					component:'广州樊文花化妆品有限公司',
+					address:'珠江新城K11管理中心',
+					qqNumber:123456789012,
+					wechatNumber:'1212121212121',
+					email:'12121212@163.com'
+				},
+				update:true
 			}
 		},
 		onLoad(options) {
 			console.log(options)
+			this.getUserInfo()
 		},
 		methods: {
+			// 更新用户邮箱
+			async handleUserEmail(e,value2){
+				let {value}=e.detail
+				let data={
+					address:value2.address,
+					email:value,
+					mobile:value2.mobile,
+					name:value2.name,
+					qqNumber:value2.qqNumber,
+					wechatNumber:value2.wechatNumber,
+					userid:uni.getStorageSync('userID')
+				}
+				let res=await myAxios({
+					method:'psot',
+					url:'/anonymous/updateUserInfo',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.getUserInfo()
+				}else{
+					uni.showToast({
+						title:'更新失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 更新用户wechat
+			async handleUserWechat(e,value2){
+				let {value}=e.detail
+				let data={
+					address:value2.address,
+					email:value2.email,
+					mobile:value2.mobile,
+					name:value2.name,
+					qqNumber:value2.qqNumber,
+					wechatNumber:value,
+					userid:uni.getStorageSync('userID')
+				}
+				let res=await myAxios({
+					method:'psot',
+					url:'/anonymous/updateUserInfo',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.getUserInfo()
+				}else{
+					uni.showToast({
+						title:'更新失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 更新用户QQ
+			async handleUserQQ(e,value2){
+				let {value}=e.detail
+				let data={
+					address:value2.address,
+					email:value2.email,
+					mobile:value2.mobile,
+					name:value2.name,
+					qqNumber:value,
+					wechatNumber:value2.wechatNumber,
+					userid:uni.getStorageSync('userID')
+				}
+				let res=await myAxios({
+					method:'psot',
+					url:'/anonymous/updateUserInfo',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.getUserInfo()
+				}else{
+					uni.showToast({
+						title:'更新失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 更新用户地址
+			async handleUserAddress(e,value2){
+				let {value}=e.detail
+				let data={
+					address:value,
+					email:value2.email,
+					mobile:value2.mobile,
+					name:value2.name,
+					qqNumber:value2.qqNumber,
+					wechatNumber:value2.wechatNumber,
+					userid:uni.getStorageSync('userID')
+				}
+				let res=await myAxios({
+					method:'psot',
+					url:'/anonymous/updateUserInfo',
+					data
+				})
+				if(res.data.statusCode==200){
+					this.getUserInfo()
+				}else{
+					uni.showToast({
+						title:'更新失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 获取用户信息
+			async getUserInfo(){
+				this.update=false
+				let res= await myAxios({
+					method:'post',
+					url:'/anonymous/queryUserInfo',
+					data:{
+						code:'123',
+						userid:uni.getStorageSync('userID')
+					}
+				})
+				if(res.data.statusCode==200){
+					this.userInfo=res.data.result
+				}else{
+					uni.showToast({
+						title:'获取用户信息失败,请重试',
+						icon:'none',
+						duration:500
+					})
+				}
+				this.update=true
+			},
+			
+			// 路由跳转
 			goToelsePage(v){
 				console.log(v)
 				uni.navigateTo({
@@ -111,7 +266,7 @@
 		background: #EFF3F6;
 	.index {
 		color: #219d9c;
-		font-size: 22rpx;
+		font-size: 20rpx;
 
 		&-top {
 			height: 271rpx;
@@ -238,6 +393,7 @@
 			color: #AFB5B3;
 
 			&>view {
+				height: 30rpx;
 				display: flex;
 				margin-bottom: 27rpx;
 				align-items: center;
@@ -245,13 +401,23 @@
 
 			.item {
 				&>view {
+					width: 100%;
+					height: 100%;
+					textarea{
+						width: 100%;
+						height: 100%;
+						font-size: 22rpx;
+						text-align: left;
+					}
 					&:first-child {
 						width: 30rpx;
+						display: flex;
+						align-items: center;
 					}
 
 					&:last-child {
 						margin-left: 11rpx;
-						font-size: 22rpx;
+						font-size: 20rpx;
 						color: #257065;
 					}
 				}
@@ -259,7 +425,7 @@
 
 			.user-name {
 				display: flex;
-
+				
 				&>view {
 					display: flex;
 
@@ -270,8 +436,10 @@
 						&:last-child {
 							margin-left: 11rpx;
 							width: 150rpx;
-							font-size: 22rpx;
+							font-size: 20rpx;
 							color: #257065;
+							display: flex;
+							flex-wrap: wrap;
 						}
 					}
 				}
@@ -301,10 +469,15 @@
 						&:last-child {
 							margin-left: 11rpx;
 							width: 150rpx;
-							font-size: 22rpx;
 							color: #257065;
 							display: flex;
 							flex-wrap: wrap;
+							textarea{
+								width: 100%;
+								height: 100%;
+								font-size: 20rpx;
+								text-align: left;
+							}
 						}
 					}
 				}
@@ -312,7 +485,7 @@
 
 			.email {
 				display: flex;
-
+				height: 30rpx;
 				&>view {
 					&:first-child {
 						width: 30rpx;
@@ -324,11 +497,19 @@
 					}
 
 					&:last-child {
+						flex: 1;
+						height: 30rpx;
 						margin-left: 11rpx;
-						font-size: 22rpx;
+						font-size: 20rpx;
 						color: #257065;
 						display: flex;
 						flex-wrap: wrap;
+						textarea{
+							height: 100%;
+							width: 100%;
+							font-size: 20rpx;
+							text-align: left;
+						}
 					}
 				}
 			}

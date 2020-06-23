@@ -563,6 +563,7 @@ page {
   position: absolute;
   top: 0;
   left: 0;
+  font-size: 25rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -572,6 +573,7 @@ page {
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
+  margin: 8rpx;
 }
 .daily-left .description > view:nth-child(2) input {
   width: 100%;
