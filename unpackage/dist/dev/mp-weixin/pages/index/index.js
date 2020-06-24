@@ -235,15 +235,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
         url: '/pages/weekgoals/weekgoals' }],
 
 
-      userInfo: uni.getStorageInfoSync('userInfo').name || {
-        name: '樊文花',
-        mobile: '130123456789',
-        component: '广州樊文花化妆品有限公司',
-        address: '珠江新城K11管理中心',
-        qqNumber: 123456789012,
-        wechatNumber: '1212121212121',
-        email: '12121212@163.com' },
-
+      userInfo: uni.getStorageInfoSync('userInfo') || {},
       update: true };
 
   },
@@ -258,14 +250,14 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                 data = {
                   address: value2.address,
                   email: value,
-                  mobile: value2.mobile,
+                  mobile: +value2.mobile,
                   name: value2.name,
                   qqNumber: value2.qqNumber,
                   wechatNumber: value2.wechatNumber,
                   userid: uni.getStorageSync('userID') };_context.next = 4;return (
 
                   (0, _myAxios.myAxios)({
-                    method: 'psot',
+                    method: 'post',
                     url: '/anonymous/updateUserInfo',
                     data: data }));case 4:res = _context.sent;
 
@@ -286,14 +278,14 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                 data = {
                   address: value2.address,
                   email: value2.email,
-                  mobile: value2.mobile,
+                  mobile: +value2.mobile,
                   name: value2.name,
                   qqNumber: value2.qqNumber,
                   wechatNumber: value,
                   userid: uni.getStorageSync('userID') };_context2.next = 4;return (
 
                   (0, _myAxios.myAxios)({
-                    method: 'psot',
+                    method: 'post',
                     url: '/anonymous/updateUserInfo',
                     data: data }));case 4:res = _context2.sent;
 
@@ -316,12 +308,12 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                   email: value2.email,
                   mobile: value2.mobile,
                   name: value2.name,
-                  qqNumber: value,
+                  qqNumber: +value,
                   wechatNumber: value2.wechatNumber,
                   userid: uni.getStorageSync('userID') };_context3.next = 4;return (
 
                   (0, _myAxios.myAxios)({
-                    method: 'psot',
+                    method: 'post',
                     url: '/anonymous/updateUserInfo',
                     data: data }));case 4:res = _context3.sent;
 
@@ -345,11 +337,11 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                   mobile: value2.mobile,
                   name: value2.name,
                   qqNumber: value2.qqNumber,
-                  wechatNumber: value2.wechatNumber,
-                  userid: uni.getStorageSync('userID') };_context4.next = 4;return (
+                  userid: uni.getStorageSync('userID'),
+                  wechatNumber: value2.wechatNumber };_context4.next = 4;return (
 
                   (0, _myAxios.myAxios)({
-                    method: 'psot',
+                    method: 'post',
                     url: '/anonymous/updateUserInfo',
                     data: data }));case 4:res = _context4.sent;
 
@@ -371,12 +363,12 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     method: 'post',
                     url: '/anonymous/queryUserInfo',
                     data: {
-                      code: '123',
+                      // code:'123',
                       userid: uni.getStorageSync('userID') } }));case 3:res = _context5.sent;
 
 
-                if (res.data.statusCode == 200) {
-                  _this5.userInfo = res.data.result;
+                if (res.statusCode == 200 && res.data) {
+                  _this5.userInfo = res.data;
                 } else {
                   uni.showToast({
                     title: '获取用户信息失败,请重试',

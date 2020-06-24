@@ -36,7 +36,7 @@
 			      </view>
 			      <view class="item">
 			        <view>单位</view>
-			        <view>{{userInfo.component}}</view>
+			        <view>广州樊文花化妆品有限公司</view>
 			      </view>
 			      <view class="item">
 			        <view>地址</view>

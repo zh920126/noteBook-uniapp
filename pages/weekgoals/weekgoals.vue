@@ -685,7 +685,7 @@
 		
 		// 获取时间
 		getDateNow(){
-			console.log(this.time)
+			// console.log(this.time)
 			let date=new Date(this.time)
 			let year=date.getFullYear()
 			let month=date.getMonth()+1
@@ -748,7 +748,7 @@
 					url:'/anonymous/updateDayPlan',
 					data
 				})
-				console.log(res)
+				// console.log(res)
 				if(res.data.statusCode==200){
 					this.getDayPlan()
 				}else{
@@ -874,8 +874,8 @@
 				url:'/anonymous/findAimsByConditionForDayPlan',
 				data
 			})
-			console.log(data)
-			console.log(res)
+			// console.log(data)
+			// console.log(res)
 			if(res.data.statusCode==200&&res.data.result){
 				let {result}=res.data
 				// 数据初始化
@@ -1241,7 +1241,7 @@
 				url:'/anonymous/updateWeekPlan',
 				data
 			})
-			console.log(res.data.message)
+			// console.log(res.data.message)
 			if(res.data.statusCode==200){
 				this.getWeeklyTarget()
 			}else{

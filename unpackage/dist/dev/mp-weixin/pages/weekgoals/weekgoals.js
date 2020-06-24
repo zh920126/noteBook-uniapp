@@ -846,7 +846,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
 
     // 获取时间
     getDateNow: function getDateNow() {
-      console.log(this.time);
+      // console.log(this.time)
       var date = new Date(this.time);
       var year = date.getFullYear();
       var month = date.getMonth() + 1;
@@ -902,14 +902,14 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                   year: +_this5.year,
                   whichDay: +_this5.whichDay };if (!
 
-                value.id) {_context5.next = 8;break;}
+                value.id) {_context5.next = 7;break;}
                 data.id = value.id;_context5.next = 5;return (
                   (0, _myAxios.myAxios)({
                     method: 'post',
                     url: '/anonymous/updateDayPlan',
                     data: data }));case 5:res = _context5.sent;
 
-                console.log(res);
+                // console.log(res)
                 if (res.data.statusCode == 200) {
                   _this5.getDayPlan();
                 } else {
@@ -918,7 +918,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     icon: 'none',
                     duration: 500 });
 
-                }case 8:case "end":return _context5.stop();}}}, _callee5);}))();
+                }case 7:case "end":return _context5.stop();}}}, _callee5);}))();
 
     },
 
@@ -1035,8 +1035,8 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     url: '/anonymous/findAimsByConditionForDayPlan',
                     data: data }));case 4:res = _context9.sent;
 
-                console.log(data);
-                console.log(res);
+                // console.log(data)
+                // console.log(res)
                 if (res.data.statusCode == 200 && res.data.result) {
                   result = res.data.result;
                   // 数据初始化
@@ -1280,7 +1280,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     duration: 500 });
 
                 }
-                _this9.update3 = true;case 9:case "end":return _context9.stop();}}}, _callee9);}))();
+                _this9.update3 = true;case 7:case "end":return _context9.stop();}}}, _callee9);}))();
     },
 
     /****************************************************周-部分数据***********************************************/
@@ -1402,7 +1402,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     url: '/anonymous/updateWeekPlan',
                     data: data }));case 5:res = _context12.sent;
 
-                console.log(res.data.message);
+                // console.log(res.data.message)
                 if (res.data.statusCode == 200) {
                   _this12.getWeeklyTarget();
                 } else {
@@ -1411,7 +1411,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     icon: 'none',
                     duration: 500 });
 
-                }case 8:case "end":return _context12.stop();}}}, _callee12);}))();
+                }case 7:case "end":return _context12.stop();}}}, _callee12);}))();
     },
 
     // 本周目标完成状态更新
