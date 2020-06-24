@@ -98,21 +98,13 @@
 						url: '/pages/weekgoals/weekgoals'
 					}
 				],
-				userInfo: uni.getStorageInfoSync('userInfo').name || {
-					name:'樊文花',
-					mobile:'130123456789',
-					component:'广州樊文花化妆品有限公司',
-					address:'珠江新城K11管理中心',
-					qqNumber:1234567890,
-					wechatNumber:'1212121212121',
-					email:'12121212@163.com'
-				},
+				userInfo: uni.getStorageInfoSync('userInfo') || {},
 				update:true
 			}
 		},
 		onLoad(options) {
 			console.log(options)
-			// this.getUserInfo()
+			this.getUserInfo()
 		},
 		methods: {
 			// 更新用户邮箱
@@ -177,7 +169,7 @@
 				let data={
 					address:value2.address,
 					email:value2.email,
-					mobile:0,
+					mobile:value2.mobile,
 					name:value2.name,
 					qqNumber:+value,
 					wechatNumber:value2.wechatNumber,
@@ -205,7 +197,7 @@
 				let data={
 					address:value,
 					email:value2.email,
-					mobile:0,
+					mobile:value2.mobile,
 					name:value2.name,
 					qqNumber:value2.qqNumber,
 					userid:uni.getStorageSync('userID'),
@@ -216,8 +208,6 @@
 					url:'/anonymous/updateUserInfo',
 					data
 				})
-				console.log(data)
-				console.log(res)
 				if(res.data.statusCode==200){
 					this.getUserInfo()
 				}else{
@@ -240,9 +230,8 @@
 						userid:uni.getStorageSync('userID')
 					}
 				})
-				console.log(res)
-				if(res.data.statusCode==200){
-					this.userInfo=res.data.result
+				if(res.statusCode==200&&res.data){
+					this.userInfo=res.data
 				}else{
 					uni.showToast({
 						title:'获取用户信息失败,请重试',
