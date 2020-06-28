@@ -69,8 +69,8 @@ page .index .card .bg.data-v-57280228 {
   background-size: 100% 100%;
 }
 page .index .card .bg .userAvatar.data-v-57280228 {
-  width: 157rpx;
-  height: 203rpx;
+  width: 156rpx;
+  height: 156rpx;
   position: absolute;
   background: #fff;
   top: 52rpx;
@@ -159,7 +159,7 @@ page .index .userInfo .item > view.data-v-57280228 {
   width: 100%;
   height: 100%;
 }
-page .index .userInfo .item > view textarea.data-v-57280228 {
+page .index .userInfo .item > view input.data-v-57280228 {
   width: 100%;
   height: 100%;
   font-size: 22rpx;
@@ -218,6 +218,9 @@ page .index .userInfo .item-qq .wechat.data-v-57280228 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 page .index .userInfo .item-qq .qq > view image.data-v-57280228,
 page .index .userInfo .item-qq .wechat > view image.data-v-57280228 {
@@ -247,8 +250,8 @@ page .index .userInfo .item-qq .wechat > view.data-v-57280228:last-child {
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-page .index .userInfo .item-qq .qq > view:last-child textarea.data-v-57280228,
-page .index .userInfo .item-qq .wechat > view:last-child textarea.data-v-57280228 {
+page .index .userInfo .item-qq .qq > view:last-child input.data-v-57280228,
+page .index .userInfo .item-qq .wechat > view:last-child input.data-v-57280228 {
   width: 100%;
   height: 100%;
   font-size: 20rpx;
@@ -258,6 +261,9 @@ page .index .userInfo .email.data-v-57280228 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
   height: 30rpx;
 }
 page .index .userInfo .email > view.data-v-57280228:first-child {
@@ -286,7 +292,7 @@ page .index .userInfo .email > view.data-v-57280228:last-child {
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-page .index .userInfo .email > view:last-child textarea.data-v-57280228 {
+page .index .userInfo .email > view:last-child input.data-v-57280228 {
   height: 100%;
   width: 100%;
   font-size: 20rpx;

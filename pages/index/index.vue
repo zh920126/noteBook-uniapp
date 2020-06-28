@@ -10,15 +10,16 @@
 		</view>
 		<view class="card">
 			<!-- 顶部背景 -->
-			<view class="bg">
-				<block v-if="true">
+			<view class="bg" v-if="update1">
+				<block v-if="userMsg.avatarUrl">
 					<view class="userAvatar">
-						<image class="" mode="widthFix" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3104749104,4207433598&fm=26&gp=0.jpg"></image>
+						<!-- <image class="" mode="widthFix" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3104749104,4207433598&fm=26&gp=0.jpg"></image> -->
+						<image class="" mode="widthFix" :src="userMsg.avatarUrl"></image>
 					</view>
 				</block>
 				<block v-else>
 					<view class="userAvatar">
-						<button open-type="getUserInfo" bind:tap="handleGetUserInfo">我的照片</button>
+						<button open-type="getUserInfo" @getuserinfo="handleGetUserInfo">请登录</button>
 					</view>
 				</block>
 			</view>
@@ -27,11 +28,13 @@
 			      <view class="user-name">
 			        <view class="user-name-title">
 			          <view>姓名</view>
-			          <view class="name">{{userInfo.name}}</view>
+			          <view class="name">{{userMsg.nickName}}</view>
 			        </view>
 			        <view class="user-name-phone">
 			          <view>手机</view>
-			          <view class="name">{{userInfo.mobile}}</view>
+			          <view class="name">
+									<input type="text" :value="userInfo.mobile" @blur="handleUserPhone($event,userInfo)"/>
+								</view>
 			        </view>
 			      </view>
 			      <view class="item">
@@ -41,27 +44,27 @@
 			      <view class="item">
 			        <view>地址</view>
 			        <view>
-								<textarea :value="userInfo.address" @blur="handleUserAddress($event,userInfo)"></textarea>
+								<input :value="userInfo.address" @blur="handleUserAddress($event,userInfo)"></input>
 							</view>
 			      </view>
 			      <view class="item-qq">
 			        <view class="qq">
 			          <view class="iconfont icon-QQ"></view>
 			          <view class="name">
-									<textarea :value="userInfo.qqNumber" @blur="handleUserQQ($event,userInfo)"/>
+									<input :value="userInfo.qqNumber" @blur="handleUserQQ($event,userInfo)"/>
 								</view>
 			        </view>
 			        <view class="wechat">
 			          <view class="iconfont icon-weixin"></view>
 			          <view class="name">
-									<textarea :value="userInfo.wechatNumber" @blur="handleUserWechat($event,userInfo)"/>
+									<input :value="userInfo.wechatNumber" @blur="handleUserWechat($event,userInfo)"/>
 								</view>
 			        </view>
 			      </view>
 			      <view class="email">
 			          <view class="iconfont icon-email"></view>
 			          <view class="email-des">
-									<textarea :value="userInfo.email" @blur="handleUserEmail($event,userInfo)"/>
+									<input :value="userInfo.email" @blur="handleUserEmail($event,userInfo)"/>
 								</view>
 			      </view>
 			</view>
@@ -98,37 +101,149 @@
 						url: '/pages/weekgoals/weekgoals'
 					}
 				],
-				userInfo: uni.getStorageInfoSync('userInfo') || {},
-				update:true
+				userMsg:{},
+				userInfo:{},
+				update:true,
+				update1:true
 			}
 		},
-		onLoad(options) {
-			console.log(options)
+		onShow() {
 			this.getUserInfo()
+			if(uni.getStorageSync('userMsg')){
+				this.userMsg=JSON.parse(uni.getStorageSync('userMsg'))||{}
+			}
+		},
+		
+		onLoad(options) {
+			
 		},
 		methods: {
-			// 更新用户邮箱
-			async handleUserEmail(e,value2){
-				let {value}=e.detail
-				let data={
-					address:value2.address,
-					email:value,
-					mobile:+value2.mobile,
-					name:value2.name,
-					qqNumber:value2.qqNumber,
-					wechatNumber:value2.wechatNumber,
-					userid:uni.getStorageSync('userID')
+			
+			// 获取用户授权
+			async handleGetUserInfo(e){
+				// this.update1=false
+				console.log(e)
+				if(e.detail.errMsg.includes('ok')){
+					let {encryptedData,iv,signature,userInfo}=e.detail
+					this.userMsg=userInfo
+					// console.log(this.userMsg)
+					// 将用户信息存储到本地
+					uni.setStorageSync('userMsg',JSON.stringify(this.userMsg))
+					try{
+						// 发起登录请求获取code
+						let code=await this.userLogin()
+						// 获取openid
+						let res=await this.getUserOpenid(code)
+						// 将用户的唯一标识存起来
+						uni.setStorageSync('userID',res.data.openid)
+						this.getUserInfo()
+					}catch(error){
+						uni.showToast({
+							title:'登录失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
 				}
-				let res=await myAxios({
-					method:'post',
-					url:'/anonymous/updateUserInfo',
-					data
+			},
+			
+			// 获取用户的openId
+			getUserOpenid(code){
+				return new Promise((resolve,reject)=>{
+					uni.request({
+						url:`https://api.weixin.qq.com/sns/jscode2session?appid=wx316e402fbca1c4fb&secret=d4358b7320c9452581e1fa94b88b5e36&js_code=${code}&grant_type=authorization_code`,
+						success(res) {
+							resolve(res)
+						}
+					})
 				})
-				if(res.data.statusCode==200){
-					this.getUserInfo()
+			},
+			
+			// 微信登录
+			userLogin(){
+			 return new Promise((resolve, reject) => {
+					uni.login({
+						success: result => {
+							resolve(result.code);
+						}
+					});
+				});
+			},
+			
+			// 更新用户手机号
+			async handleUserPhone(e,value2){
+				let {value}=e.detail
+				if(uni.getStorageSync('userID')){
+					if((/^1[3456789]\d{9}$/.test(value))){ 
+					  let data={
+					  	address:value2.address,
+					  	email:value2.email,
+					  	mobile:+value,
+					  	name:value2.name,
+					  	qqNumber:value2.qqNumber,
+					  	wechatNumber:value2.wechatNumber,
+					  	userid:uni.getStorageSync('userID')
+					  }
+					  let res=await myAxios({
+					  	method:'post',
+					  	url:'/anonymous/updateUserInfo',
+					  	data
+					  })
+					  if(res.data.statusCode==200){
+					  	this.getUserInfo()
+					  }else{
+					  	uni.showToast({
+					  		title:'更新失败,请重试',
+					  		icon:'none',
+					  		duration:500
+					  	})
+					  } 
+					}else{
+						uni.showToast({
+							title:'请输入正确的手机号',
+							icon:'none',
+							duration:500
+						})
+					}
 				}else{
 					uni.showToast({
-						title:'更新失败,请重试',
+						title:'请登录',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
+			
+			// 更新用户邮箱
+			async handleUserEmail(e,value2){
+				if(uni.getStorageSync('userID')){
+					let {value}=e.detail
+					let data={
+						address:value2.address,
+						email:value,
+						mobile:+value2.mobile,
+						name:value2.name,
+						qqNumber:value2.qqNumber,
+						wechatNumber:value2.wechatNumber,
+						userid:uni.getStorageSync('userID')
+					}
+					let res=await myAxios({
+						method:'post',
+						url:'/anonymous/updateUserInfo',
+						data
+					})
+					if(res.data.statusCode==200){
+						this.getUserInfo()
+					}else{
+						uni.showToast({
+							title:'更新失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
+				}else{
+					uni.showToast({
+						title:'请登录',
 						icon:'none',
 						duration:500
 					})
@@ -137,26 +252,34 @@
 			
 			// 更新用户wechat
 			async handleUserWechat(e,value2){
-				let {value}=e.detail
-				let data={
-					address:value2.address,
-					email:value2.email,
-					mobile:+value2.mobile,
-					name:value2.name,
-					qqNumber:value2.qqNumber,
-					wechatNumber:value,
-					userid:uni.getStorageSync('userID')
-				}
-				let res=await myAxios({
-					method:'post',
-					url:'/anonymous/updateUserInfo',
-					data
-				})
-				if(res.data.statusCode==200){
-					this.getUserInfo()
+				if(uni.getStorageSync('userID')){
+					let {value}=e.detail
+					let data={
+						address:value2.address,
+						email:value2.email,
+						mobile:+value2.mobile,
+						name:value2.name,
+						qqNumber:value2.qqNumber,
+						wechatNumber:value,
+						userid:uni.getStorageSync('userID')
+					}
+					let res=await myAxios({
+						method:'post',
+						url:'/anonymous/updateUserInfo',
+						data
+					})
+					if(res.data.statusCode==200){
+						this.getUserInfo()
+					}else{
+						uni.showToast({
+							title:'更新失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
 				}else{
 					uni.showToast({
-						title:'更新失败,请重试',
+						title:'请登录',
 						icon:'none',
 						duration:500
 					})
@@ -165,26 +288,34 @@
 			
 			// 更新用户QQ
 			async handleUserQQ(e,value2){
-				let {value}=e.detail
-				let data={
-					address:value2.address,
-					email:value2.email,
-					mobile:value2.mobile,
-					name:value2.name,
-					qqNumber:+value,
-					wechatNumber:value2.wechatNumber,
-					userid:uni.getStorageSync('userID')
-				}
-				let res=await myAxios({
-					method:'post',
-					url:'/anonymous/updateUserInfo',
-					data
-				})
-				if(res.data.statusCode==200){
-					this.getUserInfo()
+				if(uni.getStorageSync('userID')){
+					let {value}=e.detail
+					let data={
+						address:value2.address,
+						email:value2.email,
+						mobile:value2.mobile,
+						name:value2.name,
+						qqNumber:+value,
+						wechatNumber:value2.wechatNumber,
+						userid:uni.getStorageSync('userID')
+					}
+					let res=await myAxios({
+						method:'post',
+						url:'/anonymous/updateUserInfo',
+						data
+					})
+					if(res.data.statusCode==200){
+						this.getUserInfo()
+					}else{
+						uni.showToast({
+							title:'更新失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
 				}else{
 					uni.showToast({
-						title:'更新失败,请重试',
+						title:'请登录',
 						icon:'none',
 						duration:500
 					})
@@ -193,26 +324,34 @@
 			
 			// 更新用户地址
 			async handleUserAddress(e,value2){
-				let {value}=e.detail
-				let data={
-					address:value,
-					email:value2.email,
-					mobile:value2.mobile,
-					name:value2.name,
-					qqNumber:value2.qqNumber,
-					userid:uni.getStorageSync('userID'),
-					wechatNumber:value2.wechatNumber
-				}
-				let res=await myAxios({
-					method:'post',
-					url:'/anonymous/updateUserInfo',
-					data
-				})
-				if(res.data.statusCode==200){
-					this.getUserInfo()
+				if(uni.getStorageSync('userID')){
+					let {value}=e.detail
+					let data={
+						address:value,
+						email:value2.email,
+						mobile:value2.mobile,
+						name:value2.name,
+						qqNumber:value2.qqNumber,
+						userid:uni.getStorageSync('userID'),
+						wechatNumber:value2.wechatNumber
+					}
+					let res=await myAxios({
+						method:'post',
+						url:'/anonymous/updateUserInfo',
+						data
+					})
+					if(res.data.statusCode==200){
+						this.getUserInfo()
+					}else{
+						uni.showToast({
+							title:'更新失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
 				}else{
 					uni.showToast({
-						title:'更新失败,请重试',
+						title:'请登录',
 						icon:'none',
 						duration:500
 					})
@@ -221,7 +360,7 @@
 			
 			// 获取用户信息
 			async getUserInfo(){
-				this.update=false
+				// this.update=false
 				let res= await myAxios({
 					method:'post',
 					url:'/anonymous/queryUserInfo',
@@ -239,15 +378,23 @@
 						duration:500
 					})
 				}
-				this.update=true
+				// this.update=true
 			},
 			
 			// 路由跳转
 			goToelsePage(v){
-				console.log(v)
-				uni.navigateTo({
-					url:v
-				})
+				// 如果用户登录成功才可以跳转
+				if(uni.getStorageSync('userID')){
+					uni.navigateTo({
+						url:v
+					})
+				}else{
+					uni.showToast({
+						title:'请先登录',
+						icon:'none',
+						duration:500
+					})
+				}
 			}
 		}
 	}
@@ -322,8 +469,8 @@
 				background-size: 100% 100%;
 
 				.userAvatar {
-					width: 157rpx;
-					height: 203rpx;
+					width: 156rpx;
+					height: 156rpx;
 					position: absolute;
 					background: #fff;
 					top: 52rpx;
@@ -395,7 +542,7 @@
 				&>view {
 					width: 100%;
 					height: 100%;
-					textarea{
+					input{
 						width: 100%;
 						height: 100%;
 						font-size: 22rpx;
@@ -443,6 +590,7 @@
 				.qq,
 				.wechat {
 					display: flex;
+					align-items: center;
 
 					&>view {
 						image {
@@ -464,7 +612,7 @@
 							color: #257065;
 							display: flex;
 							flex-wrap: wrap;
-							textarea{
+							input{
 								width: 100%;
 								height: 100%;
 								font-size: 20rpx;
@@ -477,6 +625,7 @@
 
 			.email {
 				display: flex;
+				align-items: center;
 				height: 30rpx;
 				&>view {
 					&:first-child {
@@ -496,7 +645,7 @@
 						color: #257065;
 						display: flex;
 						flex-wrap: wrap;
-						textarea{
+						input{
 							height: 100%;
 							width: 100%;
 							font-size: 20rpx;
