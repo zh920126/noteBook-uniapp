@@ -666,6 +666,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                   workIndex.forEach(function (v, i) {
                     _this8.table[0].children[i] = v;
                     _this8.table[0].children.length = 5;
+                    // this.$set(this.table[0].children,i,v)
                   });
                   otherTarget.forEach(function (v, i) {
                     if (v.importanceLevel == '学习计划') {
@@ -678,6 +679,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                       table[1].children.push(v);
                     }
                     _this8.table[1].children.length = 3;
+                    // this.$set(this.table[1].children,i,v)
                   });
                 } else {
                   uni.showToast({

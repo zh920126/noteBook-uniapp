@@ -11,24 +11,26 @@
 		<view class="card">
 			<!-- 顶部背景 -->
 			<view class="bg" v-if="update1">
-				<block v-if="userMsg.avatarUrl">
+				<block >
 					<view class="userAvatar">
 						<!-- <image class="" mode="widthFix" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3104749104,4207433598&fm=26&gp=0.jpg"></image> -->
-						<image class="" mode="widthFix" :src="userMsg.avatarUrl"></image>
+						<image class="" mode="widthFix" src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=865217805,1141028360&fm=26&gp=0.jpg"></image>
 					</view>
 				</block>
-				<block v-else>
+				<!-- <block v-else>
 					<view class="userAvatar">
 						<button open-type="getUserInfo" @getuserinfo="handleGetUserInfo">请登录</button>
 					</view>
-				</block>
+				</block> -->
 			</view>
 			
 			<view class="userInfo" v-if="update">
 			      <view class="user-name">
 			        <view class="user-name-title">
 			          <view>姓名</view>
-			          <view class="name">{{userMsg.nickName}}</view>
+			          <view class="name">
+									<input type="text" :value="userInfo.name" @blur="handleUserName($event,userInfo)"/>
+								</view>
 			        </view>
 			        <view class="user-name-phone">
 			          <view>手机</view>
@@ -115,9 +117,74 @@
 		},
 		
 		onLoad(options) {
-			
+			// let redirect_uri= urlencode("wx.fawa1988.com")
+			// uni.request({
+			// 	url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=wwdccc2763a3f12d3f&redirect_uri=wx.fawa1988.com&response_type=code&scope=snsapi_userinfo&agentid=1000072&state=123#wechat_redirect`,
+			// 	success(res1) {
+			// 		console.log(res1)
+			// 		let {code}=res1
+			// 		uni.request({
+			// 			url:'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wwdccc2763a3f12d3f&corpsecret=DJegIGfOfqJspz9Jf1hPpDligylJglSXUgYy_JiXSRM',
+			// 			success(res2) {
+			// 				let {access_token}=res2
+			// 				uni.request({
+			// 					url:`https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=${access_token}code=${code}`,
+			// 					success(res3) {
+			// 						let {user_ticket,UserId}=res3
+			// 						uni.request({
+			// 							url:`https://qyapi.weixin.qq.com/cgi-bin/user/getuserdetail?access_token=${access_token}`,
+			// 							method:'post',
+			// 							data:{
+			// 								user_ticket:user_ticket
+			// 							},
+			// 							success(result) {
+			// 								this.userInfo=result
+			// 							}
+			// 						})
+			// 					}
+			// 				})
+			// 			}
+			// 		})
+			// 	}
+			// })
 		},
 		methods: {
+			
+			// 更新用户名
+			async handleUserName(e,value2){
+				if(uni.getStorageSync('userID')){
+					let {value}=e.detail
+					let data={
+						address:value2.address,
+						email:value2.email,
+						mobile:+value2.mobile,
+						name:value,
+						qqNumber:value2.qqNumber,
+						wechatNumber:value2.wechatNumber,
+						userid:uni.getStorageSync('userID')
+					}
+					let res=await myAxios({
+						method:'post',
+						url:'/anonymous/updateUserInfo',
+						data
+					})
+					if(res.data.statusCode==200){
+						this.getUserInfo()
+					}else{
+						uni.showToast({
+							title:'更新失败,请重试',
+							icon:'none',
+							duration:500
+						})
+					}
+				}else{
+					uni.showToast({
+						title:'请登录',
+						icon:'none',
+						duration:500
+					})
+				}
+			},
 			
 			// 获取用户授权
 			async handleGetUserInfo(e){
@@ -172,7 +239,7 @@
 			
 			// 更新用户手机号
 			async handleUserPhone(e,value2){
-				let {value}=e.detail
+				let {value} =e.detail
 				if(uni.getStorageSync('userID')){
 					if((/^1[3456789]\d{9}$/.test(value))){ 
 					  let data={
@@ -384,17 +451,17 @@
 			// 路由跳转
 			goToelsePage(v){
 				// 如果用户登录成功才可以跳转
-				if(uni.getStorageSync('userID')){
+				// if(uni.getStorageSync('userID')){
 					uni.navigateTo({
 						url:v
 					})
-				}else{
-					uni.showToast({
-						title:'请先登录',
-						icon:'none',
-						duration:500
-					})
-				}
+				// }else{
+				// 	uni.showToast({
+				// 		title:'请先登录',
+				// 		icon:'none',
+				// 		duration:500
+				// 	})
+				// }
 			}
 		}
 	}

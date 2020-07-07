@@ -534,6 +534,7 @@
 					 workIndex.forEach((v, i) => {
 							this.table[0].children[i]=v
 							this.table[0].children.length = 5
+							// this.$set(this.table[0].children,i,v)
 						});
 					otherTarget.forEach((v, i) => {
 						if(v.importanceLevel=='学习计划'){
@@ -546,6 +547,7 @@
 							table[1].children.push(v)
 						}
 						this.table[1].children.length = 3
+						// this.$set(this.table[1].children,i,v)
 					});
 				}else{
 					uni.showToast({

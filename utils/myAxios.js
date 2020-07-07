@@ -1,5 +1,5 @@
 // 设置基准路径
-const baseUrl='http://172.16.10.21:8080'
+const baseUrl='http://note.fwh1988.com:30493'
 // const baseUrl='https://www.easy-mock.com/mock/5eef1a89aa78635a7b46263c/example/'
 // myAxios 函数，params 发请求时传入的参数
 export const myAxios = (params)=>{

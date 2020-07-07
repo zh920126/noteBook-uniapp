@@ -660,12 +660,12 @@
 
 			// 获取蓝图3的数据内容
 			async viewBlPrint3(){
-				this.update=false
+				// this.update=false
 				let res=await myAxios({
 					method:'post',
 					url:'/anonymous/queryBlueprintDetailed',
 					data:{
-						userid:wx.getStorageSync('userID')
+						userid:uni.getStorageSync('userID')
 					}
 				})
 				// console.log(res);
@@ -676,6 +676,7 @@
 						content.forEach(v=>{
 							if(this.cateList[i].name===v.parentType){
 								this.cateList[i]['children'][v.count-1]=v
+								this.$set(this.cateList[i]['children'],v.count-1,v)
 							}
 						})
 					}
@@ -686,12 +687,12 @@
 						duration:500
 					})
 				}
-				this.update=true
+				// this.update=true
 			},
 
 			// 获取蓝图2的数据
 			async getUserBlPrint2() {
-				this.update = false
+				// this.update = false
 				let data = {
 					completionTime: 5,
 					userid: uni.getStorageSync('userID')
@@ -707,23 +708,30 @@
 					userBluePrint.forEach(v => {
 						if (v.type == '事业') {
 							this.array[0] = v
+							this.$set(this.array,0,v)
 						}
 						if (v.type == '财富') {
 							this.array[1] = v
+							this.$set(this.array,1,v)
 						}
 						if (v.type == '家庭生活') {
 							this.array[2] = v
+							this.$set(this.array,2,v)
 						}
 						if (v.type == '学习成长') {
 							this.array[3] = v
+							this.$set(this.array,3,v)
 						}
 						if (v.type == '人际关系') {
 							this.array[4] = v
+							this.$set(this.array,4,v)
 						}
 						if (v.type == '健康计划') {
 							this.array[5] = v
+							this.$set(this.array,5,v)
 						}
 					})
+					// this.$set(this.array,index)
 					// console.log(this.array)
 				} else {
 					uni.showToast({
@@ -732,12 +740,12 @@
 						icon: 'none'
 					})
 				}
-				this.update = true
+				// this.update = true
 			},
 
 			// 进入页面就获取蓝图1的数据
 			async getUserBlPrint() {
-				this.update = false
+				// this.update = false
 				let data = {
 					completionTime: 3,
 					userid: uni.getStorageSync('userID')
@@ -753,21 +761,27 @@
 					userBluePrint.forEach(v => {
 						if (v.type == '事业') {
 							this.arr[0] = v
+							this.$set(this.arr,0,v)
 						}
 						if (v.type == '财富') {
 							this.arr[1] = v
+							this.$set(this.arr,1,v)
 						}
 						if (v.type == '家庭生活') {
 							this.arr[2] = v
+							this.$set(this.arr,2,v)
 						}
 						if (v.type == '学习成长') {
 							this.arr[3] = v
+							this.$set(this.arr,3,v)
 						}
 						if (v.type == '人际关系') {
 							this.arr[4] = v
+							this.$set(this.arr,4,v)
 						}
 						if (v.type == '健康计划') {
 							this.arr[5] = v
+							this.$set(this.arr,5,v)
 						}
 					})
 
@@ -778,7 +792,7 @@
 						icon: 'none'
 					})
 				}
-				this.update = true
+				// this.update = true
 			}
 		},
 		onLoad() {

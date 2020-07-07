@@ -791,13 +791,13 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
     },
 
     // 获取蓝图3的数据内容
-    viewBlPrint3: function viewBlPrint3() {var _this9 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var res, content, _loop, i;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:
-                _this9.update = false;_context9.next = 3;return (
+    viewBlPrint3: function viewBlPrint3() {var _this9 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var res, content, _loop, i;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:_context9.next = 2;return (
+
                   (0, _myAxios.myAxios)({
                     method: 'post',
                     url: '/anonymous/queryBlueprintDetailed',
                     data: {
-                      userid: wx.getStorageSync('userID') } }));case 3:res = _context9.sent;
+                      userid: uni.getStorageSync('userID') } }));case 2:res = _context9.sent;
 
 
                 // console.log(res);
@@ -808,6 +808,7 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     content.forEach(function (v) {
                       if (_this9.cateList[i].name === v.parentType) {
                         _this9.cateList[i]['children'][v.count - 1] = v;
+                        _this9.$set(_this9.cateList[i]['children'], v.count - 1, v);
                       }
                     });};for (i = 0; i < _this9.cateList.length; i++) {_loop(i);
                   }
@@ -818,20 +819,20 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     duration: 500 });
 
                 }
-                _this9.update = true;case 6:case "end":return _context9.stop();}}}, _callee9);}))();
-    },
+                // this.update=true
+              case 4:case "end":return _context9.stop();}}}, _callee9);}))();},
 
     // 获取蓝图2的数据
     getUserBlPrint2: function getUserBlPrint2() {var _this10 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee10() {var data, res, userBluePrint;return _regenerator.default.wrap(function _callee10$(_context10) {while (1) {switch (_context10.prev = _context10.next) {case 0:
-                _this10.update = false;
+                // this.update = false
                 data = {
                   completionTime: 5,
-                  userid: uni.getStorageSync('userID') };_context10.next = 4;return (
+                  userid: uni.getStorageSync('userID') };_context10.next = 3;return (
 
                   (0, _myAxios.myAxios)({
                     method: 'post',
                     url: '/anonymous/queryBlueprint',
-                    data: data }));case 4:res = _context10.sent;
+                    data: data }));case 3:res = _context10.sent;
 
                 if (res.data.message == '查询成功' && res.data.result.content) {
                   userBluePrint = res.data.result.content;
@@ -839,23 +840,30 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                   userBluePrint.forEach(function (v) {
                     if (v.type == '事业') {
                       _this10.array[0] = v;
+                      _this10.$set(_this10.array, 0, v);
                     }
                     if (v.type == '财富') {
                       _this10.array[1] = v;
+                      _this10.$set(_this10.array, 1, v);
                     }
                     if (v.type == '家庭生活') {
                       _this10.array[2] = v;
+                      _this10.$set(_this10.array, 2, v);
                     }
                     if (v.type == '学习成长') {
                       _this10.array[3] = v;
+                      _this10.$set(_this10.array, 3, v);
                     }
                     if (v.type == '人际关系') {
                       _this10.array[4] = v;
+                      _this10.$set(_this10.array, 4, v);
                     }
                     if (v.type == '健康计划') {
                       _this10.array[5] = v;
+                      _this10.$set(_this10.array, 5, v);
                     }
                   });
+                  // this.$set(this.array,index)
                   // console.log(this.array)
                 } else {
                   uni.showToast({
@@ -864,20 +872,20 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     icon: 'none' });
 
                 }
-                _this10.update = true;case 7:case "end":return _context10.stop();}}}, _callee10);}))();
-    },
+                // this.update = true
+              case 5:case "end":return _context10.stop();}}}, _callee10);}))();},
 
     // 进入页面就获取蓝图1的数据
     getUserBlPrint: function getUserBlPrint() {var _this11 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee11() {var data, res, userBluePrint;return _regenerator.default.wrap(function _callee11$(_context11) {while (1) {switch (_context11.prev = _context11.next) {case 0:
-                _this11.update = false;
+                // this.update = false
                 data = {
                   completionTime: 3,
-                  userid: uni.getStorageSync('userID') };_context11.next = 4;return (
+                  userid: uni.getStorageSync('userID') };_context11.next = 3;return (
 
                   (0, _myAxios.myAxios)({
                     method: 'post',
                     url: '/anonymous/queryBlueprint',
-                    data: data }));case 4:res = _context11.sent;
+                    data: data }));case 3:res = _context11.sent;
 
                 if (res.data.message == '查询成功' && res.data.result.content) {
                   userBluePrint = res.data.result.content;
@@ -885,21 +893,27 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                   userBluePrint.forEach(function (v) {
                     if (v.type == '事业') {
                       _this11.arr[0] = v;
+                      _this11.$set(_this11.arr, 0, v);
                     }
                     if (v.type == '财富') {
                       _this11.arr[1] = v;
+                      _this11.$set(_this11.arr, 1, v);
                     }
                     if (v.type == '家庭生活') {
                       _this11.arr[2] = v;
+                      _this11.$set(_this11.arr, 2, v);
                     }
                     if (v.type == '学习成长') {
                       _this11.arr[3] = v;
+                      _this11.$set(_this11.arr, 3, v);
                     }
                     if (v.type == '人际关系') {
                       _this11.arr[4] = v;
+                      _this11.$set(_this11.arr, 4, v);
                     }
                     if (v.type == '健康计划') {
                       _this11.arr[5] = v;
+                      _this11.$set(_this11.arr, 5, v);
                     }
                   });
 
@@ -910,8 +924,8 @@ var _myAxios = __webpack_require__(/*! ../../utils/myAxios.js */ 20);function _i
                     icon: 'none' });
 
                 }
-                _this11.update = true;case 7:case "end":return _context11.stop();}}}, _callee11);}))();
-    } },
+                // this.update = true
+              case 5:case "end":return _context11.stop();}}}, _callee11);}))();} },
 
   onLoad: function onLoad() {
     this.getUserBlPrint();

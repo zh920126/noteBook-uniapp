@@ -77,13 +77,17 @@
     },
     "h5" : {
         "router" : {
-            "mode" : "hash"
+            "mode" : "hash",
+            "base" : "./"
         },
         "devServer" : {
             "https" : false
         },
         "sdkConfigs" : {
             "maps" : {}
-        }
+        },
+        "template" : "",
+        "domain" : "http://note.fwh1988.com",
+        "title" : "樊文花成长日志"
     }
 }
